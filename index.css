@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #0c0a09;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  /* RESET GLOBAL: Prevenção de corte em fontes Italic/Display */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.4 !important;
+    overflow: visible !important;
+    display: block;
+    word-wrap: break-word;
+    /* Margens de segurança para evitar clipping de glifos inclinados */
+    padding-right: 0.6em !important;
+    padding-top: 0.1em !important;
+    padding-bottom: 0.1em !important;
+  }
+}
+
+/* Classe utilitária para títulos grandes em Italic */
+.italic-safe {
+  padding-right: 0.5em !important;
+  display: inline-block;
+}
+
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  z-index: 1;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  color: transparent;
+}
+
+.glass-ultra {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-metallic {
+  background: linear-gradient(to right, #ffffff 0%, #DD878D 50%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-premium-in {
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
