@@ -53,7 +53,7 @@ const ImersaoLP2: React.FC = () => {
             if (y && y.parentNode) {
                 y.parentNode.insertBefore(t, y);
             }
-        })(window, document, "clarity", "script", "vwoatqx0y1");
+        })(window, document, "clarity", "script", "vx6snroi7f");
     }, []);
 
     const scrollToTop = () => {

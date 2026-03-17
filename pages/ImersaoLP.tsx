@@ -53,7 +53,7 @@ const ImersaoLP: React.FC = () => {
             if (y && y.parentNode) {
                 y.parentNode.insertBefore(t, y);
             }
-        })(window, document, "clarity", "script", "vwo2tw26vo");
+        })(window, document, "clarity", "script", "vx6s00ss2l");
 
         // Meta Pixel Code apenas para /imersao-lp
         if (!document.getElementById('meta-pixel-imersao')) {
@@ -68,7 +68,7 @@ const ImersaoLP: React.FC = () => {
                 t.src=v;s=b.getElementsByTagName(e)[0];
                 s.parentNode.insertBefore(t,s)}(window, document,'script',
                 'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '4214948072087892');
+                fbq('init', '767249786202838');
                 fbq('track', 'PageView');
             `;
             document.head.appendChild(script);
@@ -79,7 +79,7 @@ const ImersaoLP: React.FC = () => {
             img.height = 1;
             img.width = 1;
             img.style.display = 'none';
-            img.src = 'https://www.facebook.com/tr?id=4214948072087892&ev=PageView&noscript=1';
+            img.src = 'https://www.facebook.com/tr?id=767249786202838&ev=PageView&noscript=1';
             noscript.appendChild(img);
             document.head.appendChild(noscript);
         }
