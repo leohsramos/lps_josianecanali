@@ -20,7 +20,7 @@ const lps: LPCard[] = [
         description: 'Construa um consultório 100% particular e escale sua rentabilidade no high-ticket, sem sacrificar família ou paz mental.',
         href: '/imersao',
         tag: 'Exclusivo para Médicos',
-        image: 'https://i.postimg.cc/pVcC9Z7r/HDS-9276-Photoroom.png',
+        image: 'https://img.ampulloo.com/josiane_canali/imersao-hero.webp',
         accentColor: '#D4AF37',
     },
     {
@@ -29,7 +29,7 @@ const lps: LPCard[] = [
         description: 'A segunda via de acesso à imersão. Conteúdo idêntico ao original, com uma jornada de apresentação diferenciada.',
         href: '/imersao2',
         tag: 'Exclusivo para Médicos',
-        image: 'https://i.postimg.cc/sg9hBBgk/ft-agenda.png',
+        image: 'https://img.ampulloo.com/josiane_canali/imersao-hero.webp',
         accentColor: '#D4AF37',
     },
     {
@@ -38,7 +38,7 @@ const lps: LPCard[] = [
         description: 'Aprofunde-se no universo da medicina sexual com protocolos exclusivos e posicionamento premium para consultórios.',
         href: '/sexualidade',
         tag: 'Curso Online',
-        image: 'https://i.postimg.cc/2jsvRZvL/HDS-9172.jpg',
+        image: 'https://img.ampulloo.com/josiane_canali/imersao-dra.webp',
         accentColor: '#c084fc',
     },
     {
@@ -47,7 +47,7 @@ const lps: LPCard[] = [
         description: 'Domine a terapia hormonal na menopausa e crie uma linha de receita recorrente altamente valorizada por pacientes.',
         href: '/menopausa',
         tag: 'Curso Online',
-        image: 'https://i.postimg.cc/2jsvRZvL/HDS-9172.jpg',
+        image: 'https://img.ampulloo.com/josiane_canali/imersao-dra.webp',
         accentColor: '#f472b6',
     },
     {
@@ -56,7 +56,7 @@ const lps: LPCard[] = [
         description: 'Conteúdo avançado sobre anatomia corporal para médicos que desejam ampliar sua expertise clínica e cirúrgica.',
         href: '/anatomia',
         tag: 'Curso Online',
-        image: 'https://i.postimg.cc/2jsvRZvL/HDS-9172.jpg',
+        image: 'https://img.ampulloo.com/josiane_canali/imersao-dra.webp',
         accentColor: '#34d399',
     },
 ];
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             <SEO
                 title="Instituto Canali | Programas para Médicos"
                 description="Selecione o programa do Instituto Josiane Canali ideal para você e transforme sua carreira médica."
-                image="https://i.postimg.cc/LXYLt6tG/60.png"
+                image="https://img.ampulloo.com/josiane_canali/imersao-hero.webp"
                 url="https://lp.institutocanali.com"
             />
 
@@ -81,9 +81,11 @@ const Home: React.FC = () => {
             {/* Header */}
             <header className="relative z-10 flex justify-center pt-14 pb-2 px-6">
                 <img
-                    src="https://i.postimg.cc/76xjhdSC/logo.png"
+                    src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp"
                     alt="Instituto Canali"
                     className="h-12 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.35)]"
+                    loading="eager"
+                    decoding="async"
                 />
             </header>
 
