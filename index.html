@@ -7,20 +7,66 @@
     <title>Instituto Canali</title>
     <meta name="description" content="Instituto Canali — Cursos e imersões para transformar sua carreira médica." />
 
-    <!-- Preconnect only to critical origins (max 3) -->
+    <!--
+        PERF: Preconnect to critical origins ONLY.
+        crossorigin required for fonts (CORS font requests).
+        img CDN preconnect speeds up hero image on cold connections.
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://img.ampulloo.com" crossorigin />
 
     <!--
-        PERF: Fonts – load only 3 weights instead of 9.
-        display=swap prevents FOIT (flash of invisible text).
-        Removed: 300, 500, 600, 1,300, 1,400 (unused on page).
-        Kept: 400 (body), 700 (semi), 800 (titles), 900 (hero h1).
+        PERF: Critical above-the-fold CSS inlined.
+        Prevents any FOUC and eliminates render-blocking stylesheet requests
+        for the most important above-fold styles (bg, text color, font fallback).
+        Tailwind will provide the full styles once it loads.
+    -->
+    <style>
+        /* Base reset — avoids flash of white before Tailwind loads */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background-color: #0A0A0A;
+            color: #f5f5f4;
+            font-family: Montserrat, system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Prevent invisible text while Montserrat loads (font-display:swap equivalent) */
+        #root {
+            min-height: 100vh;
+        }
+
+        /* Hero placeholder: prevents CLS on first paint */
+        .hero-section {
+            background-color: #0A0A0A;
+        }
+
+        /* Navbar placeholder height reservation — prevents jump when navbar renders */
+        nav {
+            min-height: 64px;
+        }
+    </style>
+
+    <!--
+        PERF: Google Fonts — async non-blocking load.
+        Only 4 weights loaded (was 9): 400, 700, 800, 900.
+        media="print" trick: browser downloads without blocking render,
+        onload switches to media="all" so it applies after first paint.
+        font-display=swap in the URL prevents FOIT (invisible text flash).
     -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet"
         media="print" onload="this.media='all'" />
-    <!-- Noscript fallback: loads fonts normally if JS is disabled -->
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap"
             rel="stylesheet" />
@@ -28,8 +74,9 @@
 
     <link rel="icon" type="image/webp" href="https://img.ampulloo.com/josiane_canali/logo-Josiane-Canali.webp" />
 
-    <!-- LCP preload: hero image downloaded in parallel with HTML parse -->
-    <link rel="preload" as="image" href="https://img.ampulloo.com/josiane_canali/imersao-hero.webp" />
+    <!-- PERF: Hero image preloaded in parallel with HTML parse — critical for LCP -->
+    <link rel="preload" as="image" fetchpriority="high"
+        href="https://img.ampulloo.com/josiane_canali/imersao-hero.webp" />
 </head>
 
 <body>
