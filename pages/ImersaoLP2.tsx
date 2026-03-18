@@ -43,17 +43,29 @@ const ImersaoLP2: React.FC = () => {
     }, [location]);
 
     useEffect(() => {
-        // Código do Microsoft Clarity para /imersao-lp2
-        (function (c: any, l: any, a: any, r: any, i: any, t?: any, y?: any) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r);
-            t.async = 1;
-            t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0];
-            if (y && y.parentNode) {
-                y.parentNode.insertBefore(t, y);
-            }
-        })(window, document, "clarity", "script", "vx6snroi7f");
+        /**
+         * PERF: Defer Clarity until browser is idle.
+         * requestIdleCallback (Chrome/Edge) with 3000ms timeout fallback.
+         * Prevents tracker from blocking TTI and LCP on /imersao2.
+         */
+        const loadClarity = () => {
+            (function (c: any, l: any, a: any, r: any, i: any, t?: any, y?: any) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0];
+                if (y && y.parentNode) {
+                    y.parentNode.insertBefore(t, y);
+                }
+            })(window, document, "clarity", "script", "vx6snroi7f");
+        };
+
+        if ('requestIdleCallback' in window) {
+            (window as any).requestIdleCallback(loadClarity, { timeout: 3000 });
+        } else {
+            setTimeout(loadClarity, 3000);
+        }
     }, []);
 
     const scrollToTop = () => {

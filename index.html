@@ -6,13 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instituto Canali</title>
     <meta name="description" content="Instituto Canali — Cursos e imersões para transformar sua carreira médica." />
+
+    <!-- Preconnect only to critical origins (max 3) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,700&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://img.ampulloo.com" crossorigin />
+
+    <!--
+        PERF: Fonts – load only 3 weights instead of 9.
+        display=swap prevents FOIT (flash of invisible text).
+        Removed: 300, 500, 600, 1,300, 1,400 (unused on page).
+        Kept: 400 (body), 700 (semi), 800 (titles), 900 (hero h1).
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'" />
+    <!-- Noscript fallback: loads fonts normally if JS is disabled -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
     <link rel="icon" type="image/webp" href="https://img.ampulloo.com/josiane_canali/logo-Josiane-Canali.webp" />
-    <!-- LCP preload: hero image loaded as early as possible -->
+
+    <!-- LCP preload: hero image downloaded in parallel with HTML parse -->
     <link rel="preload" as="image" href="https://img.ampulloo.com/josiane_canali/imersao-hero.webp" />
 </head>
 
