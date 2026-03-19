@@ -27,7 +27,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     );
 };
 
-const ImersaoLP: React.FC = () => {
+const ImersaoLP01: React.FC = () => {
     const location = useLocation();
 
     useEffect(() => {
@@ -100,38 +100,6 @@ const ImersaoLP: React.FC = () => {
         }
     }, []);
 
-    useEffect(() => {
-        // PERF: Carregar Tally Form APÓS primeiro render, sem bloquear loading
-        const loadTally = () => {
-            const d = document;
-            const w = "https://tally.so/widgets/embed.js";
-            const v = function () {
-                if (typeof (window as any).Tally !== "undefined") {
-                    (window as any).Tally.loadEmbeds();
-                } else {
-                    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e: any) {
-                        e.src = e.dataset.tallySrc;
-                    });
-                }
-            };
-
-            if (typeof (window as any).Tally !== "undefined") v();
-            else if (d.querySelector('script[src="' + w + '"]') == null) {
-                const s = d.createElement("script");
-                s.src = w;
-                s.onload = v;
-                s.onerror = v;
-                d.body.appendChild(s);
-            }
-        };
-
-        if ('requestIdleCallback' in window) {
-            (window as any).requestIdleCallback(loadTally, { timeout: 1500 });
-        } else {
-            setTimeout(loadTally, 1500);
-        }
-    }, []);
-
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -195,9 +163,10 @@ const ImersaoLP: React.FC = () => {
                             <div className="mt-8 mb-4 lg:mb-16 flex flex-col lg:flex-row gap-4 lg:gap-6 lg:items-center lg:w-max relative z-30">
                                 <a
                                     id="apply-button"
-                                    href="#aplicar-form"
-                                    onClick={(e) => {
-                                        e.preventDefault();
+                                    href="https://institutocanali.com.br/imersao"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => {
                                         if (typeof window !== 'undefined') {
                                             if ((window as any).clarity) {
                                                 (window as any).clarity("event", "click_aplicacao");
@@ -206,7 +175,6 @@ const ImersaoLP: React.FC = () => {
                                                 (window as any).fbq('track', 'Lead');
                                             }
                                         }
-                                        document.getElementById('aplicar-form')?.scrollIntoView({ behavior: 'smooth' });
                                     }}
                                     className={`w-full lg:w-max group relative overflow-hidden rounded-md transition-all duration-500 hover:-translate-y-1 block p-[2px] flex-shrink-0`}
                                 >
@@ -656,9 +624,10 @@ const ImersaoLP: React.FC = () => {
 
                         <a
                             id="apply-button"
-                            href="#aplicar-form"
-                            onClick={(e) => {
-                                e.preventDefault();
+                            href="https://institutocanali.com.br/imersao"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => {
                                 if (typeof window !== 'undefined') {
                                     if ((window as any).clarity) {
                                         (window as any).clarity("event", "click_aplicacao");
@@ -667,7 +636,6 @@ const ImersaoLP: React.FC = () => {
                                         (window as any).fbq('track', 'Lead');
                                     }
                                 }
-                                document.getElementById('aplicar-form')?.scrollIntoView({ behavior: 'smooth' });
                             }}
                             className={`inline-block text-center w-full md:w-auto px-10 py-6 md:px-16 md:py-8 rounded-md font-black uppercase tracking-[0.2em] text-[13px] md:text-lg transition-all transform hover:-translate-y-1 ${goldButton} ${goldButtonHover}`}
                         >
@@ -677,45 +645,6 @@ const ImersaoLP: React.FC = () => {
                         <p className="mt-8 text-stone-500 text-xs font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2">
                             <AlertCircle size={16} className="text-[#D4AF37]" /> A avaliação não garante vaga. Acesso condicionado ao perfil médico.
                         </p>
-                    </div>
-                </section>
-
-                {/* SEÇÃO DO FORMULÁRIO TALLY (NOVO CTA ULTRA HIGHLIGHT) */}
-                <section id="aplicar-form" className="py-24 relative bg-[#050505] border-t-4 border-[#D4AF37] shadow-[0_-30px_80px_rgba(212,175,55,0.15)] z-40">
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/10 to-transparent pointer-events-none"></div>
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-                        {/* AVISO IMPORTANTE */}
-                        <div className="bg-[#110505] border border-red-500/50 p-6 sm:p-8 rounded-2xl text-center mb-16 max-w-3xl mx-auto flex flex-col items-center shadow-[0_0_40px_rgba(255,0,0,0.1)]">
-                            <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-4 animate-pulse border border-red-500/30">
-                                <AlertCircle className="text-red-500 w-8 h-8" />
-                            </div>
-                            <h3 className="text-red-500 font-black uppercase tracking-[0.2em] mb-4 text-base sm:text-xl">Atenção: Ação Obrigatória</h3>
-                            <p className="text-stone-300 font-light text-base md:text-lg leading-relaxed">
-                                Você chegou na etapa final. Sua vaga na Imersão <strong>NÃO</strong> está garantida até que este formulário seja 100% preenchido e analisado pela nossa equipe.
-                            </p>
-                        </div>
-
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-black text-white uppercase tracking-tight mb-6 drop-shadow-2xl">
-                                INICIE SUA <span className={goldText}>APLICAÇÃO</span> NAS LINHAS ABAIXO
-                            </h2>
-                        </div>
-
-                        {/* TALLY IFRAME WRAPPER COM GLOW */}
-                        <div className="w-full bg-[#0A0A0A] p-3 md:p-8 md:pb-5 rounded-3xl border-2 border-[#D4AF37]/60 shadow-[0_0_60px_rgba(212,175,55,0.2)] transition-all hover:border-[#D4AF37] hover:shadow-[0_0_100px_rgba(212,175,55,0.3)]">
-                            <iframe
-                                data-tally-src="https://tally.so/embed/442VZk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
-                                loading="lazy"
-                                width="100%"
-                                height="200"
-                                frameBorder="0"
-                                marginHeight={0}
-                                marginWidth={0}
-                                title="Aplicação Mentoria | Implant & Inject 360"
-                                className="w-full bg-transparent rounded-lg"
-                            ></iframe>
-                        </div>
                     </div>
                 </section>
 
@@ -781,8 +710,8 @@ const ImersaoLP: React.FC = () => {
                 <p className="mt-3 text-[11px] font-bold text-stone-400 uppercase tracking-widest hover:text-[#D4AF37] transition-colors cursor-pointer inline-block">Desenvolvido por Ampulloo Studio</p>
             </footer>
 
-        </div>
+        </div >
     );
 };
 
-export default ImersaoLP;
+export default ImersaoLP01;
