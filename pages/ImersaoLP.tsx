@@ -242,7 +242,7 @@ const ImersaoLP: React.FC = () => {
                         <div className="w-full lg:w-[45%] lg:absolute lg:bottom-0 lg:right-0 lg:h-full flex items-end justify-center lg:justify-end mt-auto pointer-events-none z-10">
                             {/* Contain relative para o Badge no Mobile */}
                             <div className="relative w-full max-w-[420px] lg:max-w-none lg:w-auto lg:h-[85vh] xl:h-[95vh] flex items-end justify-center">
-                                <picture>
+                                <picture className="contents">
                                     <source media="(max-width: 768px)" srcSet="/imersao-hero-mobile.webp" />
                                     <img
                                         src="/imersao-hero-desktop.webp"
