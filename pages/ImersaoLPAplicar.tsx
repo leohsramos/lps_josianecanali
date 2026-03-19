@@ -643,10 +643,10 @@ const ImersaoLPAplicar: React.FC = () => {
                         {/* TALLY IFRAME WRAPPER */}
                         <div className="w-full bg-[#050505]/80 backdrop-blur-md p-2 md:p-4 rounded-xl border border-stone-800 shadow-[0_0_30px_rgba(212,175,55,0.05)] transition-all hover:border-[#D4AF37]/30">
                             <iframe
-                                data-tally-src="https://tally.so/embed/442VZk?formEventsForwarding=1"
+                                data-tally-src="https://tally.so/embed/442VZk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
                                 loading="lazy"
                                 width="100%"
-                                height="1000"
+                                height="200"
                                 frameBorder="0"
                                 marginHeight={0}
                                 marginWidth={0}
