@@ -293,13 +293,69 @@ const ImersaoLP2: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="mt-16 max-w-3xl mx-auto">
-                            <div className="p-8 border-l-4 border-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent text-left relative overflow-hidden">
-                                <Quote className="absolute -right-4 -bottom-4 w-32 h-32 text-[#D4AF37]/10" />
-                                <p className="text-xl md:text-2xl text-white font-light italic leading-relaxed relative z-10">
-                                    "Eu não aguentava mais brigar por R$ 50 de ticket... Hoje, meus alunos cobram o VALOR deles, em cada consulta ou procedimento. É sobre estruturar o modelo de negócio certo."
-                                </p>
-                                <p className="mt-6 text-[#D4AF37] font-black uppercase tracking-widest text-sm relative z-10">— Dra. Josiane Canali</p>
+                    </div>
+                </section>
+
+                {/* PARA QUEM É / NÃO É */}
+                <section className="py-24 relative bg-black border-t border-stone-800">
+                    <div className="max-w-6xl mx-auto px-6 relative z-10">
+                        <div className="text-center mb-16">
+                            <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-4 block">O Filtro de Seleção</span>
+                            <h2 className="text-3xl lg:text-5xl font-display font-black text-white uppercase tracking-tight">
+                                Para Quem é A IMERSÃO?
+                            </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                            {/* É PARA */}
+                            <div className="bg-[#050505] p-8 md:p-12 rounded-2xl border border-[#D4AF37]/30 shadow-[0_0_30px_rgba(212,175,55,0.05)] relative overflow-hidden transition-all hover:border-[#D4AF37]/50">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/5 rounded-bl-[100px] pointer-events-none"></div>
+                                <h3 className="text-2xl font-black text-white uppercase tracking-wide mb-8 flex items-center gap-3">
+                                    <ShieldCheck className="text-[#D4AF37] w-8 h-8 flex-shrink-0" /> É PARA MÉDICOS QUE:
+                                </h3>
+                                <ul className="space-y-6 text-stone-300 font-light">
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
+                                        <span>Estão exaustos de depender de convênios e querem focar 100% em <strong>atendimentos particulares de alto padrão</strong>.</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
+                                        <span>Sabem da própria capacidade técnica, mas têm dificuldade em precificar, "se vender" e cobrar ingressos mais altos.</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
+                                        <span>Buscam implementar novas frentes de receita recorrente dominando a <strong>Terapia Hormonal e Implantes</strong>.</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
+                                        <span>Desejam recuperar sua qualidade de vida, reduzir o volume de trabalho exaustivo e adquirir paz mental.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* NÃO É PARA */}
+                            <div className="bg-[#050505] p-8 md:p-12 rounded-2xl border border-red-900/40 shadow-[0_0_30px_rgba(255,0,0,0.02)] relative overflow-hidden transition-all hover:border-red-900/60">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/5 rounded-bl-[100px] pointer-events-none"></div>
+                                <h3 className="text-2xl font-black text-white uppercase tracking-wide mb-8 flex items-center gap-3">
+                                    <XSquare className="text-red-500 w-8 h-8 flex-shrink-0" /> NÃO É PARA VOCÊ SE:
+                                </h3>
+                                <ul className="space-y-6 text-stone-300 font-light">
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0"></div>
+                                        <span>As agendas lotadas de convênios não te incomodam e você está satisfeito com ingressos de R$ 50-80.</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0"></div>
+                                        <span>Acredita que os pacientes só tomam decisão baseada no profissional com o "menor preço".</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0"></div>
+                                        <span>Não está disposto a refinar a estrutura, scripts e posicionamento do seu consultório.</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0"></div>
+                                        <span>Busca apenas dicas motivacionais e se recusa a aplicar técnicas empresariais diretas e validadas.</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -401,8 +457,8 @@ const ImersaoLP2: React.FC = () => {
                                                 <BookOpen className="w-5 h-5 text-[#D4AF37]" />
                                             </div>
                                             <div>
-                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Fundamentação Implacável</h4>
-                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Revisão de papers globais sobre terapia hormonal integrativa. Doses magistrais, farmacobotânica e protocolos fechados. Seu paciente não poderá refutar sua prescrição.</p>
+                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Fundamentação</h4>
+                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Revisão médica de papers globais sobre terapia hormonal integrativa e uso clínico de implantes.</p>
                                             </div>
                                         </div>
                                         <div className="flex gap-4 items-start">
@@ -410,8 +466,8 @@ const ImersaoLP2: React.FC = () => {
                                                 <Target className="w-5 h-5 text-[#D4AF37]" />
                                             </div>
                                             <div>
-                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Posicionamento Monopolista</h4>
-                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Como aniquilar a comparação de preços. Estratégias táticas de fechamento desde a foto de perfil do WhatsApp até a sua postura, a sua vestimenta e a sua imposição vocal dentro do consultório.</p>
+                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Posicionamento</h4>
+                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Estratégias para aniquilar a comparação de preços através de autoridade, postura e ambiente clínico.</p>
                                             </div>
                                         </div>
                                         <div className="flex gap-4 items-start">
@@ -419,8 +475,8 @@ const ImersaoLP2: React.FC = () => {
                                                 <BrainCircuit className="w-5 h-5 text-[#D4AF37]" />
                                             </div>
                                             <div>
-                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Psicologia de Fechamento</h4>
-                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Precificação nua e crua. Como dizer "O tratamento custa X milhares de reais" sustentando o olhar, justificando o valor e forçando sutilmente o desejo do paciente em abrir a carteira porque a dor dele suplica pela sua solução.</p>
+                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Alta Conversão</h4>
+                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Scripts exatos de fechamento para aplicar tickets altos sem rejeição ou medo de objeções.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -444,8 +500,8 @@ const ImersaoLP2: React.FC = () => {
                                                 <Stethoscope className="w-5 h-5 text-[#D4AF37]" />
                                             </div>
                                             <div>
-                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Shadowing Silencioso</h4>
-                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Como um observador privilegiado, você imergirá no fluxo real de uma Clínica Premium com foco no encantamento e fechamento, compreendendo na prática como os pacientes voluntários são acolhidos, o clima da espera e o atendimento.</p>
+                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Clínica Real</h4>
+                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Observação silenciosa (Shadowing) na rotina viva de uma clínica Premium.</p>
                                             </div>
                                         </div>
                                         <div className="flex gap-4 items-start">
@@ -453,8 +509,8 @@ const ImersaoLP2: React.FC = () => {
                                                 <Activity className="w-5 h-5 text-[#D4AF37]" />
                                             </div>
                                             <div>
-                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Hands-on de Inserção</h4>
-                                                <p className="text-stone-500 text-sm font-light leading-relaxed">O ato cirúrgico de consultório revelado sem filtros pela Dra. Você acompanhará as melhores práticas, macetes e resultados de forma intensiva no foco prático cirúrgico da paramentação e inserção estéril e indolor utilizando pacientes voluntários.</p>
+                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">Hands-on Cirúrgico</h4>
+                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Acompanhamento intenso da técnica cirúrgica estéril e indolor para implantes.</p>
                                             </div>
                                         </div>
                                         <div className="flex gap-4 items-start">
@@ -462,8 +518,8 @@ const ImersaoLP2: React.FC = () => {
                                                 <Heart className="w-5 h-5 text-[#D4AF37]" />
                                             </div>
                                             <div>
-                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">O Detalhe Oculto</h4>
-                                                <p className="text-stone-500 text-sm font-light leading-relaxed">A jornada VIP avaliada a pente fino. Das opções de café servidas na recepção até a louça específica usada no consultório, do aroma aos scripts do WhatsApp de pós-cirúrgico para extrair reviews e indicações espontâneas milionárias.</p>
+                                                <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">A Jornada VIP</h4>
+                                                <p className="text-stone-500 text-sm font-light leading-relaxed">Mapeamento da experiência completa, do aroma aos scripts magnéticos de WhatsApp.</p>
                                             </div>
                                         </div>
                                     </div>
