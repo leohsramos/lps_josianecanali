@@ -38,7 +38,7 @@ const lps: LPCard[] = [
         description: 'Aprofunde-se no universo da medicina sexual com protocolos exclusivos e posicionamento premium para consultórios.',
         href: '/sexualidade',
         tag: 'Curso Online',
-        image: 'https://img.ampulloo.com/josiane_canali/imersao-dra.webp',
+        image: 'https://img.ampulloo.com/josiane_canali/josiane_canali_imersao-dra.webp',
         accentColor: '#c084fc',
     },
     {
@@ -47,7 +47,7 @@ const lps: LPCard[] = [
         description: 'Domine a terapia hormonal na menopausa e crie uma linha de receita recorrente altamente valorizada por pacientes.',
         href: '/menopausa',
         tag: 'Curso Online',
-        image: 'https://img.ampulloo.com/josiane_canali/imersao-dra.webp',
+        image: 'https://img.ampulloo.com/josiane_canali/josiane_canali_imersao-dra.webp',
         accentColor: '#f472b6',
     },
     {
@@ -56,7 +56,7 @@ const lps: LPCard[] = [
         description: 'Conteúdo avançado sobre anatomia corporal para médicos que desejam ampliar sua expertise clínica e cirúrgica.',
         href: '/anatomia',
         tag: 'Curso Online',
-        image: 'https://img.ampulloo.com/josiane_canali/imersao-dra.webp',
+        image: 'https://img.ampulloo.com/josiane_canali/josiane_canali_imersao-dra.webp',
         accentColor: '#34d399',
     },
 ];

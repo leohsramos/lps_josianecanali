@@ -422,7 +422,7 @@ const ImersaoLP: React.FC = () => {
                             <div className="lg:col-span-5 relative flex justify-center">
                                 <div className="absolute inset-0 bg-stone-100 rounded-lg transform translate-x-4 translate-y-4"></div>
                                 <img
-                                    src="https://img.ampulloo.com/josiane_canali/imersao-dra.webp"
+                                    src="https://img.ampulloo.com/josiane_canali/josiane_canali_imersao-dra.webp"
                                     alt="Dra. Josiane Canali Mentora de Médicos"
                                     width="2626"
                                     height="3939"

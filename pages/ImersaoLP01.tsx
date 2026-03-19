@@ -379,7 +379,7 @@ const ImersaoLP01: React.FC = () => {
                             <div className="lg:col-span-5 relative flex justify-center">
                                 <div className="absolute inset-0 bg-stone-100 rounded-lg transform translate-x-4 translate-y-4"></div>
                                 <img
-                                    src="https://img.ampulloo.com/josiane_canali/imersao-dra.webp"
+                                    src="https://img.ampulloo.com/josiane_canali/josiane_canali_imersao-dra.webp"
                                     alt="Dra. Josiane Canali Mentora de Médicos"
                                     className="w-full h-auto object-cover rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.2)] grayscale-[10%] hover:grayscale-0 transition-all duration-700 relative z-10"
                                     loading="lazy"
