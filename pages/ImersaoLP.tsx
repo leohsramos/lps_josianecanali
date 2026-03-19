@@ -50,6 +50,9 @@ const ImersaoLP: React.FC = () => {
          * improving LCP and TTI by ~300–600ms on cold loads.
          */
         const loadTrackers = () => {
+            if ((window as any)._trackersLoaded) return;
+            (window as any)._trackersLoaded = true;
+
             // --- Microsoft Clarity ---
             (function (c: any, l: any, a: any, r: any, i: any, t?: any, y?: any) {
                 c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -90,19 +93,8 @@ const ImersaoLP: React.FC = () => {
                 noscript.appendChild(img);
                 document.head.appendChild(noscript);
             }
-        };
 
-        // requestIdleCallback defers until browser is idle; setTimeout 3s is the fallback
-        if ('requestIdleCallback' in window) {
-            (window as any).requestIdleCallback(loadTrackers, { timeout: 3000 });
-        } else {
-            setTimeout(loadTrackers, 3000);
-        }
-    }, []);
-
-    useEffect(() => {
-        // PERF: Carregar Tally Form APÓS primeiro render, sem bloquear loading
-        const loadTally = () => {
+            // --- Tally Form Embed ---
             const d = document;
             const w = "https://tally.so/widgets/embed.js";
             const v = function () {
@@ -123,13 +115,27 @@ const ImersaoLP: React.FC = () => {
                 s.onerror = v;
                 d.body.appendChild(s);
             }
+
+            // Cleanup
+            ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(evt =>
+                window.removeEventListener(evt, loadTrackers)
+            );
         };
 
-        if ('requestIdleCallback' in window) {
-            (window as any).requestIdleCallback(loadTally, { timeout: 1500 });
-        } else {
-            setTimeout(loadTally, 1500);
-        }
+        // Attach listeners for user interaction
+        ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(evt =>
+            window.addEventListener(evt, loadTrackers, { once: true, passive: true })
+        );
+
+        // Fallback for extremely slow/uninteractive users
+        const fallback = setTimeout(loadTrackers, 4000);
+
+        return () => {
+            clearTimeout(fallback);
+            ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(evt =>
+                window.removeEventListener(evt, loadTrackers)
+            );
+        };
     }, []);
 
     const scrollToTop = () => {
@@ -157,7 +163,9 @@ const ImersaoLP: React.FC = () => {
                         <img
                             src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp"
                             alt="Instituto Canali"
-                            className="h-10 object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 transition-transform duration-300"
+                            width="1080"
+                            height="1350"
+                            className="h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 transition-transform duration-300"
                             loading="eager"
                             decoding="async"
                         />
@@ -218,7 +226,7 @@ const ImersaoLP: React.FC = () => {
 
                                 {/* Desktop Badge: escondido no mobile, com a logo bem realçada */}
                                 <div className="hidden lg:flex w-max items-center justify-center gap-4 bg-[#0A0A0A]/95 border border-[#D4AF37]/40 py-4 px-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-xl flex-shrink-0 h-full">
-                                    <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" alt="O Método" className="h-10 xl:h-12 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
+                                    <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" width="1080" height="1350" alt="O Método" className="h-10 w-auto xl:h-12 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
                                     <div className="pr-1 text-left">
                                         <div className="text-white font-black text-[13px] xl:text-[15px] uppercase tracking-wider leading-tight">Método Comprovado</div>
                                         <div className="text-[#D4AF37] text-[9px] xl:text-[11px] uppercase tracking-[0.2em] font-bold mt-1">Implant & Inject 360</div>
@@ -234,20 +242,24 @@ const ImersaoLP: React.FC = () => {
                         <div className="w-full lg:w-[45%] lg:absolute lg:bottom-0 lg:right-0 lg:h-full flex items-end justify-center lg:justify-end mt-auto pointer-events-none z-10">
                             {/* Contain relative para o Badge no Mobile */}
                             <div className="relative w-full max-w-[420px] lg:max-w-none lg:w-auto lg:h-[85vh] xl:h-[95vh] flex items-end justify-center">
-                                <img
-                                    src="https://img.ampulloo.com/josiane_canali/imersao-hero.webp"
-                                    alt="Dra. Josiane Canali - Mentoria Médica"
-                                    className="w-full h-auto lg:h-full lg:w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto origin-bottom"
-                                    // LCP: hero image — eager load, high priority, no lazy
-                                    loading="eager"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    style={{ filter: "saturate(1.15) contrast(1.05)" }}
-                                />
+                                <picture>
+                                    <source media="(max-width: 768px)" srcSet="/imersao-hero-mobile.webp" />
+                                    <img
+                                        src="/imersao-hero-desktop.webp"
+                                        alt="Dra. Josiane Canali - Mentoria Médica"
+                                        width="853"
+                                        height="1280"
+                                        className="w-full h-auto lg:h-full lg:w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto origin-bottom"
+                                        loading="eager"
+                                        fetchPriority="high"
+                                        decoding="async"
+                                        style={{ filter: "saturate(1.15) contrast(1.05)" }}
+                                    />
+                                </picture>
 
                                 {/* Mobile Trust Badge reposicionado e cravado com inset-x-0 para alinhamento central absoluto */}
                                 <div className="lg:hidden absolute bottom-6 inset-x-0 mx-auto w-max z-30 bg-[#0A0A0A]/95 border border-[#D4AF37]/40 px-5 py-3 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-xl flex items-center gap-3 pointer-events-auto">
-                                    <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" alt="O Método" className="h-10 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
+                                    <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" width="1080" height="1350" alt="O Método" className="h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
                                     <div className="pr-1 text-left">
                                         <div className="text-white font-black text-[12px] uppercase tracking-wider leading-none">Método Comprovado</div>
                                         <div className="text-[#D4AF37] text-[8px] uppercase tracking-[0.2em] font-bold mt-1">Implant & Inject 360</div>
@@ -413,6 +425,8 @@ const ImersaoLP: React.FC = () => {
                                 <img
                                     src="https://img.ampulloo.com/josiane_canali/imersao-dra.webp"
                                     alt="Dra. Josiane Canali Mentora de Médicos"
+                                    width="2626"
+                                    height="3939"
                                     className="w-full h-auto object-cover rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.2)] grayscale-[10%] hover:grayscale-0 transition-all duration-700 relative z-10"
                                     loading="lazy"
                                     decoding="async"
@@ -477,13 +491,13 @@ const ImersaoLP: React.FC = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div className="group overflow-hidden rounded-xl border border-stone-800 aspect-[4/3] bg-stone-900 cursor-pointer">
-                                <img src="https://img.ampulloo.com/josiane_canali/imersao-pratica-1.webp" alt="Mentoria Médica" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" decoding="async" />
+                                <img src="https://img.ampulloo.com/josiane_canali/imersao-pratica-1.webp" width="800" height="800" alt="Mentoria Médica" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" decoding="async" />
                             </div>
                             <div className="group overflow-hidden rounded-xl border border-stone-800 aspect-[4/3] bg-stone-900 cursor-pointer">
-                                <img src="https://img.ampulloo.com/josiane_canali/imersao-pratica-2.webp" alt="Campo Estéril" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" decoding="async" />
+                                <img src="https://img.ampulloo.com/josiane_canali/imersao-pratica-2.webp" width="800" height="800" alt="Campo Estéril" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" decoding="async" />
                             </div>
                             <div className="group overflow-hidden rounded-xl border border-stone-800 aspect-[4/3] bg-stone-900 cursor-pointer">
-                                <img src="https://img.ampulloo.com/josiane_canali/imersao-pratica-3.webp" alt="Apresentação Teórica" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" decoding="async" />
+                                <img src="https://img.ampulloo.com/josiane_canali/imersao-pratica-3.webp" width="800" height="800" alt="Apresentação Teórica" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" decoding="async" />
                             </div>
                         </div>
                         <div className="mt-12 text-center text-stone-500 font-light italic">
@@ -644,7 +658,7 @@ const ImersaoLP: React.FC = () => {
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
 
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" alt="Instituto Canali" className="w-48 sm:w-64 mx-auto mb-6 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]" loading="lazy" decoding="async" />
+                        <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" width="1080" height="1350" alt="Instituto Canali" className="w-48 h-auto sm:w-64 mx-auto mb-6 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]" loading="lazy" decoding="async" />
 
                         <h2 className="text-4xl sm:text-5xl lg:text-7xl font-display font-black text-white mb-8 uppercase leading-tight drop-shadow-2xl">
                             Você é um líder <br className="hidden md:block" /> ou um <span className={goldText}>refém?</span>
