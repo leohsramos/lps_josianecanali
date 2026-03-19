@@ -128,7 +128,7 @@ const ImersaoLP: React.FC = () => {
         );
 
         // Fallback for extremely slow/uninteractive users
-        const fallback = setTimeout(loadTrackers, 4000);
+        const fallback = setTimeout(loadTrackers, 8500);
 
         return () => {
             clearTimeout(fallback);
@@ -161,7 +161,7 @@ const ImersaoLP: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-6 flex justify-center lg:justify-start">
                     <button onClick={scrollToTop} className="focus:outline-none focus:ring-0">
                         <img
-                            src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp"
+                            src="/logo-ii-mobile.webp"
                             alt="Instituto Canali"
                             width="1080"
                             height="1350"
@@ -226,7 +226,7 @@ const ImersaoLP: React.FC = () => {
 
                                 {/* Desktop Badge: escondido no mobile, com a logo bem realçada */}
                                 <div className="hidden lg:flex w-max items-center justify-center gap-4 bg-[#0A0A0A]/95 border border-[#D4AF37]/40 py-4 px-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-xl flex-shrink-0 h-full">
-                                    <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" width="1080" height="1350" alt="O Método" className="h-10 w-auto xl:h-12 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
+                                    <img src="/logo-ii-mobile.webp" width="1080" height="1350" alt="O Método" className="h-10 w-auto xl:h-12 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
                                     <div className="pr-1 text-left">
                                         <div className="text-white font-black text-[13px] xl:text-[15px] uppercase tracking-wider leading-tight">Método Comprovado</div>
                                         <div className="text-[#D4AF37] text-[9px] xl:text-[11px] uppercase tracking-[0.2em] font-bold mt-1">Implant & Inject 360</div>
@@ -242,20 +242,23 @@ const ImersaoLP: React.FC = () => {
                         <div className="w-full lg:w-[45%] lg:absolute lg:bottom-0 lg:right-0 lg:h-full flex items-end justify-center lg:justify-end mt-auto pointer-events-none z-10">
                             {/* Contain relative para o Badge no Mobile */}
                             <div className="relative w-full max-w-[420px] lg:max-w-none lg:w-auto lg:h-[85vh] xl:h-[95vh] flex items-end justify-center">
-                                <img
-                                    src="https://img.ampulloo.com/josiane_canali/imersao-hero.webp"
-                                    alt="Dra. Josiane Canali - Mentoria Médica"
-                                    width="853"
-                                    height="1280"
-                                    className="w-full max-w-[90%] mx-auto lg:max-w-none lg:mx-0 h-auto lg:h-full lg:w-auto object-contain object-bottom drop-shadow-none lg:drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto origin-bottom"
-                                    loading="eager"
-                                    fetchPriority="high"
-                                    decoding="sync"
-                                />
+                                <picture>
+                                    <source media="(max-width: 768px)" srcSet="/imersao-hero-mobile.webp" />
+                                    <img
+                                        src="/imersao-hero-desktop.webp"
+                                        alt="Dra. Josiane Canali - Mentoria Médica"
+                                        width="853"
+                                        height="1280"
+                                        className="w-full max-w-[90%] mx-auto lg:max-w-none lg:mx-0 h-auto lg:h-full lg:w-auto object-contain object-bottom drop-shadow-none lg:drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto origin-bottom"
+                                        loading="eager"
+                                        fetchPriority="high"
+                                        decoding="sync"
+                                    />
+                                </picture>
 
                                 {/* Mobile Trust Badge reposicionado e cravado com inset-x-0 para alinhamento central absoluto */}
                                 <div className="lg:hidden absolute bottom-6 inset-x-0 mx-auto w-max z-30 bg-[#0A0A0A]/95 border border-[#D4AF37]/40 px-5 py-3 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-xl flex items-center gap-3 pointer-events-auto">
-                                    <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" width="1080" height="1350" alt="O Método" className="h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
+                                    <img src="/logo-ii-mobile.webp" width="1080" height="1350" alt="O Método" className="h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] filter brightness-110" loading="lazy" decoding="async" />
                                     <div className="pr-1 text-left">
                                         <div className="text-white font-black text-[12px] uppercase tracking-wider leading-none">Método Comprovado</div>
                                         <div className="text-[#D4AF37] text-[8px] uppercase tracking-[0.2em] font-bold mt-1">Implant & Inject 360</div>
@@ -472,7 +475,7 @@ const ImersaoLP: React.FC = () => {
                     </div>
                 </section>
 
-                {/* MURAL DE EXPERIÊNCIAS */}
+                {/* MURAL DE EXPERIÊNCIAS 
                 <section className="py-24 relative bg-[#050505] border-y border-[#D4AF37]/10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
@@ -501,6 +504,7 @@ const ImersaoLP: React.FC = () => {
                         </div>
                     </div>
                 </section>
+                */}
 
                 {/* SCHEDULE PREVIEW */}
                 <section id="cronograma" className="py-24 relative bg-black pt-32 -mt-10">
@@ -654,7 +658,7 @@ const ImersaoLP: React.FC = () => {
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
 
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <img src="https://img.ampulloo.com/josiane_canali/logo-i%26i.webp" width="1080" height="1350" alt="Instituto Canali" className="w-48 h-auto sm:w-64 mx-auto mb-6 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]" loading="lazy" decoding="async" />
+                        <img src="/logo-ii-mobile.webp" width="1080" height="1350" alt="Instituto Canali" className="w-48 h-auto sm:w-64 mx-auto mb-6 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]" loading="lazy" decoding="async" />
 
                         <h2 className="text-4xl sm:text-5xl lg:text-7xl font-display font-black text-white mb-8 uppercase leading-tight drop-shadow-2xl">
                             Você é um líder <br className="hidden md:block" /> ou um <span className={goldText}>refém?</span>
