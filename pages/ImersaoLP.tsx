@@ -242,20 +242,16 @@ const ImersaoLP: React.FC = () => {
                         <div className="w-full lg:w-[45%] lg:absolute lg:bottom-0 lg:right-0 lg:h-full flex items-end justify-center lg:justify-end mt-auto pointer-events-none z-10">
                             {/* Contain relative para o Badge no Mobile */}
                             <div className="relative w-full max-w-[420px] lg:max-w-none lg:w-auto lg:h-[85vh] xl:h-[95vh] flex items-end justify-center">
-                                <picture>
-                                    <source media="(max-width: 768px)" srcSet="/imersao-hero-mobile.webp" />
-                                    <img
-                                        src="/imersao-hero-desktop.webp"
-                                        alt="Dra. Josiane Canali - Mentoria Médica"
-                                        width="853"
-                                        height="1280"
-                                        className="w-full h-auto lg:h-full lg:w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto origin-bottom"
-                                        loading="eager"
-                                        fetchPriority="high"
-                                        decoding="async"
-                                        style={{ filter: "saturate(1.15) contrast(1.05)" }}
-                                    />
-                                </picture>
+                                <img
+                                    src="https://img.ampulloo.com/josiane_canali/imersao-hero.webp"
+                                    alt="Dra. Josiane Canali - Mentoria Médica"
+                                    width="853"
+                                    height="1280"
+                                    className="w-full max-w-[90%] mx-auto lg:max-w-none lg:mx-0 h-auto lg:h-full lg:w-auto object-contain object-bottom drop-shadow-none lg:drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto origin-bottom"
+                                    loading="eager"
+                                    fetchPriority="high"
+                                    decoding="sync"
+                                />
 
                                 {/* Mobile Trust Badge reposicionado e cravado com inset-x-0 para alinhamento central absoluto */}
                                 <div className="lg:hidden absolute bottom-6 inset-x-0 mx-auto w-max z-30 bg-[#0A0A0A]/95 border border-[#D4AF37]/40 px-5 py-3 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-xl flex items-center gap-3 pointer-events-auto">
