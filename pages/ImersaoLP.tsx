@@ -297,25 +297,25 @@ const ImersaoLP: React.FC = () => {
                 </section>
 
                 {/* PARA QUEM É / NÃO É */}
-                <section className="py-24 relative bg-black border-t border-stone-800">
+                <section className="py-24 relative bg-stone-50 border-t border-stone-200">
                     <div className="max-w-6xl mx-auto px-6 relative z-10">
                         <div className="text-center mb-16">
                             <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-4 block">O Filtro de Seleção</span>
-                            <h2 className="text-3xl lg:text-5xl font-display font-black text-white uppercase tracking-tight">
+                            <h2 className="text-3xl lg:text-5xl font-display font-black text-stone-900 uppercase tracking-tight">
                                 Para Quem é A IMERSÃO?
                             </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                             {/* É PARA */}
-                            <div className="bg-[#050505] p-8 md:p-12 rounded-2xl border border-[#D4AF37]/30 shadow-[0_0_30px_rgba(212,175,55,0.05)] relative overflow-hidden transition-all hover:border-[#D4AF37]/50">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/5 rounded-bl-[100px] pointer-events-none"></div>
-                                <h3 className="text-2xl font-black text-white uppercase tracking-wide mb-8 flex items-center gap-3">
+                            <div className="bg-white p-8 md:p-12 rounded-2xl border border-stone-200 shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative overflow-hidden transition-all hover:border-[#D4AF37]/50 hover:shadow-[0_15px_50px_rgba(212,175,55,0.1)]">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 rounded-bl-[100px] pointer-events-none"></div>
+                                <h3 className="text-2xl font-black text-stone-900 uppercase tracking-wide mb-8 flex items-center gap-3">
                                     <ShieldCheck className="text-[#D4AF37] w-8 h-8 flex-shrink-0" /> É PARA MÉDICOS QUE:
                                 </h3>
-                                <ul className="space-y-6 text-stone-300 font-light">
+                                <ul className="space-y-6 text-stone-600 font-light">
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
-                                        <span>Estão exaustos de depender de convênios e querem focar 100% em <strong>atendimentos particulares de alto padrão</strong>.</span>
+                                        <span>Estão exaustos de depender de convênios e querem focar 100% em <strong className="text-stone-900">atendimentos particulares de alto padrão</strong>.</span>
                                     </li>
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
@@ -323,7 +323,7 @@ const ImersaoLP: React.FC = () => {
                                     </li>
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
-                                        <span>Buscam implementar novas frentes de receita recorrente dominando a <strong>Terapia Hormonal e Implantes</strong>.</span>
+                                        <span>Buscam implementar novas frentes de receita recorrente dominando a <strong className="text-stone-900">Terapia Hormonal e Implantes</strong>.</span>
                                     </li>
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 flex-shrink-0"></div>
@@ -333,12 +333,12 @@ const ImersaoLP: React.FC = () => {
                             </div>
 
                             {/* NÃO É PARA */}
-                            <div className="bg-[#050505] p-8 md:p-12 rounded-2xl border border-red-900/40 shadow-[0_0_30px_rgba(255,0,0,0.02)] relative overflow-hidden transition-all hover:border-red-900/60">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/5 rounded-bl-[100px] pointer-events-none"></div>
-                                <h3 className="text-2xl font-black text-white uppercase tracking-wide mb-8 flex items-center gap-3">
+                            <div className="bg-white p-8 md:p-12 rounded-2xl border border-stone-200 shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative overflow-hidden transition-all hover:border-red-500/30 hover:shadow-[0_15px_50px_rgba(255,0,0,0.05)]">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-[100px] pointer-events-none"></div>
+                                <h3 className="text-2xl font-black text-stone-900 uppercase tracking-wide mb-8 flex items-center gap-3">
                                     <XSquare className="text-red-500 w-8 h-8 flex-shrink-0" /> NÃO É PARA VOCÊ SE:
                                 </h3>
-                                <ul className="space-y-6 text-stone-300 font-light">
+                                <ul className="space-y-6 text-stone-600 font-light">
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0"></div>
                                         <span>As agendas lotadas de convênios não te incomodam e você está satisfeito com ingressos de R$ 50-80.</span>
