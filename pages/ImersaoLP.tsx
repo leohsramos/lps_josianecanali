@@ -27,6 +27,25 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     );
 };
 
+const CTAButton = ({ text, className = "" }: { text: string, className?: string }) => {
+    return (
+        <a
+            href="#aplicar-form"
+            onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined') {
+                    if ((window as any).clarity) (window as any).clarity("event", "click_aplicacao");
+                    if ((window as any).fbq) (window as any).fbq('track', 'Lead');
+                }
+                document.getElementById('aplicar-form')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className={`inline-flex items-center justify-center text-center w-full md:w-auto px-8 py-5 md:px-10 md:py-6 rounded-md font-black uppercase tracking-[0.12em] text-[13px] md:text-sm border border-emerald-400/30 transition-all transform hover:-translate-y-1 bg-emerald-600 text-white shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:bg-emerald-500 hover:shadow-[0_0_60px_rgba(5,150,105,0.6)] ${className}`}
+        >
+            {text}
+        </a>
+    );
+};
+
 const ImersaoLP: React.FC = () => {
     const location = useLocation();
 
@@ -93,29 +112,6 @@ const ImersaoLP: React.FC = () => {
                 noscript.appendChild(img);
                 document.head.appendChild(noscript);
             }
-
-            // --- Tally Form Embed ---
-            const d = document;
-            const w = "https://tally.so/widgets/embed.js";
-            const v = function () {
-                if (typeof (window as any).Tally !== "undefined") {
-                    (window as any).Tally.loadEmbeds();
-                } else {
-                    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e: any) {
-                        e.src = e.dataset.tallySrc;
-                    });
-                }
-            };
-
-            if (typeof (window as any).Tally !== "undefined") v();
-            else if (d.querySelector('script[src="' + w + '"]') == null) {
-                const s = d.createElement("script");
-                s.src = w;
-                s.onload = v;
-                s.onerror = v;
-                d.body.appendChild(s);
-            }
-
             // Cleanup
             ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(evt =>
                 window.removeEventListener(evt, loadTrackers)
@@ -136,6 +132,31 @@ const ImersaoLP: React.FC = () => {
                 window.removeEventListener(evt, loadTrackers)
             );
         };
+    }, []);
+
+    useEffect(() => {
+        // --- Load Tally Form Immediately (separated from heavy trackers) ---
+        setTimeout(() => {
+            const d = document;
+            const w = "https://tally.so/widgets/embed.js";
+            const v = function () {
+                if (typeof (window as any).Tally !== "undefined") {
+                    (window as any).Tally.loadEmbeds();
+                } else {
+                    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e: any) {
+                        e.src = e.dataset.tallySrc;
+                    });
+                }
+            };
+            if (typeof (window as any).Tally !== "undefined") v();
+            else if (d.querySelector('script[src="' + w + '"]') == null) {
+                const s = d.createElement("script");
+                s.src = w;
+                s.onload = v;
+                s.onerror = v;
+                d.body.appendChild(s);
+            }
+        }, 500);
     }, []);
 
     const scrollToTop = () => {
@@ -304,6 +325,10 @@ const ImersaoLP: React.FC = () => {
                             </div>
                         </div>
 
+                        <div className="mt-16 flex justify-center">
+                            <CTAButton text="Quero conquistar uma clínica 100% particular" />
+                        </div>
+
                     </div>
                 </section>
 
@@ -368,6 +393,10 @@ const ImersaoLP: React.FC = () => {
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+
+                        <div className="mt-16 flex justify-center">
+                            <CTAButton text="Quero ter rentabilidade financeira" />
                         </div>
                     </div>
                 </section>
@@ -602,6 +631,10 @@ const ImersaoLP: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+
+                        <div className="mt-16 flex justify-center relative z-20">
+                            <CTAButton text="Não quero que a medicina destrua a minha vida" />
+                        </div>
                     </div>
                 </section>
 
@@ -699,14 +732,17 @@ const ImersaoLP: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/10 to-transparent pointer-events-none"></div>
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                        {/* AVISO IMPORTANTE */}
-                        <div className="bg-[#110505] border border-red-500/50 p-6 sm:p-8 rounded-2xl text-center mb-16 max-w-3xl mx-auto flex flex-col items-center shadow-[0_0_40px_rgba(255,0,0,0.1)]">
-                            <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-4 animate-pulse border border-red-500/30">
-                                <AlertCircle className="text-red-500 w-8 h-8" />
+                        {/* AVISO IMPORTANTE EXTREMO */}
+                        <div className="bg-red-700/90 border border-red-500/50 p-8 sm:p-12 rounded-xl text-center mb-16 max-w-3xl mx-auto flex flex-col items-center shadow-[0_0_80px_rgba(239,68,68,0.4)] relative overflow-hidden backdrop-blur-sm">
+                            <div className="absolute top-0 left-0 w-full h-2 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full">
+                                <AlertCircle className="text-white w-12 h-12 lg:w-14 lg:h-14 animate-pulse drop-shadow-lg flex-shrink-0" />
+                                <h3 className="text-white font-black uppercase tracking-[0.15em] text-2xl sm:text-3xl lg:text-4xl leading-tight drop-shadow-md pb-1 border-b-2 border-red-500/50">ATENÇÃO: AÇÃO OBRIGATÓRIA</h3>
                             </div>
-                            <h3 className="text-red-500 font-black uppercase tracking-[0.2em] mb-4 text-base sm:text-xl">Atenção: Ação Obrigatória</h3>
-                            <p className="text-stone-300 font-light text-base md:text-lg leading-relaxed">
-                                Você chegou na etapa final. Sua vaga na Imersão <strong>NÃO</strong> está garantida até que este formulário seja 100% preenchido e analisado pela nossa equipe.
+
+                            <p className="text-white font-medium text-lg md:text-xl leading-relaxed max-w-2xl px-2">
+                                VOCÊ CHEGOU NA ETAPA FINAL. SUA VAGA NA IMERSÃO <strong className="font-black bg-white text-red-700 px-2 py-1 mx-1 rounded shadow-md uppercase">NÃO ESTÁ GARANTIDA</strong> ATÉ QUE ESTE FORMULÁRIO SEJA 100% PREENCHIDO E ENVIADO PARA NOSSOS ASSESSORES.
                             </p>
                         </div>
 
