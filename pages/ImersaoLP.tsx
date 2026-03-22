@@ -219,7 +219,7 @@ const ImersaoLP: React.FC = () => {
                             </h1>
 
                             <h2 className="mt-6 text-base md:text-xl lg:text-[22px] text-stone-300 font-light border-l-2 border-[#D4AF37] pl-4 lg:pl-6 max-w-2xl mx-auto lg:mx-0 py-2 leading-relaxed">
-                                Como construir do zero um consultório <strong>100% particular</strong> e previsível, escalando a sua rentabilidade financeira no high-ticket. <strong>Sem sacrificar família, fins de semana e sua paz mental.</strong>
+                                Desenvolvido por uma médica, este método ajuda você a transformar seu consultório em uma operação particular previsível e altamente rentável. Com menos atendimentos e mais qualidade de vida.
                             </h2>
 
                             <div className="mt-8 mb-4 lg:mb-16 flex flex-col lg:flex-row gap-4 lg:gap-6 lg:items-center lg:w-max relative z-30">
@@ -320,7 +320,7 @@ const ImersaoLP: React.FC = () => {
                 <section className="py-24 relative bg-stone-50 border-t border-stone-200">
                     <div className="max-w-6xl mx-auto px-6 relative z-10">
                         <div className="text-center mb-16">
-                            <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-4 block">O Filtro de Seleção</span>
+
                             <h2 className="text-3xl lg:text-5xl font-display font-black text-stone-900 uppercase tracking-tight">
                                 Para Quem é A IMERSÃO?
                             </h2>
@@ -389,7 +389,7 @@ const ImersaoLP: React.FC = () => {
                 <section className="py-24 relative bg-[#0a0a0a]">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-20">
-                            <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-4 block">A Virada de Chave</span>
+
                             <h2 className="text-3xl lg:text-5xl font-display font-black text-white uppercase tracking-tight">
                                 O Que Você <span className={goldText}>Aprenderá</span>
                             </h2>
@@ -449,7 +449,7 @@ const ImersaoLP: React.FC = () => {
                             {/* Copy Magnético de Elite */}
                             <div className="lg:col-span-7 space-y-10">
                                 <div>
-                                    <span className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Autoridade Absoluta Em Gestão</span>
+
                                     <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-black text-stone-900 uppercase tracking-tight leading-[1.1]">
                                         A ARQUITETA DE <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-stone-900 to-stone-500">IMPÉRIOS MÉDICOS.</span>
                                     </h2>
