@@ -27,7 +27,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     );
 };
 
-const CTAButton = ({ text, className = "" }: { text: string, className?: string }) => {
+const CTAButton = ({ text, className = "", showIcon = false }: { text: React.ReactNode, className?: string, showIcon?: boolean }) => {
     return (
         <a
             href="#aplicar-form"
@@ -39,9 +39,10 @@ const CTAButton = ({ text, className = "" }: { text: string, className?: string 
                 }
                 document.getElementById('aplicar-form')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className={`inline-flex items-center justify-center text-center w-full md:w-auto px-8 py-5 md:px-10 md:py-6 rounded-md font-black uppercase tracking-[0.12em] text-[13px] md:text-sm border border-emerald-400/30 transition-all transform hover:-translate-y-1 bg-emerald-600 text-white shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:bg-emerald-500 hover:shadow-[0_0_60px_rgba(5,150,105,0.6)] ${className}`}
+            className={`inline-flex items-center justify-center text-center w-full md:w-auto px-8 py-5 md:px-10 md:py-6 rounded-md font-black uppercase tracking-[0.12em] text-[13px] md:text-sm border border-emerald-400/30 transition-all transform hover:-translate-y-1 bg-emerald-600 text-white shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:bg-emerald-500 hover:shadow-[0_0_60px_rgba(5,150,105,0.6)] gap-3 ${className}`}
         >
-            {text}
+            <span className="leading-tight flex items-center justify-center text-center">{text}</span>
+            {showIcon && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-100 flex-shrink-0" />}
         </a>
     );
 };
@@ -222,28 +223,11 @@ const ImersaoLP: React.FC = () => {
                             </h2>
 
                             <div className="mt-8 mb-4 lg:mb-16 flex flex-col lg:flex-row gap-4 lg:gap-6 lg:items-center lg:w-max relative z-30">
-                                <a
-                                    id="apply-button"
-                                    href="#aplicar-form"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (typeof window !== 'undefined') {
-                                            if ((window as any).clarity) {
-                                                (window as any).clarity("event", "click_aplicacao");
-                                            }
-                                            if ((window as any).fbq) {
-                                                (window as any).fbq('track', 'Lead');
-                                            }
-                                        }
-                                        document.getElementById('aplicar-form')?.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className={`w-full lg:w-max group relative overflow-hidden rounded-md transition-all duration-500 hover:-translate-y-1 block p-[2px] flex-shrink-0`}
-                                >
-                                    <div className={`absolute inset-0 ${goldGradient} animate-spin-slow opacity-90`}></div>
-                                    <span className={`relative bg-black py-4 px-4 sm:px-5 lg:px-6 rounded-[4px] text-xs sm:text-[13px] lg:text-[14px] xl:text-[15px] font-black uppercase tracking-[0.05em] sm:tracking-[0.1em] flex items-center justify-center text-center gap-2 sm:gap-3 group-hover:bg-[#D4AF37] transition-colors sm:whitespace-nowrap h-full`}>
-                                        <span className={`text-[#D4AF37] group-hover:text-black transition-colors leading-tight`}>Quero me aplicar para a lista<br className="sm:hidden" /> de espera</span> <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37] group-hover:text-black group-hover:translate-x-1 transition-all flex-shrink-0" />
-                                    </span>
-                                </a>
+                                <CTAButton
+                                    text={<>QUERO ME APLICAR PARA <br className="sm:hidden" /> A IMERSÃO</>}
+                                    showIcon={true}
+                                    className="!w-full lg:!w-max text-[13px] sm:text-[14px] xl:text-[15px]"
+                                />
 
                                 {/* Desktop Badge: escondido no mobile, com a logo bem realçada */}
                                 <div className="hidden lg:flex w-max items-center justify-center gap-4 bg-[#0A0A0A]/95 border border-[#D4AF37]/40 py-4 px-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-xl flex-shrink-0 h-full">
@@ -326,7 +310,7 @@ const ImersaoLP: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center">
-                            <CTAButton text="Quero conquistar uma clínica 100% particular" />
+                            <CTAButton text="QUERO CONSTRUIR UMA CLÍNICA 100% PARTICULAR" />
                         </div>
 
                     </div>
@@ -396,7 +380,7 @@ const ImersaoLP: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center">
-                            <CTAButton text="Quero ter rentabilidade financeira" />
+                            <CTAButton text="QUERO ESCALAR MEU FATURAMENTO NO PARTICULAR" />
                         </div>
                     </div>
                 </section>
@@ -633,7 +617,7 @@ const ImersaoLP: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center relative z-20">
-                            <CTAButton text="Não quero que a medicina destrua a minha vida" />
+                            <CTAButton text="QUERO RETOMAR O CONTROLE DA MINHA ROTINA" />
                         </div>
                     </div>
                 </section>
@@ -701,25 +685,10 @@ const ImersaoLP: React.FC = () => {
                             A escolha é simples. Continue dividindo o lucro do seu trabalho com convênios ou <strong className="text-white font-bold">assuma a liderança total da sua clínica</strong> na próxima turma.
                         </p>
 
-                        <a
-                            id="apply-button"
-                            href="#aplicar-form"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                if (typeof window !== 'undefined') {
-                                    if ((window as any).clarity) {
-                                        (window as any).clarity("event", "click_aplicacao");
-                                    }
-                                    if ((window as any).fbq) {
-                                        (window as any).fbq('track', 'Lead');
-                                    }
-                                }
-                                document.getElementById('aplicar-form')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className={`inline-block text-center w-full md:w-auto px-10 py-6 md:px-16 md:py-8 rounded-md font-black uppercase tracking-[0.2em] text-[13px] md:text-lg transition-all transform hover:-translate-y-1 ${goldButton} ${goldButtonHover}`}
-                        >
-                            Aplicar para a lista de espera
-                        </a>
+                        <CTAButton
+                            text="INICIAR MINHA APLICAÇÃO AGORA"
+                            className="px-10 py-6 md:px-16 md:py-8 text-[13px] md:text-lg tracking-[0.2em] w-full md:w-auto mt-4"
+                        />
 
                         <p className="mt-8 text-stone-500 text-xs font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2">
                             <AlertCircle size={16} className="text-[#D4AF37]" /> A avaliação não garante vaga. Acesso condicionado ao perfil médico.
@@ -736,20 +705,12 @@ const ImersaoLP: React.FC = () => {
                         <div className="bg-red-700/90 border border-red-500/50 p-8 sm:p-12 rounded-xl text-center mb-16 max-w-3xl mx-auto flex flex-col items-center shadow-[0_0_80px_rgba(239,68,68,0.4)] relative overflow-hidden backdrop-blur-sm">
                             <div className="absolute top-0 left-0 w-full h-2 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
 
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full">
-                                <AlertCircle className="text-white w-12 h-12 lg:w-14 lg:h-14 animate-pulse drop-shadow-lg flex-shrink-0" />
-                                <h3 className="text-white font-black uppercase tracking-[0.15em] text-2xl sm:text-3xl lg:text-4xl leading-tight drop-shadow-md pb-1 border-b-2 border-red-500/50">ATENÇÃO: AÇÃO OBRIGATÓRIA</h3>
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-6 w-full relative z-10 py-2">
+                                <AlertCircle className="text-white w-12 h-12 lg:w-16 lg:h-16 animate-pulse drop-shadow-lg flex-shrink-0" />
+                                <h3 className="text-white font-black uppercase md:tracking-[0.05em] text-2xl sm:text-3xl lg:text-[40px] leading-tight drop-shadow-md text-center">
+                                    INICIE SUA APLICAÇÃO NAS LINHAS ABAIXO
+                                </h3>
                             </div>
-
-                            <p className="text-white font-medium text-lg md:text-xl leading-relaxed max-w-2xl px-2">
-                                VOCÊ CHEGOU NA ETAPA FINAL. SUA VAGA NA IMERSÃO <strong className="font-black bg-white text-red-700 px-2 py-1 mx-1 rounded shadow-md uppercase">NÃO ESTÁ GARANTIDA</strong> ATÉ QUE ESTE FORMULÁRIO SEJA 100% PREENCHIDO E ENVIADO PARA NOSSOS ASSESSORES.
-                            </p>
-                        </div>
-
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-black text-white uppercase tracking-tight mb-6 drop-shadow-2xl">
-                                INICIE SUA <span className={goldText}>APLICAÇÃO</span> NAS LINHAS ABAIXO
-                            </h2>
                         </div>
 
                         {/* TALLY IFRAME WRAPPER COM GLOW */}
