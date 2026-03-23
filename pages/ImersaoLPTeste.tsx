@@ -181,11 +181,16 @@ const ImersaoLPTeste: React.FC = () => {
     return (
         <div className="w-full font-sans bg-[#0A0A0A] text-stone-100 overflow-hidden selection:bg-[#D4AF37] selection:text-black">
             <SEO
-                title="O Fim da Dependência dos Convênios | Dra. Josiane Canali"
-                description="Como construir um consultório particular exclusivo e gerar múltiplos 6 dígitos recorrentes."
-                image="https://img.ampulloo.com/josiane_canali/imersao-hero.webp"
+                title="Desenvolvido por uma Médica | Aplicação Imersão particular"
+                description="Transforme seu consultório em uma clínica particular premium ultra-lucrativa com um método que defende a sua qualidade de vida."
+                image="https://img.ampulloo.com/josiane_canali/capa-ii360.webp"
                 url="https://lp.institutocanali.com/imersao"
             />
+
+            {/* OTIMIZAÇÃO DE RENDIMENTO: DOWNLOAD INVISÍVEL E PRÉ-CONEXÃO COM OS SERVIDORES DO TALLY PARA ZERAR O 'LOADING' MENTAL */}
+            <link rel="preconnect" href="https://tally.so" />
+            <link rel="dns-prefetch" href="https://tally.so" />
+            <link rel="prefetch" href="https://tally.so/embed/442VZk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" />
 
             {/* NAVBAR MINIMAL - Clicável para voltar ao topo */}
             <nav className="fixed top-0 left-0 right-0 z-50 py-4 bg-[#050505]/90 backdrop-blur-md border-b border-[#D4AF37]/20">
@@ -765,12 +770,12 @@ const ImersaoLPTeste: React.FC = () => {
 
             {/* MODAL OVERLAY PARA O FORMULÁRIO TALLY */}
             {/* O iframe é renderizado APENAS no click (hasLoadedForm) para que o disparo Tally.FormPageView aconteça EXATAMENTE na intenção de preenchimento, preservando a saúde do tráfego do Pixel Pai. */}
-            <div className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-300 ${isFormOpen ? 'opacity-100 pointer-events-auto visible' : 'opacity-0 pointer-events-none invisible'}`}>
+            <div className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-200 ease-out ${isFormOpen ? 'opacity-100 pointer-events-auto visible' : 'opacity-0 pointer-events-none invisible'}`}>
                 {/* BACKDROP SÓLIDO NO MOBILE (Anti-bug Safari iOS) e BLUR NO DESKTOP */}
-                <div className="absolute inset-0 bg-black md:bg-black/90 md:backdrop-blur-md" onClick={() => setIsFormOpen(false)}></div>
+                <div className="absolute inset-0 bg-black md:bg-black/90 md:backdrop-blur-md transition-opacity duration-300" onClick={() => setIsFormOpen(false)}></div>
 
-                {/* MODAL: FULL SCREEN MOBILE, FLOATING NO DESKTOP */}
-                <div className={`relative w-full h-full md:w-[95%] max-w-4xl bg-[#080808] md:rounded-2xl border-0 md:border md:border-[#D4AF37]/50 shadow-none md:shadow-[0_0_100px_rgba(212,175,55,0.2)] p-2 pt-10 md:p-6 max-h-[100dvh] md:max-h-[90vh] overflow-y-hidden z-10 transition-transform duration-500 flex flex-col ${isFormOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}>
+                {/* MODAL: FULL SCREEN MOBILE, FLOATING NO DESKTOP. TRANSITIONS ACELERADAS SEM SCALE E GPU HARDWARE ACCEL. */}
+                <div className={`relative w-full h-full md:w-[95%] max-w-4xl bg-[#080808] md:rounded-2xl border-0 md:border md:border-[#D4AF37]/50 shadow-none md:shadow-[0_0_100px_rgba(212,175,55,0.2)] p-2 pt-10 md:p-6 max-h-[100dvh] md:max-h-[85vh] overflow-y-hidden z-10 transition-transform duration-300 ease-out will-change-transform flex flex-col ${isFormOpen ? 'translate-y-0' : 'translate-y-8'}`}>
 
                     <button
                         onClick={() => setIsFormOpen(false)}
