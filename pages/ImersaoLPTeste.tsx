@@ -776,23 +776,27 @@ const ImersaoLPTeste: React.FC = () => {
 
             {/* MODAL OVERLAY PARA O FORMULÁRIO TALLY */}
             {/* O iframe é renderizado APENAS no click (hasLoadedForm) para que o disparo Tally.FormPageView aconteça EXATAMENTE na intenção de preenchimento, preservando a saúde do tráfego do Pixel Pai. */}
-            <div className={`fixed inset-0 z-[100] flex items-center justify-center transition-all duration-300 ${isFormOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                <div className="absolute inset-0 bg-black/90 backdrop-blur-md" onClick={() => setIsFormOpen(false)}></div>
+            <div className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-300 ${isFormOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                {/* BACKDROP SÓLIDO NO MOBILE (Anti-bug Safari iOS) e BLUR NO DESKTOP */}
+                <div className="absolute inset-0 bg-black md:bg-black/90 md:backdrop-blur-md" onClick={() => setIsFormOpen(false)}></div>
 
-                <div className={`relative w-[95%] max-w-4xl bg-[#080808] rounded-2xl border border-[#D4AF37]/50 shadow-[0_0_100px_rgba(212,175,55,0.2)] p-2 md:p-6 max-h-[95vh] overflow-y-hidden z-10 transition-transform duration-500 flex flex-col ${isFormOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}>
+                {/* MODAL: FULL SCREEN MOBILE, FLOATING NO DESKTOP */}
+                <div className={`relative w-full h-full md:w-[95%] max-w-4xl bg-[#080808] md:rounded-2xl border-0 md:border md:border-[#D4AF37]/50 shadow-none md:shadow-[0_0_100px_rgba(212,175,55,0.2)] p-2 pt-10 md:p-6 max-h-[100dvh] md:max-h-[90vh] overflow-y-hidden z-10 transition-transform duration-500 flex flex-col ${isFormOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}>
+
                     <button
                         onClick={() => setIsFormOpen(false)}
-                        className="absolute top-2 right-2 md:top-4 md:right-4 text-stone-500 hover:text-white z-50 bg-black/50 rounded-full p-1 backdrop-blur-sm transition-colors"
+                        className="absolute top-3 right-3 md:top-4 md:right-4 text-stone-500 hover:text-white z-[9999] bg-[#111] md:bg-black/50 border border-stone-800 rounded-full p-2 backdrop-blur-sm transition-colors shadow-lg"
+                        aria-label="Fechar formulário"
                     >
-                        <XSquare className="w-8 h-8" />
+                        <XSquare className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
 
-                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-8 md:pt-4 custom-scrollbar relative min-h-[400px]">
+                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar relative min-h-[400px]" style={{ WebkitOverflowScrolling: 'touch' }}>
                         {/* SPINNER ELEGANTE ENQUANTO O TALLY É BAIXADO NO PRIMEIRO CLICK */}
                         {!hasLoadedForm ? (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center z-0">
+                            <div className="absolute inset-0 flex flex-col items-center justify-center z-0 bg-[#080808]">
                                 <Loader2 className="w-8 h-8 text-[#D4AF37] animate-spin mb-4" />
-                                <p className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold animate-pulse">Iniciando ambiente seguro...</p>
+                                <p className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold animate-pulse text-center px-4">Iniciando ambiente seguro...</p>
                             </div>
                         ) : null}
 
@@ -807,7 +811,7 @@ const ImersaoLPTeste: React.FC = () => {
                                 marginHeight={0}
                                 marginWidth={0}
                                 title="Aplicação Mentoria | Implant & Inject 360"
-                                className="w-full bg-transparent min-h-[650px] border-none relative z-10"
+                                className="w-full bg-[#080808] min-h-[85vh] md:min-h-[650px] border-none relative z-10"
                                 onLoad={() => {
                                     // Garante que os embeds ajustem a altura quando a network terminar
                                     if (typeof (window as any).Tally !== 'undefined') {
