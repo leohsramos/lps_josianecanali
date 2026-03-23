@@ -56,19 +56,8 @@ const ImersaoLPTeste: React.FC = () => {
         if (!hasLoadedForm) setHasLoadedForm(true);
     };
 
-    useEffect(() => {
-        if (isFormOpen) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.paddingRight = '15px'; // Avoid layout shift from scrollbar
-        } else {
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-        }
-        return () => {
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-        };
-    }, [isFormOpen]);
+    // Body scroll locking removed due to catastrophic iOS Safari rendering bugs.
+    // Instead, we use `overscroll-contain` on the scrolling child to avoid scroll-chaining natively.
 
     useEffect(() => {
         if (location.hash) {
@@ -791,7 +780,7 @@ const ImersaoLPTeste: React.FC = () => {
                         <XSquare className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
 
-                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar relative min-h-[400px]" style={{ WebkitOverflowScrolling: 'touch' }}>
+                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar relative min-h-[400px] overscroll-contain" style={{ WebkitOverflowScrolling: 'touch' }}>
                         {/* SPINNER ELEGANTE ENQUANTO O TALLY É BAIXADO NO PRIMEIRO CLICK */}
                         {!hasLoadedForm ? (
                             <div className="absolute inset-0 flex flex-col items-center justify-center z-0 bg-[#080808]">
