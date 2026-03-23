@@ -765,7 +765,7 @@ const ImersaoLPTeste: React.FC = () => {
 
             {/* MODAL OVERLAY PARA O FORMULÁRIO TALLY */}
             {/* O iframe é renderizado APENAS no click (hasLoadedForm) para que o disparo Tally.FormPageView aconteça EXATAMENTE na intenção de preenchimento, preservando a saúde do tráfego do Pixel Pai. */}
-            <div className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-300 ${isFormOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+            <div className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-300 ${isFormOpen ? 'opacity-100 pointer-events-auto visible' : 'opacity-0 pointer-events-none invisible'}`}>
                 {/* BACKDROP SÓLIDO NO MOBILE (Anti-bug Safari iOS) e BLUR NO DESKTOP */}
                 <div className="absolute inset-0 bg-black md:bg-black/90 md:backdrop-blur-md" onClick={() => setIsFormOpen(false)}></div>
 
