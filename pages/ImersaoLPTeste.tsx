@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowRight, Play, Volume2, Quote, PlayCircle, Star, BadgeDollarSign, ShieldCheck, HeartHandshake, MapPin, Clock, XSquare, AlertCircle, Camera, ChevronDown, BookOpen, BrainCircuit, Target, Stethoscope, Activity, Heart } from 'lucide-react';
+import { ArrowRight, Play, Volume2, Quote, PlayCircle, Star, BadgeDollarSign, ShieldCheck, HeartHandshake, MapPin, Clock, XSquare, AlertCircle, Camera, ChevronDown, BookOpen, BrainCircuit, Target, Stethoscope, Activity, Heart, Loader2 } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
@@ -49,6 +49,12 @@ const CTAButton = ({ text, className = "", showIcon = false, onClick }: { text: 
 const ImersaoLPTeste: React.FC = () => {
     const location = useLocation();
     const [isFormOpen, setIsFormOpen] = useState(false);
+    const [hasLoadedForm, setHasLoadedForm] = useState(false);
+
+    const handleOpenForm = () => {
+        setIsFormOpen(true);
+        if (!hasLoadedForm) setHasLoadedForm(true);
+    };
 
     useEffect(() => {
         if (isFormOpen) {
@@ -241,7 +247,7 @@ const ImersaoLPTeste: React.FC = () => {
                                     text={<>QUERO ME APLICAR PARA <br className="sm:hidden" /> A IMERSÃO</>}
                                     showIcon={true}
                                     className="!w-full lg:!w-max text-[13px] sm:text-[14px] xl:text-[15px]"
-                                    onClick={() => setIsFormOpen(true)}
+                                    onClick={handleOpenForm}
                                 />
 
                                 {/* Desktop Badge: escondido no mobile, com a logo bem realçada */}
@@ -325,7 +331,7 @@ const ImersaoLPTeste: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center">
-                            <CTAButton text="QUERO CONSTRUIR UMA CLÍNICA 100% PARTICULAR" onClick={() => setIsFormOpen(true)} />
+                            <CTAButton text="QUERO CONSTRUIR UMA CLÍNICA 100% PARTICULAR" onClick={handleOpenForm} />
                         </div>
 
                     </div>
@@ -395,7 +401,7 @@ const ImersaoLPTeste: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center">
-                            <CTAButton text="QUERO ESCALAR MEU FATURAMENTO NO PARTICULAR" onClick={() => setIsFormOpen(true)} />
+                            <CTAButton text="QUERO ESCALAR MEU FATURAMENTO NO PARTICULAR" onClick={handleOpenForm} />
                         </div>
                     </div>
                 </section>
@@ -632,7 +638,7 @@ const ImersaoLPTeste: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center relative z-20">
-                            <CTAButton text="QUERO RETOMAR O CONTROLE DA MINHA ROTINA" onClick={() => setIsFormOpen(true)} />
+                            <CTAButton text="QUERO RETOMAR O CONTROLE DA MINHA ROTINA" onClick={handleOpenForm} />
                         </div>
                     </div>
                 </section>
@@ -703,7 +709,7 @@ const ImersaoLPTeste: React.FC = () => {
                         <CTAButton
                             text="INICIAR MINHA APLICAÇÃO AGORA"
                             className="px-10 py-6 md:px-16 md:py-8 text-[13px] md:text-lg tracking-[0.2em] w-full md:w-auto"
-                            onClick={() => setIsFormOpen(true)}
+                            onClick={handleOpenForm}
                         />
 
                         <p className="mt-8 text-stone-500 text-xs font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2">
@@ -769,7 +775,7 @@ const ImersaoLPTeste: React.FC = () => {
             </main>
 
             {/* MODAL OVERLAY PARA O FORMULÁRIO TALLY */}
-            {/* O iframe do Tally já é renderizado e "escondido" (opacity-0/pointer-events-none). Ele carrega no background via o fallback de 500ms no useEffect, garantindo 0 delay e 100% tracking do Pixel! */}
+            {/* O iframe é renderizado APENAS no click (hasLoadedForm) para que o disparo Tally.FormPageView aconteça EXATAMENTE na intenção de preenchimento, preservando a saúde do tráfego do Pixel Pai. */}
             <div className={`fixed inset-0 z-[100] flex items-center justify-center transition-all duration-300 ${isFormOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                 <div className="absolute inset-0 bg-black/90 backdrop-blur-md" onClick={() => setIsFormOpen(false)}></div>
 
@@ -781,18 +787,35 @@ const ImersaoLPTeste: React.FC = () => {
                         <XSquare className="w-8 h-8" />
                     </button>
 
-                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-8 md:pt-4 custom-scrollbar">
-                        <iframe
-                            data-tally-src="https://tally.so/embed/442VZk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
-                            loading="lazy"
-                            width="100%"
-                            height="650"
-                            frameBorder="0"
-                            marginHeight={0}
-                            marginWidth={0}
-                            title="Aplicação Mentoria | Implant & Inject 360"
-                            className="w-full bg-transparent min-h-[650px] border-none"
-                        ></iframe>
+                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-8 md:pt-4 custom-scrollbar relative min-h-[400px]">
+                        {/* SPINNER ELEGANTE ENQUANTO O TALLY É BAIXADO NO PRIMEIRO CLICK */}
+                        {!hasLoadedForm ? (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center z-0">
+                                <Loader2 className="w-8 h-8 text-[#D4AF37] animate-spin mb-4" />
+                                <p className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold animate-pulse">Iniciando ambiente seguro...</p>
+                            </div>
+                        ) : null}
+
+                        {/* TALLY IFRAME LAZY MOUNT */}
+                        {hasLoadedForm && (
+                            <iframe
+                                src="https://tally.so/embed/442VZk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+                                loading="lazy"
+                                width="100%"
+                                height="650"
+                                frameBorder="0"
+                                marginHeight={0}
+                                marginWidth={0}
+                                title="Aplicação Mentoria | Implant & Inject 360"
+                                className="w-full bg-transparent min-h-[650px] border-none relative z-10"
+                                onLoad={() => {
+                                    // Garante que os embeds ajustem a altura quando a network terminar
+                                    if (typeof (window as any).Tally !== 'undefined') {
+                                        (window as any).Tally.loadEmbeds();
+                                    }
+                                }}
+                            ></iframe>
+                        )}
                     </div>
                 </div>
             </div>
