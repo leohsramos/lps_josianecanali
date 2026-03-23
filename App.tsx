@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 
 const ImersaoLP = React.lazy(() => import('./pages/ImersaoLP'));
+const ImersaoLPTeste = React.lazy(() => import('./pages/ImersaoLPTeste'));
 const ImersaoLP01 = React.lazy(() => import('./pages/ImersaoLP01'));
 const ImersaoLP2 = React.lazy(() => import('./pages/ImersaoLP2'));
 const ImersaoSuccess = React.lazy(() => import('./pages/ImersaoSuccess'));
@@ -36,6 +37,7 @@ const App: React.FC = () => {
 
                     {/* Imersão — com Meta Pixel 4214948072087892 */}
                     <Route path="/imersao" element={<ImersaoLP />} />
+                    <Route path="/imersao/teste" element={<ImersaoLPTeste />} />
                     <Route path="/imersao01" element={<ImersaoLP01 />} />
                     <Route path="/imersao/sucesso" element={<ImersaoSuccess />} />
 
