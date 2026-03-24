@@ -232,7 +232,7 @@ const ImersaoLPTeste: React.FC = () => {
                                 O fim da <br className="hidden lg:block" /> dependência <br className="hidden lg:block" /> <span className="whitespace-nowrap">dos <span className={goldText}>convênios</span>.</span>
                             </h1>
 
-                            <h2 className="mt-6 text-base md:text-xl lg:text-[22px] text-stone-300 font-light border-l-2 border-[#D4AF37] pl-4 lg:pl-6 max-w-2xl mx-auto lg:mx-0 py-2 leading-relaxed">
+                            <h2 className="mt-6 text-left text-base md:text-xl lg:text-[22px] text-stone-300 font-light border-l-2 border-[#D4AF37] pl-4 lg:pl-6 max-w-2xl mx-auto lg:mx-0 py-2 leading-relaxed">
                                 Desenvolvido por uma médica, este método ajuda você a transformar seu consultório em uma operação particular previsível e altamente rentável. Com menos atendimentos e mais qualidade de vida.
                             </h2>
 

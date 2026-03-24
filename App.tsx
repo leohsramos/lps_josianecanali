@@ -36,8 +36,8 @@ const App: React.FC = () => {
                     <Route path="/" element={<Home />} />
 
                     {/* Imersão — com Meta Pixel 4214948072087892 */}
-                    <Route path="/imersao" element={<ImersaoLP />} />
-                    <Route path="/imersao/teste" element={<ImersaoLPTeste />} />
+                    <Route path="/imersao" element={<ImersaoLPTeste />} />
+                    <Route path="/imersao1" element={<ImersaoLP />} />
                     <Route path="/imersao01" element={<ImersaoLP01 />} />
                     <Route path="/imersao/sucesso" element={<ImersaoSuccess />} />
 
