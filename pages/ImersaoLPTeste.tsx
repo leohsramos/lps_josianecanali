@@ -31,17 +31,13 @@ const CTAButton = ({ text, className = "", showIcon = false, link = "https://ins
     return (
         <a
             href={link}
-            onClick={(e) => {
-                e.preventDefault();
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
                 if (typeof window !== 'undefined') {
                     if ((window as any).clarity) (window as any).clarity("event", "click_aplicacao");
                     if ((window as any).fbq) (window as any).fbq('track', 'Lead');
                 }
-
-                // Allow time for pixel to fire before redirecting
-                setTimeout(() => {
-                    window.location.href = link;
-                }, 300);
             }}
             className={`inline-flex items-center justify-center text-center w-full md:w-auto px-8 py-5 md:px-10 md:py-6 rounded-md font-black uppercase tracking-[0.12em] text-[13px] md:text-sm border border-emerald-400/30 transition-all transform hover:-translate-y-1 bg-emerald-600 text-white shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:bg-emerald-500 hover:shadow-[0_0_60px_rgba(5,150,105,0.6)] gap-3 ${className}`}
         >
