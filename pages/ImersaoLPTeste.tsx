@@ -27,34 +27,32 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     );
 };
 
-const CTAButton = ({ text, className = "", showIcon = false, onClick }: { text: React.ReactNode, className?: string, showIcon?: boolean, onClick?: () => void }) => {
+const CTAButton = ({ text, className = "", showIcon = false, link = "https://institutocanali.com.br/imersao" }: { text: React.ReactNode, className?: string, showIcon?: boolean, link?: string }) => {
     return (
-        <button
+        <a
+            href={link}
             onClick={(e) => {
                 e.preventDefault();
                 if (typeof window !== 'undefined') {
                     if ((window as any).clarity) (window as any).clarity("event", "click_aplicacao");
                     if ((window as any).fbq) (window as any).fbq('track', 'Lead');
                 }
-                if (onClick) onClick();
+
+                // Allow time for pixel to fire before redirecting
+                setTimeout(() => {
+                    window.location.href = link;
+                }, 300);
             }}
             className={`inline-flex items-center justify-center text-center w-full md:w-auto px-8 py-5 md:px-10 md:py-6 rounded-md font-black uppercase tracking-[0.12em] text-[13px] md:text-sm border border-emerald-400/30 transition-all transform hover:-translate-y-1 bg-emerald-600 text-white shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:bg-emerald-500 hover:shadow-[0_0_60px_rgba(5,150,105,0.6)] gap-3 ${className}`}
         >
             <span className="leading-tight flex items-center justify-center text-center">{text}</span>
             {showIcon && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-100 flex-shrink-0" />}
-        </button>
+        </a>
     );
 };
 
 const ImersaoLPTeste: React.FC = () => {
     const location = useLocation();
-    const [isFormOpen, setIsFormOpen] = useState(false);
-    const [hasLoadedForm, setHasLoadedForm] = useState(false);
-
-    const handleOpenForm = () => {
-        setIsFormOpen(true);
-        if (!hasLoadedForm) setHasLoadedForm(true);
-    };
 
     // Body scroll locking removed due to catastrophic iOS Safari rendering bugs.
     // Instead, we use `overscroll-contain` on the scrolling child to avoid scroll-chaining natively.
@@ -241,7 +239,6 @@ const ImersaoLPTeste: React.FC = () => {
                                     text={<>QUERO ME APLICAR PARA <br className="sm:hidden" /> A IMERSÃO</>}
                                     showIcon={true}
                                     className="!w-full lg:!w-max text-[13px] sm:text-[14px] xl:text-[15px]"
-                                    onClick={handleOpenForm}
                                 />
 
                                 {/* Desktop Badge: escondido no mobile, com a logo bem realçada */}
@@ -325,7 +322,7 @@ const ImersaoLPTeste: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center">
-                            <CTAButton text="QUERO CONSTRUIR UMA CLÍNICA 100% PARTICULAR" onClick={handleOpenForm} />
+                            <CTAButton text="QUERO CONSTRUIR UMA CLÍNICA 100% PARTICULAR" />
                         </div>
 
                     </div>
@@ -395,7 +392,7 @@ const ImersaoLPTeste: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center">
-                            <CTAButton text="QUERO ESCALAR MEU FATURAMENTO NO PARTICULAR" onClick={handleOpenForm} />
+                            <CTAButton text="QUERO ESCALAR MEU FATURAMENTO NO PARTICULAR" />
                         </div>
                     </div>
                 </section>
@@ -632,7 +629,7 @@ const ImersaoLPTeste: React.FC = () => {
                         </div>
 
                         <div className="mt-16 flex justify-center relative z-20">
-                            <CTAButton text="QUERO RETOMAR O CONTROLE DA MINHA ROTINA" onClick={handleOpenForm} />
+                            <CTAButton text="QUERO RETOMAR O CONTROLE DA MINHA ROTINA" />
                         </div>
                     </div>
                 </section>
@@ -703,7 +700,6 @@ const ImersaoLPTeste: React.FC = () => {
                         <CTAButton
                             text="INICIAR MINHA APLICAÇÃO AGORA"
                             className="px-10 py-6 md:px-16 md:py-8 text-[13px] md:text-lg tracking-[0.2em] w-full md:w-auto"
-                            onClick={handleOpenForm}
                         />
 
                         <p className="mt-8 text-stone-500 text-xs font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2">
@@ -767,56 +763,6 @@ const ImersaoLPTeste: React.FC = () => {
                 </section>
 
             </main>
-
-            {/* MODAL OVERLAY PARA O FORMULÁRIO TALLY */}
-            {/* O iframe é renderizado APENAS no click (hasLoadedForm) para que o disparo Tally.FormPageView aconteça EXATAMENTE na intenção de preenchimento, preservando a saúde do tráfego do Pixel Pai. */}
-            <div className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-200 ease-out ${isFormOpen ? 'opacity-100 pointer-events-auto visible' : 'opacity-0 pointer-events-none invisible'}`}>
-                {/* BACKDROP SÓLIDO NO MOBILE (Anti-bug Safari iOS) e BLUR NO DESKTOP */}
-                <div className="absolute inset-0 bg-black md:bg-black/90 md:backdrop-blur-md transition-opacity duration-300" onClick={() => setIsFormOpen(false)}></div>
-
-                {/* MODAL: FULL SCREEN MOBILE, FLOATING NO DESKTOP. TRANSITIONS ACELERADAS SEM SCALE E GPU HARDWARE ACCEL. */}
-                <div className={`relative w-full h-full md:w-[95%] max-w-4xl bg-[#080808] md:rounded-2xl border-0 md:border md:border-[#D4AF37]/50 shadow-none md:shadow-[0_0_100px_rgba(212,175,55,0.2)] p-2 pt-10 md:p-6 max-h-[100dvh] md:max-h-[85vh] overflow-y-hidden z-10 transition-transform duration-300 ease-out will-change-transform flex flex-col ${isFormOpen ? 'translate-y-0' : 'translate-y-8'}`}>
-
-                    <button
-                        onClick={() => setIsFormOpen(false)}
-                        className="absolute top-3 right-3 md:top-4 md:right-4 text-stone-500 hover:text-white z-[9999] bg-[#111] md:bg-black/50 border border-stone-800 rounded-full p-2 backdrop-blur-sm transition-colors shadow-lg"
-                        aria-label="Fechar formulário"
-                    >
-                        <XSquare className="w-6 h-6 md:w-8 md:h-8" />
-                    </button>
-
-                    <div className="w-full flex-grow overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar relative min-h-[400px] overscroll-contain" style={{ WebkitOverflowScrolling: 'touch' }}>
-                        {/* SPINNER ELEGANTE ENQUANTO O TALLY É BAIXADO NO PRIMEIRO CLICK */}
-                        {!hasLoadedForm ? (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center z-0 bg-[#080808]">
-                                <Loader2 className="w-8 h-8 text-[#D4AF37] animate-spin mb-4" />
-                                <p className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold animate-pulse text-center px-4">Iniciando ambiente seguro...</p>
-                            </div>
-                        ) : null}
-
-                        {/* TALLY IFRAME LAZY MOUNT */}
-                        {hasLoadedForm && (
-                            <iframe
-                                src="https://tally.so/embed/442VZk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
-                                loading="lazy"
-                                width="100%"
-                                height="650"
-                                frameBorder="0"
-                                marginHeight={0}
-                                marginWidth={0}
-                                title="Aplicação Mentoria | Implant & Inject 360"
-                                className="w-full bg-[#080808] min-h-[85vh] md:min-h-[650px] border-none relative z-10"
-                                onLoad={() => {
-                                    // Garante que os embeds ajustem a altura quando a network terminar
-                                    if (typeof (window as any).Tally !== 'undefined') {
-                                        (window as any).Tally.loadEmbeds();
-                                    }
-                                }}
-                            ></iframe>
-                        )}
-                    </div>
-                </div>
-            </div>
 
             {/* FOOTER LP - A JUSTE DE CRÉDITO VISÍVEL */}
             <footer className="bg-[#050505] py-10 border-t border-stone-800 text-center text-sm font-light z-10 relative">
