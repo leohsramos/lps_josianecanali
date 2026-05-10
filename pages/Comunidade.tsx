@@ -293,64 +293,156 @@ const Comunidade: React.FC = () => {
                 </section>
 
                 {/* 5. A Comunidade */}
-                <section className="py-24 bg-white relative">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div className="text-center mb-16 px-4">
-                            <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Por dentro da Plataforma</span>
-                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-6">
-                                A Comunidade Frequência Feminina
+                <section className="py-24 bg-white relative overflow-hidden">
+                    <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+                        
+                        {/* Esquerda: Textos e Cards */}
+                        <div className="w-full lg:w-1/2">
+                            <div className="mb-12">
+                                <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Por dentro da Plataforma</span>
+                                <h2 className="text-4xl md:text-5xl font-display font-bold text-stone-900 mb-6">
+                                    A Comunidade Frequência Feminina
+                                </h2>
+                                <p className="text-stone-500 text-lg font-light leading-relaxed">
+                                    Muito além de um espaço de acolhimento, a Comunidade é um ambiente <strong>desenvolvido com rigorosa base científica</strong>. Durante 16 semanas, você seguirá uma cronologia exata de exercícios e reflexões pensados para que, ao final da jornada, você tenha clareza sobre o seu processo e saiba o caminho exato para voltar a ser a sua melhor versão.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                {/* Card 1 */}
+                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
+                                        <Heart size={24} />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">O que é?</h3>
+                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
+                                        Uma jornada de 16 semanas com conteúdo de alto nível para você se reconectar consigo mesma.
+                                    </p>
+                                </div>
+
+                                {/* Card 2 */}
+                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
+                                        <Smile size={24} />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">Para quem é?</h3>
+                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
+                                        Para mulheres cansadas de respostas rasas e que precisam de orientação médica segura e apoio real.
+                                    </p>
+                                </div>
+
+                                {/* Card 3 */}
+                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
+                                        <CheckCircle size={24} />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">O que resolve?</h3>
+                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
+                                        O sentimento de "não ser mais eu". Traz clareza sobre o corpo e direcionamento para tratamentos.
+                                    </p>
+                                </div>
+
+                                {/* Card 4 */}
+                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
+                                        <MessageCircle size={24} />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">Como funciona?</h3>
+                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
+                                        Vídeos e reflexões profundas, exercícios cronológicos e "Consultório Aberto" ao vivo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Direita: Imagem da Comunidade (Placeholder) */}
+                        <div className="w-full lg:w-1/2 relative">
+                            {/* Glow de Fundo */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-yellow-300/20 blur-3xl rounded-full transform translate-y-10"></div>
+                            
+                            {/* Container da Imagem com Efeito */}
+                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white transform transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
+                                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent z-10 pointer-events-none"></div>
+                                
+                                {/* AQUI O USUÁRIO DEVE TROCAR O SRC PELA FOTO HORIZONTAL DA COMUNIDADE */}
+                                <img 
+                                    src="https://placehold.co/1200x800/1c1917/ea580c?text=COLOQUE+A+FOTO+HORIZONTAL+AQUI" 
+                                    alt="Plataforma Frequência Feminina por dentro" 
+                                    className="w-full h-auto object-cover"
+                                />
+                                
+                                <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center text-white shadow-lg animate-pulse">
+                                        <Play className="w-4 h-4 ml-1" />
+                                    </div>
+                                    <span className="text-white font-bold tracking-widest text-sm uppercase drop-shadow-md">Interface Premium</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* 5.5 A Jornada de 16 Semanas */}
+                <section className="py-24 bg-stone-950 relative overflow-hidden border-t border-stone-800">
+                    <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10"></div>
+                    <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-orange-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+                    
+                    <div className="max-w-7xl mx-auto px-4 relative z-10 flex flex-col lg:flex-row-reverse items-center gap-16">
+                        
+                        {/* Textos sobre as 16 Semanas */}
+                        <div className="w-full lg:w-5/12">
+                            <span className="text-orange-500 font-bold tracking-widest uppercase text-xs mb-2 block">Cronologia Científica</span>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+                                A Jornada de 16 Semanas
                             </h2>
-                            <p className="text-stone-500 text-lg max-w-3xl mx-auto font-light leading-relaxed">
-                                Muito além de um espaço de acolhimento, a Comunidade é um ambiente <strong>desenvolvido com rigorosa base científica</strong>. Durante 16 semanas, você seguirá uma cronologia exata de exercícios e reflexões pensados para que, ao final da jornada, você tenha clareza sobre o seu processo e saiba o caminho exato para voltar a ser a sua melhor versão.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {/* Card 1 */}
-                            <div className="bg-stone-50 p-6 lg:p-8 rounded-[2.5rem] border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm hover:shadow-lg flex flex-col">
-                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md text-orange-500 group-hover:scale-110 transition-transform">
-                                    <Heart size={28} />
-                                </div>
-                                <h3 className="text-xl font-bold text-stone-900 mb-4 group-hover:text-orange-700">O que é?</h3>
-                                <p className="text-stone-600 leading-relaxed mb-6 text-sm flex-grow">
-                                    Uma jornada de 16 semanas, organizada em episódios de reflexão e conteúdo sobre a menopausa. É uma experiência desenhada para você se reconectar consigo mesma.
+                            <div className="space-y-6 text-stone-400 font-light leading-relaxed text-lg">
+                                <p>
+                                    Cada semana da comunidade é desenhada como uma <strong>fogueira de conhecimento</strong>. Os temas seguem uma ordem lógica e progressiva para que você não apenas consuma conteúdo, mas construa uma base forte para se reconectar com seu corpo.
                                 </p>
-                            </div>
-
-                            {/* Card 2 */}
-                            <div className="bg-stone-50 p-6 lg:p-8 rounded-[2.5rem] border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm hover:shadow-lg flex flex-col">
-                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md text-orange-500 group-hover:scale-110 transition-transform">
-                                    <Smile size={28} />
-                                </div>
-                                <h3 className="text-xl font-bold text-stone-900 mb-4 group-hover:text-orange-700">Para quem é?</h3>
-                                <p className="text-stone-600 leading-relaxed mb-6 text-sm flex-grow">
-                                    Para mulheres que não são mais as mesmas. Que vivem cansaço, insônia, falta de energia ou estão confusas sobre climatério e precisam de respostas seguras.
-                                </p>
-                            </div>
-
-                            {/* Card 3 */}
-                            <div className="bg-stone-50 p-6 lg:p-8 rounded-[2.5rem] border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm hover:shadow-lg relative overflow-hidden flex flex-col">
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-orange-200/20 rounded-full blur-2xl pointer-events-none"></div>
-                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md text-orange-500 group-hover:scale-110 transition-transform relative z-10">
-                                    <CheckCircle size={28} />
-                                </div>
-                                <h3 className="text-xl font-bold text-stone-900 mb-4 group-hover:text-orange-700 relative z-10">O que resolve?</h3>
-                                <p className="text-stone-600 leading-relaxed mb-6 text-sm relative z-10 flex-grow">
-                                    Ajuda você a entender o que está acontecendo. Você vai parar de se culpar, dominar seu sono e emoções, e descobrir como voltar a ter qualidade de vida e energia.
-                                </p>
-                            </div>
-
-                            {/* Card 4 */}
-                            <div className="bg-stone-50 p-6 lg:p-8 rounded-[2.5rem] border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm hover:shadow-lg flex flex-col">
-                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md text-orange-500 group-hover:scale-110 transition-transform">
-                                    <MessageCircle size={28} />
-                                </div>
-                                <h3 className="text-xl font-bold text-stone-900 mb-4 group-hover:text-orange-700">Como funciona?</h3>
-                                <p className="text-stone-600 leading-relaxed mb-6 text-sm flex-grow">
-                                    Vídeos e reflexões profundas sobre cada fase da mulher, com exercícios para uma jornada de 16 semanas que trará resultados espetaculares. Inclui sessões de "Consultório Aberto" ao vivo (gravadas para quem chegar depois).
+                                <ul className="space-y-5">
+                                    <li className="flex items-start">
+                                        <div className="bg-orange-500/10 p-2 rounded-full mr-4 shrink-0 mt-1">
+                                            <TrendingUp className="text-orange-500" size={20} />
+                                        </div>
+                                        <div>
+                                            <strong className="text-white block mb-1">Evolução Contínua</strong>
+                                            <span className="text-sm">Passo a passo cientificamente guiado para mapear, entender e contornar cada um dos seus sintomas.</span>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <div className="bg-orange-500/10 p-2 rounded-full mr-4 shrink-0 mt-1">
+                                            <Sun className="text-orange-500" size={20} />
+                                        </div>
+                                        <div>
+                                            <strong className="text-white block mb-1">Resultados Concretos</strong>
+                                            <span className="text-sm">Os exercícios semanais são o mapa. Ao final da 16ª semana, a clareza e a vitalidade voltam a fazer parte de você.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p className="pt-4 italic text-orange-200/80 font-serif text-xl border-l-2 border-orange-500/30 pl-4">
+                                    "A transformação não acontece da noite para o dia. Acontece semana a semana."
                                 </p>
                             </div>
                         </div>
+
+                        {/* Imagem das 16 Semanas (Placeholder) */}
+                        <div className="w-full lg:w-7/12 relative">
+                            {/* Glow */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-orange-400/20 blur-3xl rounded-full transform translate-x-10 translate-y-10"></div>
+                            
+                            <div className="relative p-2 bg-stone-900/50 rounded-[2.5rem] border border-stone-800 shadow-[0_0_50px_rgba(0,0,0,0.5)] transform transition-transform duration-700 hover:scale-[1.02] backdrop-blur-sm">
+                                <div className="absolute -inset-0.5 bg-gradient-to-b from-orange-500/50 to-red-600/50 opacity-20 blur rounded-[2.5rem]"></div>
+                                
+                                {/* AQUI O USUÁRIO DEVE TROCAR O SRC PELA FOTO VERTICAL DAS 16 SEMANAS DE FOGO */}
+                                <img 
+                                    src="https://placehold.co/1000x1200/1c1917/ea580c?text=COLOQUE+A+FOTO+DAS+SEMANAS+AQUI" 
+                                    alt="Módulos da Jornada de 16 Semanas" 
+                                    className="relative w-full h-auto object-cover rounded-[2rem] shadow-inner"
+                                />
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
