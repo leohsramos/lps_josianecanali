@@ -149,8 +149,8 @@ const Comunidade: React.FC = () => {
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-stone-900 mb-8 leading-[1.1] tracking-tight text-balance">
-                            Você mudou...<br className="hidden md:block" />
-                            e <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">não é impressão sua.</span>
+                            Descubra como voltar a ser<br className="hidden md:block" />
+                            a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">sua melhor versão.</span>
                         </h1>
 
                         <p className="text-stone-600 text-lg md:text-2xl font-light max-w-3xl mx-auto mb-12 leading-relaxed text-pretty">
@@ -266,7 +266,7 @@ const Comunidade: React.FC = () => {
                     <div className="max-w-6xl mx-auto px-4">
                         <div className="text-center mb-20">
                             <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Educação Médica</span>
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-stone-900">Entenda onde você está</h2>
+                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 px-2">Entenda onde você está</h2>
                             <p className="text-stone-500 mt-4 text-lg">Muitas mulheres confundem as fases. Saber o seu momento é crucial para o acolhimento.</p>
                         </div>
 
@@ -274,7 +274,7 @@ const Comunidade: React.FC = () => {
                             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                                 <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-orange-200 text-orange-800 font-bold z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">1</div>
                                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-stone-50 p-8 rounded-[2rem] border border-stone-100 shadow-lg hover:shadow-xl transition-shadow md:group-odd:mr-auto md:group-even:ml-auto">
-                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex items-center gap-2">Climatério <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">A Transição</span></h3>
+                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex flex-wrap items-center gap-2">Climatério <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full whitespace-nowrap">A Transição</span></h3>
                                     <p className="text-stone-600 leading-relaxed font-light">É o período de transição que engloba tudo. Muita gente confunde com menopausa, mas o climatério é a "janela" inteira de envelhecimento reprodutivo.</p>
                                 </div>
                             </div>
@@ -282,7 +282,7 @@ const Comunidade: React.FC = () => {
                             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                                 <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-orange-400 text-white font-bold z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">2</div>
                                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-stone-50 p-8 rounded-[2rem] border border-stone-100 shadow-lg hover:shadow-xl transition-shadow md:group-odd:mr-auto md:group-even:ml-auto">
-                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex items-center gap-2">Perimenopausa <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">Fase do Caos</span></h3>
+                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex flex-wrap items-center gap-2">Perimenopausa <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full whitespace-nowrap">Fase do Caos</span></h3>
                                     <p className="text-stone-600 leading-relaxed font-light">Oscilações hormonais imprevisíveis. Você ainda menstrua, mas o ciclo falha, o humor oscila e os sintomas começam a aparecer. É aqui que os erros de diagnóstico acontecem.</p>
                                 </div>
                             </div>
@@ -290,7 +290,7 @@ const Comunidade: React.FC = () => {
                             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                                 <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-red-600 text-white font-bold z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">3</div>
                                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-stone-50 p-8 rounded-[2rem] border border-stone-100 shadow-lg hover:shadow-xl transition-shadow md:group-odd:mr-auto md:group-even:ml-auto border-l-4 border-l-red-500">
-                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex items-center gap-2">Menopausa <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full">O Evento</span></h3>
+                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex flex-wrap items-center gap-2">Menopausa <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full whitespace-nowrap">O Evento</span></h3>
                                     <p className="text-stone-600 leading-relaxed font-light">Não é uma fase, é um marco: <strong>12 meses consecutivos sem menstruar</strong>. É o dia oficial em que seus ovários "se aposentam".</p>
                                 </div>
                             </div>
@@ -298,7 +298,7 @@ const Comunidade: React.FC = () => {
                             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                                 <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-stone-700 text-white font-bold z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">4</div>
                                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-stone-50 p-8 rounded-[2rem] border border-stone-100 shadow-lg hover:shadow-xl transition-shadow md:group-odd:mr-auto md:group-even:ml-auto">
-                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex items-center gap-2">Pós-Menopausa <span className="text-xs bg-stone-200 text-stone-600 px-2 py-1 rounded-full">Resto da Vida</span></h3>
+                                    <h3 className="font-bold text-stone-900 text-xl mb-2 flex flex-wrap items-center gap-2">Pós-Menopausa <span className="text-xs bg-stone-200 text-stone-600 px-2 py-1 rounded-full whitespace-nowrap">Resto da Vida</span></h3>
                                     <p className="text-stone-600 leading-relaxed font-light">Níveis hormonais baixos e estáveis. Os sintomas agudos podem passar, mas os riscos silenciosos aumentam. O cuidado aqui é vitalício.</p>
                                 </div>
                             </div>
@@ -349,8 +349,8 @@ const Comunidade: React.FC = () => {
                             <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-6">
                                 A Comunidade Frequência Feminina
                             </h2>
-                            <p className="text-stone-500 text-lg max-w-2xl mx-auto font-light">
-                                Não é apenas um curso. É uma comunidade viva, com grupo de apoio no WhatsApp e encontros ao vivo, desenhada para mulheres que querem entender melhor o próprio corpo, as emoções e os sintomas.
+                            <p className="text-stone-500 text-lg max-w-3xl mx-auto font-light leading-relaxed">
+                                Muito além de um espaço de acolhimento, a Comunidade é um ambiente <strong>desenvolvido com rigorosa base científica</strong>. Durante 16 semanas, você seguirá uma cronologia exata de exercícios e reflexões pensados para que, ao final da jornada, você tenha clareza sobre o seu processo e saiba o caminho exato para voltar a ser a sua melhor versão.
                             </p>
                         </div>
 
@@ -460,9 +460,9 @@ const Comunidade: React.FC = () => {
                                 <div className="bg-white/5 border border-white/10 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm">
                                     <p className="text-stone-400 font-bold uppercase tracking-widest text-sm mb-4">Investimento</p>
                                     
-                                    <div className="flex flex-row justify-center items-baseline gap-2 mb-2 whitespace-nowrap">
-                                        <span className="text-xl md:text-2xl text-stone-400 font-medium">12x de</span>
-                                        <span className="text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight">R$ 59,88</span>
+                                    <div className="flex flex-row justify-center items-baseline gap-1 sm:gap-2 mb-2 whitespace-nowrap">
+                                        <span className="text-lg sm:text-xl md:text-2xl text-stone-400 font-medium">12x de</span>
+                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight">R$ 59,88</span>
                                     </div>
                                     <p className="text-stone-400 text-lg">ou R$ 579,00 à vista</p>
                                 </div>
@@ -470,6 +470,7 @@ const Comunidade: React.FC = () => {
                                 <div className="max-w-md mx-auto">
                                     <a
                                         href="https://pay.kiwify.com.br/vouQr4v"
+                                        target="_blank" rel="noopener noreferrer"
                                         className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold py-6 rounded-2xl transition-all shadow-[0_0_30px_rgba(234,88,12,0.3)] hover:shadow-[0_0_50px_rgba(234,88,12,0.5)] transform hover:scale-[1.02] flex items-center justify-center text-xl uppercase tracking-wide"
                                     >
                                         QUERO ENTRAR AGORA
@@ -478,7 +479,6 @@ const Comunidade: React.FC = () => {
 
                                 <div className="mt-8 flex items-center justify-center gap-6 text-stone-400 text-sm">
                                     <span className="flex items-center"><Shield size={16} className="text-green-500 mr-2" /> Pagamento 100% Seguro</span>
-                                    <span className="flex items-center"><Lock size={16} className="text-green-500 mr-2" /> Acesso Imediato</span>
                                 </div>
                             </div>
                         </div>
