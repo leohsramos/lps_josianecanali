@@ -157,7 +157,7 @@ const CourseMenopausa: React.FC = () => {
                             <Zap size={14} className="fill-white mr-1 hidden sm:block" />
                         )}
                         <span className={`uppercase tracking-wider text-[10px] sm:text-xs font-bold ${isUrgent ? 'text-yellow-300' : 'text-white'}`}>
-                            {isUrgent ? "Últimas Vagas:" : "Oferta Especial:"}
+                            {/* {isUrgent ? "Últimas Vagas:" : "Oferta Especial:"} */}
                         </span>
                     </div>
 

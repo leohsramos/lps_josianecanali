@@ -100,7 +100,7 @@ const Comunidade: React.FC = () => {
                             <Zap size={14} className="fill-white mr-1 hidden sm:block" />
                         )}
                         <span className={`uppercase tracking-wider text-[10px] sm:text-xs font-bold ${isUrgent ? 'text-yellow-300' : 'text-white'}`}>
-                            {isUrgent ? "Últimas Vagas:" : "Oferta Especial:"}
+                            {/* {isUrgent ? "Últimas Vagas:" : "Oferta Especial:"} */}
                         </span>
                     </div>
 
@@ -134,9 +134,10 @@ const Comunidade: React.FC = () => {
             <div className="animate-fade-in-up pt-[60px]">
 
                 {/* 1. Hero Section */}
-                <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-gradient-to-b from-orange-100/50 to-stone-50">
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-300/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow-200/30 rounded-full blur-[150px] pointer-events-none"></div>
+                <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-[#FDFBF7]">
+                    {/* Fogo suave no fundo */}
+                    <div className="absolute bottom-[-20%] left-[-10%] w-[120%] h-[80%] bg-gradient-to-t from-orange-600/10 via-red-500/5 to-transparent blur-[120px] pointer-events-none animate-pulse-slow"></div>
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[80%] h-[60%] bg-gradient-to-t from-yellow-500/10 via-orange-400/5 to-transparent blur-[100px] pointer-events-none animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
 
                     <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
                         <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-orange-300/50 bg-white/60 backdrop-blur-md mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
@@ -349,7 +350,7 @@ const Comunidade: React.FC = () => {
                                 A Comunidade Frequência Feminina
                             </h2>
                             <p className="text-stone-500 text-lg max-w-2xl mx-auto font-light">
-                                Não é apenas um curso. É uma jornada online criada para mulheres que sentem que precisam entender melhor o próprio corpo, as emoções e os sintomas.
+                                Não é apenas um curso. É uma comunidade viva, com grupo de apoio no WhatsApp e encontros ao vivo, desenhada para mulheres que querem entender melhor o próprio corpo, as emoções e os sintomas.
                             </p>
                         </div>
 
@@ -395,7 +396,7 @@ const Comunidade: React.FC = () => {
                                 </div>
                                 <h3 className="text-xl font-bold text-stone-900 mb-4 group-hover:text-orange-700">Como funciona?</h3>
                                 <p className="text-stone-600 leading-relaxed mb-6 text-sm flex-grow">
-                                    32 vídeos gravados para assistir no seu ritmo, exercícios semanais para consciência real, e encontros gravados em formato de "Consultório Aberto".
+                                    Vídeos e reflexões profundas sobre cada fase da mulher, com exercícios para uma jornada de 16 semanas que trará resultados espetaculares. Inclui sessões de "Consultório Aberto" ao vivo (gravadas para quem chegar depois).
                                 </p>
                             </div>
                         </div>
@@ -459,9 +460,9 @@ const Comunidade: React.FC = () => {
                                 <div className="bg-white/5 border border-white/10 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm">
                                     <p className="text-stone-400 font-bold uppercase tracking-widest text-sm mb-4">Investimento</p>
                                     
-                                    <div className="flex flex-col md:flex-row justify-center items-center md:items-end gap-2 mb-2">
-                                        <span className="text-2xl text-stone-400 font-medium mb-1 md:mb-2">12x de</span>
-                                        <span className="text-7xl md:text-8xl font-black text-orange-500 leading-none">R$ 59,88</span>
+                                    <div className="flex flex-row justify-center items-baseline gap-2 mb-2 whitespace-nowrap">
+                                        <span className="text-xl md:text-2xl text-stone-400 font-medium">12x de</span>
+                                        <span className="text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight">R$ 59,88</span>
                                     </div>
                                     <p className="text-stone-400 text-lg">ou R$ 579,00 à vista</p>
                                 </div>
@@ -496,7 +497,7 @@ const Comunidade: React.FC = () => {
                             {[
                                 { q: "Já entrei na menopausa há anos, a comunidade ainda serve?", a: "Com certeza. A comunidade acolhe e orienta sobre todas as fases, incluindo a pós-menopausa, para que você proteja seu cérebro, ossos e coração." },
                                 { q: "O conteúdo substitui uma consulta médica?", a: "Não. A comunidade é focada em educação em saúde e acolhimento. Ela te empodera com conhecimento para que você entenda seu corpo e possa discutir melhores opções com seu médico, mas não prescreve tratamentos individuais." },
-                                { q: "Eu tenho acesso aos vídeos para sempre?", a: "Ao entrar nesta temporada, você terá acesso a todo o conteúdo gravado para assistir no seu ritmo dentro da plataforma." },
+                                { q: "Eu tenho acesso à comunidade para sempre?", a: "Você terá acesso completo a esta temporada por 6 meses para assistir, revisar todo o conteúdo no seu próprio ritmo e participar da comunidade." },
                                 { q: "Como recebo o acesso?", a: "Imediatamente após a matrícula e confirmação do pagamento, você recebe um e-mail com as instruções para acessar a plataforma." }
                             ].map((item, i) => (
                                 <div key={i} className="bg-stone-50 border border-stone-100 rounded-2xl p-6 hover:border-orange-200 transition-colors shadow-sm group">
