@@ -328,26 +328,11 @@ const Comunidade: React.FC = () => {
                                 </div>
                                 
                                 <div className="relative rounded-[1.5rem] overflow-hidden border border-white/5 bg-stone-950">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent z-10 opacity-80 pointer-events-none"></div>
-                                    
                                     <img 
                                         src="https://img.ampulloo.com/josiane_canali/comunidade/1.png" 
                                         alt="Plataforma Frequência Feminina por dentro" 
                                         className="w-full h-auto object-cover transform hover:scale-[1.03] transition-transform duration-1000"
                                     />
-                                    
-                                    {/* Bottom Overlay on Image */}
-                                    <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20 bg-gradient-to-t from-stone-950 via-stone-950/90 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(234,88,12,0.5)] shrink-0">
-                                                <Play className="w-5 h-5 ml-1 fill-white" />
-                                            </div>
-                                            <div>
-                                                <p className="text-white font-bold text-lg md:text-xl">Navegação Imersiva</p>
-                                                <p className="text-orange-300 text-sm opacity-80">Acesso imediato em qualquer dispositivo</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -469,35 +454,46 @@ const Comunidade: React.FC = () => {
                 </section>
 
                 {/* 6. Identificação */}
-                <section className="py-24 bg-stone-900 text-white relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
-                    <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-                        <h2 className="text-3xl md:text-4xl font-display font-bold mb-12">
-                            Você se identifica?
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                            <div className="bg-white/10 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                                <div className="flex items-center mb-4 text-orange-300">
-                                    <AlertTriangle className="mr-3" />
-                                    <h3 className="font-bold text-lg">Exausta</h3>
+                <section className="py-32 bg-stone-950 relative overflow-hidden border-t border-white/5">
+                    <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-orange-900/10 to-transparent pointer-events-none"></div>
+                    
+                    <div className="max-w-5xl mx-auto px-4 relative z-10">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+                                Você se <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">identifica?</span>
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            {/* Bloco 1 */}
+                            <div className="relative p-10 rounded-[2.5rem] bg-gradient-to-br from-stone-900 to-stone-900/50 border border-white/5 shadow-2xl group hover:-translate-y-2 transition-transform duration-500">
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl group-hover:bg-orange-500/20 transition-colors"></div>
+                                <div className="w-16 h-16 rounded-full bg-stone-800 flex items-center justify-center border border-white/10 mb-8 shadow-inner">
+                                    <AlertTriangle className="w-8 h-8 text-orange-400" />
                                 </div>
-                                <p className="text-stone-300 font-light">
-                                    Acorda cansada, passa o dia se arrastando e sente que a memória está falhando. Acha que "está ficando velha" rápido demais.
+                                <h3 className="text-3xl font-display font-bold text-white mb-4">Exausta</h3>
+                                <p className="text-stone-400 text-lg font-light leading-relaxed">
+                                    Acorda cansada, passa o dia se arrastando e sente que a memória está falhando. No fundo, uma voz diz que você "está ficando velha" rápido demais.
                                 </p>
                             </div>
-                            <div className="bg-white/10 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                                <div className="flex items-center mb-4 text-orange-300">
-                                    <Flame className="mr-3" />
-                                    <h3 className="font-bold text-lg">Em Chamas</h3>
+
+                            {/* Bloco 2 */}
+                            <div className="relative p-10 rounded-[2.5rem] bg-gradient-to-br from-stone-900 to-stone-900/50 border border-white/5 shadow-2xl group hover:-translate-y-2 transition-transform duration-500">
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/10 rounded-full blur-3xl group-hover:bg-red-500/20 transition-colors"></div>
+                                <div className="w-16 h-16 rounded-full bg-stone-800 flex items-center justify-center border border-white/10 mb-8 shadow-inner">
+                                    <Flame className="w-8 h-8 text-red-400" />
                                 </div>
-                                <p className="text-stone-300 font-light">
-                                    Sofre com calores que atrapalham o trabalho e o sono. Evita situações sociais por medo de suar e se sentir constrangida.
+                                <h3 className="text-3xl font-display font-bold text-white mb-4">Em Chamas</h3>
+                                <p className="text-stone-400 text-lg font-light leading-relaxed">
+                                    Sofre com fogachos incontroláveis que atrapalham o trabalho, o sono e a vida social. Evita situações por puro medo do constrangimento de suar do nada.
                                 </p>
                             </div>
                         </div>
-                        <div className="mt-12">
-                            <p className="text-xl text-orange-100 italic font-serif">
-                                "Independentemente do seu sintoma, existe um caminho de volta para você mesma. E ele começa com conhecimento."
+
+                        <div className="mt-20 text-center max-w-3xl mx-auto">
+                            <div className="h-px w-24 bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto mb-10"></div>
+                            <p className="text-2xl md:text-3xl text-stone-300 italic font-serif leading-relaxed">
+                                "Independentemente da intensidade do seu sintoma, existe um caminho de volta para você mesma. E ele começa com <span className="text-orange-400 font-bold">conhecimento</span>."
                             </p>
                         </div>
                     </div>
