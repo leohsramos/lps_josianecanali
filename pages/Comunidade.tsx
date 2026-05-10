@@ -82,56 +82,7 @@ const Comunidade: React.FC = () => {
                 structuredData={courseSchema}
             />
 
-            {/* --- BARRA FIXA UNIFICADA --- */}
-            <div className={`fixed top-0 left-0 right-0 z-[100] transition-colors duration-500 text-white h-[60px] shadow-2xl flex items-center px-2 sm:px-4 justify-between border-b ${isUrgent ? 'bg-red-800 border-red-500 shadow-red-900/50' : 'bg-gradient-to-r from-orange-700 via-amber-600 to-orange-800 border-white/10'}`}>
-
-                <a href="/" className="flex items-center text-white/80 hover:text-white hover:bg-white/10 p-2 pr-4 rounded-full transition-all group shrink-0">
-                    <div className="bg-white/20 p-1.5 rounded-full group-hover:bg-white/30 transition-colors mr-2">
-                        <CornerUpLeft size={16} />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest hidden sm:inline">Voltar</span>
-                </a>
-
-                <div className="flex items-center gap-2 sm:gap-4 pointer-events-none whitespace-nowrap">
-                    <div className={`flex items-center text-white ${isUrgent ? 'animate-pulse' : ''}`}>
-                        {isUrgent ? (
-                            <AlertOctagon size={18} className="fill-yellow-500 text-red-900 mr-2 hidden sm:block animate-bounce" />
-                        ) : (
-                            <Zap size={14} className="fill-white mr-1 hidden sm:block" />
-                        )}
-                        <span className={`uppercase tracking-wider text-[10px] sm:text-xs font-bold ${isUrgent ? 'text-yellow-300' : 'text-white'}`}>
-                            {/* {isUrgent ? "Últimas Vagas:" : "Oferta Especial:"} */}
-                        </span>
-                    </div>
-
-                    <div className={`flex items-center gap-1 px-3 sm:px-4 py-1.5 rounded-xl border tabular-nums transition-all duration-500 ${isUrgent
-                        ? 'bg-red-700 border-yellow-400 text-yellow-300 shadow-[0_0_20px_rgba(255,200,0,0.4)] scale-105'
-                        : 'bg-black/20 border-white/10 text-white shadow-inner'
-                        }`}>
-                        <Timer size={16} className={`mr-2 opacity-80 hidden sm:block ${isUrgent ? 'text-yellow-300' : ''}`} />
-                        <span className="text-sm sm:text-xl font-bold font-mono">{formatTime(timeLeft.hours)}</span>
-                        <span className="text-xs opacity-70 pb-1">:</span>
-                        <span className="text-sm sm:text-xl font-bold font-mono">{formatTime(timeLeft.minutes)}</span>
-                        <span className="text-xs opacity-70 pb-1">:</span>
-                        <span className="text-sm sm:text-xl font-bold font-mono w-6 sm:w-8">{formatTime(timeLeft.seconds)}</span>
-                    </div>
-                </div>
-
-                <div className="hidden sm:block shrink-0">
-                    <button
-                        onClick={scrollToCheckout}
-                        className={`text-xs font-bold px-4 py-2 rounded-full transition-all shadow-lg transform hover:-translate-y-0.5 border ${isUrgent
-                            ? 'bg-yellow-400 text-red-900 hover:bg-yellow-300 border-yellow-200 animate-pulse'
-                            : 'bg-white text-orange-700 hover:bg-orange-50 border-orange-100'
-                            }`}
-                    >
-                        Quero Entrar
-                    </button>
-                </div>
-                <div className="w-8 sm:hidden"></div>
-            </div>
-
-            <div className="animate-fade-in-up pt-[60px]">
+            <div className="animate-fade-in-up">
 
                 {/* 1. Hero Section */}
                 <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-[#FDFBF7]">
