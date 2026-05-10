@@ -364,9 +364,9 @@ const Comunidade: React.FC = () => {
                             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white transform transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
                                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent z-10 pointer-events-none"></div>
                                 
-                                {/* AQUI O USUÁRIO DEVE TROCAR O SRC PELA FOTO HORIZONTAL DA COMUNIDADE */}
+                                {/* Imagem Horizontal da Comunidade */}
                                 <img 
-                                    src="https://placehold.co/1200x800/1c1917/ea580c?text=COLOQUE+A+FOTO+HORIZONTAL+AQUI" 
+                                    src="https://img.ampulloo.com/josiane_canali/comunidade/1.png" 
                                     alt="Plataforma Frequência Feminina por dentro" 
                                     className="w-full h-auto object-cover"
                                 />
@@ -434,9 +434,9 @@ const Comunidade: React.FC = () => {
                             <div className="relative p-2 bg-stone-900/50 rounded-[2.5rem] border border-stone-800 shadow-[0_0_50px_rgba(0,0,0,0.5)] transform transition-transform duration-700 hover:scale-[1.02] backdrop-blur-sm">
                                 <div className="absolute -inset-0.5 bg-gradient-to-b from-orange-500/50 to-red-600/50 opacity-20 blur rounded-[2.5rem]"></div>
                                 
-                                {/* AQUI O USUÁRIO DEVE TROCAR O SRC PELA FOTO VERTICAL DAS 16 SEMANAS DE FOGO */}
+                                {/* Imagem Vertical das 16 Semanas */}
                                 <img 
-                                    src="https://placehold.co/1000x1200/1c1917/ea580c?text=COLOQUE+A+FOTO+DAS+SEMANAS+AQUI" 
+                                    src="https://img.ampulloo.com/josiane_canali/comunidade/2.jpg" 
                                     alt="Módulos da Jornada de 16 Semanas" 
                                     className="relative w-full h-auto object-cover rounded-[2rem] shadow-inner"
                                 />
