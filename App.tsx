@@ -12,6 +12,7 @@ const CourseSexualidade = React.lazy(() => import('./pages/CourseSexualidade'));
 const CourseMenopausa = React.lazy(() => import('./pages/CourseMenopausa'));
 const CourseCorpo = React.lazy(() => import('./pages/CourseCorpo'));
 const Home = React.lazy(() => import('./pages/Home'));
+const FrequenciaFeminina = React.lazy(() => import('./pages/FrequenciaFeminina'));
 
 const PageLoader = () => (
     <div className="flex items-center justify-center min-h-screen bg-stone-950">
@@ -35,6 +36,9 @@ const App: React.FC = () => {
                 <Routes>
                     {/* Home — Seleção de LPs */}
                     <Route path="/" element={<Home />} />
+                    
+                    {/* Frequência Feminina LP */}
+                    <Route path="/frequencia-feminina" element={<FrequenciaFeminina />} />
 
                     {/* Imersão — com Meta Pixel 4214948072087892 */}
                     <Route path="/imersao" element={<ImersaoLPTeste />} />
