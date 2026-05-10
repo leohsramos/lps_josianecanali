@@ -293,93 +293,115 @@ const Comunidade: React.FC = () => {
                 </section>
 
                 {/* 5. A Comunidade */}
-                <section className="py-24 bg-white relative overflow-hidden">
-                    <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
-                        
-                        {/* Esquerda: Textos e Cards */}
-                        <div className="w-full lg:w-1/2">
-                            <div className="mb-12">
-                                <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Por dentro da Plataforma</span>
-                                <h2 className="text-4xl md:text-5xl font-display font-bold text-stone-900 mb-6">
-                                    A Comunidade Frequência Feminina
-                                </h2>
-                                <p className="text-stone-500 text-lg font-light leading-relaxed">
-                                    Muito além de um espaço de acolhimento, a Comunidade é um ambiente <strong>desenvolvido com rigorosa base científica</strong>. Durante 16 semanas, você seguirá uma cronologia exata de exercícios e reflexões pensados para que, ao final da jornada, você tenha clareza sobre o seu processo e saiba o caminho exato para voltar a ser a sua melhor versão.
+                <section className="py-32 bg-stone-950 relative overflow-hidden">
+                    {/* Background Ambience */}
+                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+
+                    <div className="max-w-7xl mx-auto px-4 relative z-10">
+                        {/* Header */}
+                        <div className="text-center mb-20">
+                            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 font-bold uppercase tracking-widest text-xs mb-6 shadow-[0_0_15px_rgba(234,88,12,0.2)]">
+                                Experiência Premium
+                            </div>
+                            <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8 tracking-tight">
+                                A Comunidade<br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 italic font-serif pr-2">Por Dentro</span>
+                            </h2>
+                            <p className="text-stone-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+                                Esqueça os cursos convencionais e grupos rasos. Criamos um ambiente <strong>desenvolvido com rigorosa base científica</strong>, com qualidade de cinema e navegação intuitiva para a sua melhor jornada de transformação.
+                            </p>
+                        </div>
+
+                        {/* Central Image Showcase */}
+                        <div className="relative max-w-5xl mx-auto mb-24 group perspective-1000">
+                            {/* Animated Glow */}
+                            <div className="absolute -inset-4 bg-gradient-to-r from-orange-600 to-red-600 rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-1000 animate-pulse-slow"></div>
+                            
+                            {/* Glass Frame */}
+                            <div className="relative rounded-[2rem] bg-stone-900/60 p-2 md:p-4 border border-white/10 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] transform transition-transform duration-700 hover:rotate-x-[2deg] hover:scale-[1.01]">
+                                <div className="absolute top-4 left-6 flex gap-2 z-20 hidden md:flex">
+                                    <div className="w-3 h-3 rounded-full bg-stone-600/50"></div>
+                                    <div className="w-3 h-3 rounded-full bg-stone-600/50"></div>
+                                    <div className="w-3 h-3 rounded-full bg-stone-600/50"></div>
+                                </div>
+                                
+                                <div className="relative rounded-[1.5rem] overflow-hidden border border-white/5 bg-stone-950">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent z-10 opacity-80 pointer-events-none"></div>
+                                    
+                                    <img 
+                                        src="https://img.ampulloo.com/josiane_canali/comunidade/1.png" 
+                                        alt="Plataforma Frequência Feminina por dentro" 
+                                        className="w-full h-auto object-cover transform hover:scale-[1.03] transition-transform duration-1000"
+                                    />
+                                    
+                                    {/* Bottom Overlay on Image */}
+                                    <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20 bg-gradient-to-t from-stone-950 via-stone-950/90 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(234,88,12,0.5)] shrink-0">
+                                                <Play className="w-5 h-5 ml-1 fill-white" />
+                                            </div>
+                                            <div>
+                                                <p className="text-white font-bold text-lg md:text-xl">Navegação Imersiva</p>
+                                                <p className="text-orange-300 text-sm opacity-80">Acesso imediato em qualquer dispositivo</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Bento Grid Features */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                            {/* Card 1 */}
+                            <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/40 hover:bg-white/10 transition-all duration-300 group relative overflow-hidden backdrop-blur-sm">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-colors"></div>
+                                <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-orange-400 group-hover:scale-110 transition-transform relative z-10 shadow-lg">
+                                    <Heart size={26} />
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-3 relative z-10 group-hover:text-orange-300 transition-colors">O que é?</h3>
+                                <p className="text-stone-400 text-sm leading-relaxed relative z-10">
+                                    Uma jornada de 16 semanas com conteúdo de alto nível, estruturada com rigor médico para você se reconectar consigo mesma.
                                 </p>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                {/* Card 1 */}
-                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
-                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
-                                        <Heart size={24} />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">O que é?</h3>
-                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
-                                        Uma jornada de 16 semanas com conteúdo de alto nível para você se reconectar consigo mesma.
-                                    </p>
+                            {/* Card 2 */}
+                            <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/40 hover:bg-white/10 transition-all duration-300 group relative overflow-hidden backdrop-blur-sm">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-colors"></div>
+                                <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-orange-400 group-hover:scale-110 transition-transform relative z-10 shadow-lg">
+                                    <Smile size={26} />
                                 </div>
+                                <h3 className="text-xl font-bold text-white mb-3 relative z-10 group-hover:text-orange-300 transition-colors">Para quem é?</h3>
+                                <p className="text-stone-400 text-sm leading-relaxed relative z-10">
+                                    Para mulheres cansadas de respostas rasas, que precisam de orientação segura e apoio real frente às mudanças do corpo.
+                                </p>
+                            </div>
 
-                                {/* Card 2 */}
-                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
-                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
-                                        <Smile size={24} />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">Para quem é?</h3>
-                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
-                                        Para mulheres cansadas de respostas rasas e que precisam de orientação médica segura e apoio real.
-                                    </p>
+                            {/* Card 3 */}
+                            <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/40 hover:bg-white/10 transition-all duration-300 group relative overflow-hidden backdrop-blur-sm">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-colors"></div>
+                                <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-orange-400 group-hover:scale-110 transition-transform relative z-10 shadow-lg">
+                                    <CheckCircle size={26} />
                                 </div>
+                                <h3 className="text-xl font-bold text-white mb-3 relative z-10 group-hover:text-orange-300 transition-colors">O que resolve?</h3>
+                                <p className="text-stone-400 text-sm leading-relaxed relative z-10">
+                                    O sentimento de "não ser mais eu". Traz clareza sobre o corpo, sintomas e direcionamento assertivo para tratamentos.
+                                </p>
+                            </div>
 
-                                {/* Card 3 */}
-                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
-                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
-                                        <CheckCircle size={24} />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">O que resolve?</h3>
-                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
-                                        O sentimento de "não ser mais eu". Traz clareza sobre o corpo e direcionamento para tratamentos.
-                                    </p>
+                            {/* Card 4 */}
+                            <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/40 hover:bg-white/10 transition-all duration-300 group relative overflow-hidden backdrop-blur-sm">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-colors"></div>
+                                <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-orange-400 group-hover:scale-110 transition-transform relative z-10 shadow-lg">
+                                    <MessageCircle size={26} />
                                 </div>
-
-                                {/* Card 4 */}
-                                <div className="bg-stone-50 p-6 rounded-3xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300 group shadow-sm flex flex-col">
-                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
-                                        <MessageCircle size={24} />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-700">Como funciona?</h3>
-                                    <p className="text-stone-600 text-sm leading-relaxed flex-grow">
-                                        Vídeos e reflexões profundas, exercícios cronológicos e "Consultório Aberto" ao vivo.
-                                    </p>
-                                </div>
+                                <h3 className="text-xl font-bold text-white mb-3 relative z-10 group-hover:text-orange-300 transition-colors">Como funciona?</h3>
+                                <p className="text-stone-400 text-sm leading-relaxed relative z-10">
+                                    Aulas cinematográficas, reflexões profundas, exercícios práticos e sessões de "Consultório Aberto" ao vivo.
+                                </p>
                             </div>
                         </div>
-
-                        {/* Direita: Imagem da Comunidade (Placeholder) */}
-                        <div className="w-full lg:w-1/2 relative">
-                            {/* Glow de Fundo */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-yellow-300/20 blur-3xl rounded-full transform translate-y-10"></div>
-                            
-                            {/* Container da Imagem com Efeito */}
-                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white transform transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
-                                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent z-10 pointer-events-none"></div>
-                                
-                                {/* Imagem Horizontal da Comunidade */}
-                                <img 
-                                    src="https://img.ampulloo.com/josiane_canali/comunidade/1.png" 
-                                    alt="Plataforma Frequência Feminina por dentro" 
-                                    className="w-full h-auto object-cover"
-                                />
-                                
-                                <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center text-white shadow-lg animate-pulse">
-                                        <Play className="w-4 h-4 ml-1" />
-                                    </div>
-                                    <span className="text-white font-bold tracking-widest text-sm uppercase drop-shadow-md">Interface Premium</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </section>
 
