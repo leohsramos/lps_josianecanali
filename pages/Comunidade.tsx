@@ -310,7 +310,7 @@ const Comunidade: React.FC = () => {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 italic font-serif pr-2">Por Dentro</span>
                             </h2>
                             <p className="text-stone-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
-                                Esqueça os cursos convencionais e grupos rasos. Criamos um ambiente <strong>desenvolvido com rigorosa base científica</strong>, com qualidade de cinema e navegação intuitiva para a sua melhor jornada de transformação.
+                                Criamos um ambiente <strong>desenvolvido com rigorosa base científica</strong>, com qualidade de cinema e navegação intuitiva para a sua melhor jornada de transformação.
                             </p>
                         </div>
 
