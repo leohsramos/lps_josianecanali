@@ -100,7 +100,7 @@ const Comunidade: React.FC = () => {
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-stone-900 mb-8 leading-[1.1] tracking-tight text-balance">
-                            Descubra como voltar a ser<br className="hidden md:block" />
+                            Descubra como voltar a ser <br className="hidden md:block" />
                             a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">sua melhor versão.</span>
                         </h1>
 
