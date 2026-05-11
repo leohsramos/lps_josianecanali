@@ -68,7 +68,7 @@ const Comunidade: React.FC = () => {
     const scrollToCheckout = () => {
         const element = document.getElementById('checkout');
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
 
