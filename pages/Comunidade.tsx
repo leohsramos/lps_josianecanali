@@ -507,25 +507,53 @@ const Comunidade: React.FC = () => {
                             
                             {/* Conteúdo Oferta */}
                             <div className="w-full p-10 md:p-16 relative z-10 text-center">
-                                <div className="inline-block px-4 py-1.5 rounded-full border border-orange-500/50 bg-orange-500/10 text-orange-400 font-bold uppercase text-xs mb-6">
-                                    Inscrições Abertas
+                                <div className="flex flex-col items-center gap-3 mb-6">
+                                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black uppercase text-xs tracking-widest shadow-[0_0_20px_rgba(245,158,11,0.5)] animate-pulse-slow">
+                                        <Flame size={14} className="shrink-0" />
+                                        Oferta de Lançamento
+                                        <Flame size={14} className="shrink-0" />
+                                    </div>
+                                    <div className="inline-block px-4 py-1.5 rounded-full border border-orange-500/50 bg-orange-500/10 text-orange-400 font-bold uppercase text-xs">
+                                        Inscrições Abertas
+                                    </div>
                                 </div>
                                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
                                     1ª Temporada:<br className="hidden md:block"/> Jornada de 16 Semanas
                                 </h2>
-                                
+
                                 <p className="text-stone-400 text-lg mb-10 max-w-2xl mx-auto">
                                     Não espere "passar" para voltar a viver bem. Faça parte da Comunidade Frequência Feminina e tenha o direcionamento e acolhimento que você merece.
                                 </p>
 
-                                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm">
-                                    <p className="text-stone-400 font-bold uppercase tracking-widest text-sm mb-4">Investimento</p>
-                                    
-                                    <div className="flex flex-row justify-center items-baseline gap-1 sm:gap-2 mb-2 whitespace-nowrap">
-                                        <span className="text-lg sm:text-xl md:text-2xl text-stone-400 font-medium">12x de</span>
-                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight">R$ 59,88</span>
+                                <div className="relative bg-white/5 border border-amber-500/30 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.1)]">
+                                    {/* Badge de economia */}
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+                                        Economize R$ 90,00
                                     </div>
-                                    <p className="text-stone-400 text-lg">ou R$ 579,00 à vista</p>
+
+                                    <p className="text-amber-400 font-black uppercase tracking-widest text-xs mb-5 flex items-center justify-center gap-2">
+                                        <Flame size={13} /> Preço de Lançamento <Flame size={13} />
+                                    </p>
+
+                                    {/* Preço original riscado */}
+                                    <div className="flex items-center justify-center gap-2 mb-3">
+                                        <span className="text-stone-500 text-sm uppercase tracking-widest">De</span>
+                                        <span className="text-stone-500 text-2xl font-bold line-through decoration-red-500 decoration-2">R$ 669,00</span>
+                                    </div>
+
+                                    {/* Preço atual à vista */}
+                                    <div className="flex items-center justify-center gap-2 mb-1">
+                                        <span className="text-stone-400 text-base uppercase tracking-widest">Por apenas</span>
+                                    </div>
+                                    <div className="flex flex-row justify-center items-baseline gap-1 sm:gap-2 mb-3 whitespace-nowrap">
+                                        <span className="text-lg sm:text-xl md:text-2xl text-stone-300 font-medium">12x de</span>
+                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]">R$ 59,88</span>
+                                    </div>
+                                    <p className="text-stone-300 text-lg font-semibold">ou <span className="text-white">R$ 579,00</span> à vista</p>
+
+                                    <div className="mt-5 pt-5 border-t border-white/10 text-stone-500 text-xs uppercase tracking-widest">
+                                        Oferta válida por tempo limitado
+                                    </div>
                                 </div>
 
                                 <div className="max-w-md mx-auto">
