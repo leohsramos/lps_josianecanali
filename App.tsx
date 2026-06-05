@@ -13,6 +13,8 @@ const CourseMenopausa = React.lazy(() => import('./pages/CourseMenopausa'));
 const CourseCorpo = React.lazy(() => import('./pages/CourseCorpo'));
 const Home = React.lazy(() => import('./pages/Home'));
 const Comunidade = React.lazy(() => import('./pages/Comunidade'));
+const Comunidade1 = React.lazy(() => import('./pages/Comunidade1'));
+const Comunidade2 = React.lazy(() => import('./pages/Comunidade2'));
 
 const PageLoader = () => (
     <div className="flex items-center justify-center min-h-screen bg-stone-950">
@@ -39,6 +41,10 @@ const App: React.FC = () => {
                     
                     {/* Comunidade Frequência Feminina LP */}
                     <Route path="/comunidade" element={<Comunidade />} />
+                    {/* Variação de hero sem foto da Dra. Josi */}
+                    <Route path="/comunidade-1" element={<Comunidade1 />} />
+                    {/* Variação sem vídeo no hero */}
+                    <Route path="/comunidade-2" element={<Comunidade2 />} />
 
                     {/* Imersão — com Meta Pixel 4214948072087892 */}
                     <Route path="/imersao" element={<ImersaoLPTeste />} />
