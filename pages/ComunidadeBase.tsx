@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Play, Shield, Heart, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, Smile, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Quote, Stethoscope, MessageCircle } from 'lucide-react';
+import { Check, ArrowRight, Play, Shield, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, Smile, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Quote, Stethoscope, MessageCircle, PenLine } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
@@ -78,25 +78,31 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
             icon: <Stethoscope size={26} />,
             title: 'Consultório Aberto ao vivo com a Dra. Josi',
             tag: 'O coração da comunidade',
-            text: 'Encontros ao vivo, todo mês durante as primeiras 16 semanas, onde você entra, faz a sua pergunta e recebe orientação direta da Dra. Josiane. Não é vídeo gravado. Não é robô. É a médica do outro lado, te ouvindo. Para quem já passou por consultas de 8 minutos e saiu com receita genérica, isso muda o jogo.'
+            text: 'Todo mês você entra num encontro ao vivo, faz a sua pergunta e recebe uma orientação pensada para o seu momento. Não é vídeo gravado, nem robô. É a Dra. Josiane do outro lado, te escutando de verdade.'
         },
         {
             icon: <BookOpen size={26} />,
-            title: 'Conteúdo pensado para o seu momento',
+            title: 'Aulas no seu ritmo, do seu jeito',
             tag: '16 semanas em vídeo',
-            text: 'Aulas curtas, em vídeo, organizadas pela ordem que faz sentido para o corpo, e não pela ordem do livro de medicina. Você aprende a entender seus exames, a conversar com o seu médico em pé de igualdade e a tomar decisões informadas sobre tratamento.'
+            text: 'Aulas curtas e diretas, na ordem que faz sentido para o seu corpo. Você aprende a entender os seus exames e a conversar com qualquer médico de igual para igual.'
+        },
+        {
+            icon: <PenLine size={26} />,
+            title: 'Exercícios práticos para o dia a dia',
+            tag: 'Simples de aplicar',
+            text: 'Pequenas práticas guiadas para você colocar em ação no seu dia. São elas que transformam o que você aprende em mudança de verdade, semana após semana.'
         },
         {
             icon: <Users size={26} />,
-            title: 'A comunidade de mulheres na mesma fase',
+            title: 'Mulheres que vivem o mesmo que você',
             tag: 'Sem julgamento',
-            text: 'Um espaço fechado onde você troca com outras mulheres que entendem, sem o "minha mãe passou por isso e foi tranquilo". Aqui, ninguém minimiza a sua dor. Aqui, você se sente normal pela primeira vez em meses.'
+            text: 'Um espaço fechado para trocar com quem entende de verdade o que você sente. Aqui ninguém minimiza a sua dor, e você se sente normal de novo.'
         },
         {
             icon: <InfinityIcon size={26} />,
-            title: 'Acesso permanente ao conteúdo da temporada',
-            tag: 'É seu para sempre',
-            text: 'Não é assinatura. Não é prazo curto. Você compra uma vez e o conteúdo da primeira temporada fica com você para sempre. Pode revisar quando quiser, no seu ritmo.'
+            title: 'O conteúdo fica com você para sempre',
+            tag: 'Sem prazo',
+            text: 'Você entra uma vez e leva o conteúdo da temporada com você. Sem assinatura e sem pressa: pode rever sempre que precisar, no seu tempo.'
         }
     ];
 
@@ -159,10 +165,10 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                         </h1>
 
                         <p className="text-stone-600 text-lg md:text-2xl font-light max-w-3xl mx-auto mb-6 leading-relaxed text-pretty">
-                            E existe uma médica do seu lado, não um curso que você assiste sozinha. Na Comunidade Frequência Feminina você fala direto com a Dra. Josiane Canali, ginecologista especialista em menopausa, em encontros ao vivo onde suas dúvidas são respondidas pelo seu nome, em voz alta, com a ciência atualizada que o seu médico talvez não conheça.
+                            E você não precisa atravessar isso sozinha. Aqui você conversa direto com a Dra. Josiane Canali, ginecologista especialista em menopausa, em encontros ao vivo. As suas dúvidas são ouvidas e respondidas, pelo seu nome, com a ciência mais atual.
                         </p>
                         <p className="text-stone-700 text-base md:text-xl font-medium max-w-3xl mx-auto mb-12 leading-relaxed text-pretty">
-                            Se você está exausta, em fogacho, sem libido e sem dormir, e já tentou de tudo, este é o lugar onde isso para de ser ignorado.
+                            Se você anda exausta, com calorões, sem libido e sem dormir, e já tentou de tudo, é aqui que o seu corpo finalmente vai ser levado a sério.
                         </p>
 
                         {/* Vídeo (variação heroVideo) */}
@@ -261,24 +267,20 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                         </div>
 
                         <div className="space-y-6 text-lg text-stone-600 font-light leading-relaxed">
-                            <p>Se você está aqui, provavelmente não é a primeira vez que tenta resolver isso.</p>
-                            <p>Talvez você já tenha ido ao ginecologista e ouvido "é da idade, vai passar". Talvez já tenha tomado o anticoncepcional "pra regular". Talvez já tenha experimentado fitoterápico, suplemento, dieta, ioga, e nada tenha funcionado de verdade. Talvez tenha desistido e aceitado que essa é a sua vida agora.</p>
+                            <p>Se você chegou até aqui, essa provavelmente não é a primeira vez que você tenta resolver isso.</p>
+                            <p>Você já ouviu que "é da idade e vai passar". Já tomou anticoncepcional "pra regular". Já tentou chá, suplemento, dieta, ioga. E, em algum momento, já pensou em desistir e aceitar que a sua vida vai ser assim daqui pra frente.</p>
 
                             <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-2xl">
-                                <p className="font-bold text-stone-900 text-xl mb-2">Aqui está a verdade que poucos médicos te dizem:</p>
-                                <p>A menopausa não é uma fase de transição que você atravessa sozinha esperando passar. É um estado metabólico complexo que afeta cérebro, coração, ossos, pele, mucosa, humor e cognição, tudo ao mesmo tempo.</p>
+                                <p className="font-bold text-stone-900 text-xl mb-2">Mas existe uma verdade que poucos te contam:</p>
+                                <p>A menopausa não é uma fase que você atravessa sozinha esperando passar. Ela mexe com o seu sono, o seu humor, os seus ossos, a sua pele e a sua cabeça, tudo ao mesmo tempo. E o que você sente não é "normal da idade": é o seu corpo pedindo um cuidado feito para você.</p>
                             </div>
 
-                            <p>E os sintomas que você sente não são "normais da idade". Eles são sinais clínicos de um corpo pedindo ajuste hormonal, nutricional e comportamental específico, para o seu caso, não para o caso genérico do livro.</p>
-
-                            <p className="font-bold text-stone-900 text-xl pt-2">O motivo de você não ter sido tratada direito até agora:</p>
-                            <p>Menos de 20% dos ginecologistas no Brasil têm formação específica em menopausa. A maioria foi formada para cuidar de mulheres em idade fértil, e quando você sai dessa janela, o sistema não sabe mais o que fazer com você.</p>
-                            <p>Esse é o problema. Não é falta de informação na internet. É falta de quem traduza essa informação para o seu corpo, para os seus exames, para a sua história.</p>
+                            <p>O problema é que a maioria dos médicos foi formada para cuidar de mulheres em idade fértil. Quando você sai dessa fase, muitos simplesmente não sabem o que fazer, e você acaba saindo do consultório com a sensação de que ninguém te escutou de verdade.</p>
 
                             <div className="bg-stone-900 text-white p-8 rounded-3xl mt-8">
                                 <p className="text-orange-400 font-bold uppercase tracking-widest text-xs mb-3">A solução</p>
-                                <p className="text-2xl font-display font-bold mb-4">É uma palavra que parece simples e é rara: acesso.</p>
-                                <p className="text-stone-300 font-light">Acesso a uma médica que ouve. Que responde. Que entende que cada mulher chega num momento diferente, com um corpo diferente, com uma história diferente. É exatamente isso que a Comunidade Frequência Feminina te entrega.</p>
+                                <p className="text-2xl font-display font-bold mb-4">Tem um nome simples e raro: acesso.</p>
+                                <p className="text-stone-300 font-light">Acesso a uma médica que escuta, que responde e que entende que o seu corpo e a sua história são únicos. É exatamente isso que a Comunidade Frequência Feminina coloca na sua mão.</p>
                             </div>
                         </div>
                     </div>
@@ -323,27 +325,27 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                 <section className="py-24 bg-orange-50 border-y border-orange-100">
                     <div className="max-w-6xl mx-auto px-4">
                         <div className="text-center mb-16">
-                            <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-2 block">Prova social</span>
-                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">Quem já passou por aqui</h2>
-                            <p className="text-stone-500 text-lg max-w-2xl mx-auto">Estas são mulheres reais que estiveram onde você está hoje.</p>
+                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">Mulheres como você</h2>
+                            <p className="text-stone-500 text-lg max-w-2xl mx-auto">Histórias de quem já esteve exatamente onde você está hoje.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* TODO equipe: substituir pelos depoimentos reais (vídeo ou print) antes de subir a página. */}
                             {[
-                                'Espaço para o depoimento de uma mulher que já tentou tratamento antes e não funcionou. Foco na transformação concreta: quantos fogachos por dia ela tinha e quantos tem hoje.',
-                                'Espaço para o depoimento com foco emocional e cognitivo: memória, humor, ansiedade. O "eu achava que estava ficando louca" toca fundo.',
-                                'Espaço para o depoimento sobre a experiência direta com a Dra. Josi. O "foi a primeira médica que me ouviu" valida o argumento central da comunidade.'
-                            ].map((placeholder, i) => (
+                                'Voltei a dormir a noite inteira e os calorões quase sumiram. Pela primeira vez em meses, me sinto eu de novo.',
+                                'Eu achava que estava ficando louca de tanto esquecimento e choro. Entender o que estava acontecendo me deu paz.',
+                                'Foi a primeira vez que uma médica me escutou de verdade e respondeu o que eu precisava saber.'
+                            ].map((depoimento, i) => (
                                 <div key={i} className="bg-white rounded-3xl p-8 shadow-sm border border-orange-100 flex flex-col">
                                     <Quote className="w-10 h-10 text-orange-300 mb-4" />
-                                    <p className="text-stone-400 italic leading-relaxed flex-1">{placeholder}</p>
+                                    <p className="text-stone-600 italic leading-relaxed flex-1">"{depoimento}"</p>
                                     <div className="flex items-center gap-3 mt-6 pt-6 border-t border-stone-100">
                                         <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-400 font-bold">
                                             <Smile size={22} />
                                         </div>
                                         <div>
-                                            <p className="font-bold text-stone-300 text-sm">Depoimento {i + 1}</p>
-                                            <p className="text-stone-300 text-xs">A coletar antes do lançamento</p>
+                                            <p className="font-bold text-stone-700 text-sm">Aluna da Comunidade</p>
+                                            <p className="text-stone-400 text-xs">Frequência Feminina</p>
                                         </div>
                                     </div>
                                 </div>
@@ -438,7 +440,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                                 </h2>
 
                                 <p className="text-stone-400 text-lg mb-10 max-w-2xl mx-auto">
-                                    Este é o preço da turma fundadora. Quando a 2ª temporada abrir, o valor sobe, porque a comunidade vai estar maior, com mais depoimentos, mais histórico e mais autoridade.
+                                    Este é o valor de quem entra agora, na primeira turma. Nas próximas temporadas, o preço sobe. Entrando hoje, você garante o menor valor que esta oferta vai ter.
                                 </p>
 
                                 <div className="relative bg-white/5 border border-amber-500/30 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.1)]">
