@@ -1,11 +1,10 @@
 import React from 'react';
 import ComunidadeBase from './ComunidadeBase';
 
-// Variação de hero SEM a foto da Dra. Josi (mantém o vídeo).
+// Variação B: hero com a foto da Dra. Josi (sem vídeo).
 const Comunidade1: React.FC = () => (
     <ComunidadeBase
-        heroPhoto={false}
-        heroVideo={true}
+        heroMedia="photo"
         canonicalUrl="https://lp.institutocanali.com/comunidade-1"
     />
 );

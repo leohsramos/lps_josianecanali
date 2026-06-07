@@ -10,15 +10,13 @@ const DRA_JOSI_PHOTO = 'https://i.postimg.cc/26Q0fGqj/HDS-9361-2.jpg';
 const VIDEO_THUMB = 'https://i.postimg.cc/dV8Yx0gw/CAPAS_DE_CURSO_10.png';
 
 interface ComunidadeBaseProps {
-    /** Exibe a foto da Dra. Josi no hero. */
-    heroPhoto?: boolean;
-    /** Exibe o vídeo de vendas no hero. */
-    heroVideo?: boolean;
+    /** Mídia exibida no hero: 'video' (só vídeo), 'photo' (só foto da Dra) ou 'none' (só texto). */
+    heroMedia?: 'video' | 'photo' | 'none';
     /** URL canônica desta variação (para SEO). */
     canonicalUrl: string;
 }
 
-const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroVideo = true, canonicalUrl }) => {
+const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', canonicalUrl }) => {
     const [playVideo, setPlayVideo] = useState(false);
     const videoId = 'uBoRw_-nD68';
 
@@ -171,8 +169,8 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                             Se você anda exausta, com calorões, sem libido e sem dormir, e já tentou de tudo, é aqui que o seu corpo finalmente vai ser levado a sério.
                         </p>
 
-                        {/* Vídeo (variação heroVideo) */}
-                        {heroVideo && (
+                        {/* Variação 1: vídeo no hero */}
+                        {heroMedia === 'video' && (
                             <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden bg-white shadow-2xl shadow-orange-900/10 border-4 border-white group mb-10 transform hover:scale-[1.01] transition-transform duration-500">
                                 {!playVideo ? (
                                     <div className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer bg-stone-100" onClick={() => setPlayVideo(true)}>
@@ -191,27 +189,27 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                             </div>
                         )}
 
-                        {/* Foto da Dra. Josi (variação heroPhoto) */}
-                        {heroPhoto && (
-                            heroVideo ? (
-                                // Quando há vídeo, a foto entra como cartão de credibilidade compacto.
-                                <div className="inline-flex items-center gap-4 bg-white border border-orange-100 rounded-full pl-2 pr-6 py-2 shadow-lg mb-10">
-                                    <img src={DRA_JOSI_PHOTO} alt="Dra. Josiane Canali" className="w-14 h-14 rounded-full object-cover object-top border-2 border-orange-200" loading="lazy" decoding="async" />
-                                    <div className="text-left">
-                                        <p className="text-stone-900 font-bold text-sm leading-tight">Quem fala com você: Dra. Josiane Canali</p>
-                                        <p className="text-stone-500 text-xs leading-tight">Ginecologista especialista em menopausa</p>
-                                    </div>
+                        {/* Variação 2: foto da Dra. Josi no hero */}
+                        {heroMedia === 'photo' && (
+                            <div className="relative w-full max-w-sm mx-auto mb-10">
+                                <div className="absolute inset-0 bg-white rounded-[2.5rem] rotate-3 transform translate-y-3 shadow-lg"></div>
+                                <img src={DRA_JOSI_PHOTO} alt="Dra. Josiane Canali, ginecologista especialista em menopausa" className="relative rounded-[2.5rem] shadow-2xl w-full object-cover aspect-[4/5]" loading="lazy" decoding="async" />
+                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-5 py-2 rounded-full shadow-md text-center whitespace-nowrap">
+                                    <p className="text-stone-900 font-bold text-sm leading-tight">Dra. Josiane Canali</p>
+                                    <p className="text-stone-500 text-[11px] leading-tight">Especialista em menopausa</p>
                                 </div>
-                            ) : (
-                                // Sem vídeo, a foto vira a mídia principal do hero.
-                                <div className="relative w-full max-w-md mx-auto mb-10">
-                                    <div className="absolute inset-0 bg-white rounded-[2.5rem] rotate-3 transform translate-y-3 shadow-lg"></div>
-                                    <img src={DRA_JOSI_PHOTO} alt="Dra. Josiane Canali, ginecologista especialista em menopausa" className="relative rounded-[2.5rem] shadow-2xl w-full object-cover aspect-[4/5]" loading="lazy" decoding="async" />
-                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-5 py-2 rounded-full shadow-md whitespace-nowrap">
-                                        <p className="text-stone-900 font-bold text-sm">Dra. Josiane Canali</p>
-                                    </div>
-                                </div>
-                            )
+                            </div>
+                        )}
+
+                        {/* Variação 3: hero sem mídia, faixa de credibilidade */}
+                        {heroMedia === 'none' && (
+                            <div className="flex flex-wrap justify-center gap-3 mb-10">
+                                {['Ginecologista especialista em menopausa', 'Encontros ao vivo todo mês', 'Mulheres em mais de 5 países'].map((item, i) => (
+                                    <span key={i} className="inline-flex items-center gap-2 bg-white border border-orange-100 rounded-full px-5 py-2 shadow-sm text-stone-700 text-sm font-medium">
+                                        <Check size={15} className="text-green-600 shrink-0" /> {item}
+                                    </span>
+                                ))}
+                            </div>
                         )}
 
                         <div className="flex flex-col items-center">
@@ -250,7 +248,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
 
                         <div className="mt-16 bg-gradient-to-r from-orange-900/50 to-red-900/50 p-8 rounded-2xl border border-orange-500/30 text-center max-w-3xl mx-auto backdrop-blur-sm">
                             <p className="text-xl italic text-white font-serif">
-                                "Nenhuma mulher merece passar por isso e se contentar. A medicina tem respostas, e eu vou te mostrar o caminho para viver a sua fase de forma plena."
+                                "Nenhuma mulher precisa se contentar com isso. A medicina tem resposta, e o meu trabalho é te mostrar o caminho."
                             </p>
                         </div>
                     </div>
@@ -436,11 +434,11 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                                     </div>
                                 </div>
                                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                                    Entre pelo menor valor <br className="hidden md:block" /> que esta oferta vai ter
+                                    Entre hoje pelo menor valor <br className="hidden md:block" /> que esta oferta vai ter
                                 </h2>
 
                                 <p className="text-stone-400 text-lg mb-10 max-w-2xl mx-auto">
-                                    Este é o valor de quem entra agora, na primeira turma. Nas próximas temporadas, o preço sobe. Entrando hoje, você garante o menor valor que esta oferta vai ter.
+                                    Este é o preço de quem entra com a primeira turma. A cada nova temporada, ele sobe.
                                 </p>
 
                                 <div className="relative bg-white/5 border border-amber-500/30 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.1)]">
@@ -504,7 +502,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroPhoto = true, heroV
                         </div>
                         <div className="w-full lg:w-1/2">
                             <div className="inline-block px-4 py-1 bg-white text-orange-700 rounded-full font-bold text-xs uppercase tracking-widest mb-6 border border-orange-200 shadow-sm">
-                                Quem é a Dra. Josiane Canali
+                                Quem vai te acompanhar
                             </div>
                             <h2 className="text-4xl lg:text-5xl font-display font-bold text-stone-900 mb-6">Dra. Josiane Canali</h2>
                             <div className="space-y-6 text-lg text-stone-600 font-light leading-relaxed">
