@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Play, Shield, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, Smile, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Quote, Stethoscope, MessageCircle, PenLine } from 'lucide-react';
+import { Check, ArrowRight, ArrowDown, X, Play, Shield, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, Smile, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Quote, Stethoscope, MessageCircle, PenLine } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
@@ -356,34 +356,43 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                 </section>
 
                 {/* SESSÃO 6 - ANTES E DEPOIS */}
-                <section className="py-24 bg-white">
-                    <div className="max-w-5xl mx-auto px-4">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">O que muda quando você entra</h2>
+                <section className="py-24 bg-gradient-to-b from-white to-orange-50/40">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <div className="text-center mb-14">
+                            <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-3 block">A sua virada</span>
+                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900">O que muda quando você entra</h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-4">
-                                <div className="text-center mb-2">
-                                    <span className="inline-block px-5 py-2 rounded-full bg-stone-100 text-stone-500 font-bold uppercase tracking-widest text-xs">Antes</span>
-                                </div>
-                                {antesDepois.map((row, i) => (
-                                    <div key={i} className="bg-stone-50 border border-stone-100 rounded-2xl p-5 text-stone-600 font-light min-h-[88px] flex items-center">
-                                        {row.antes}
+                        <div className="space-y-5">
+                            {antesDepois.map((row, i) => (
+                                <div key={i} className="group flex flex-col md:flex-row items-stretch bg-white rounded-[1.75rem] border border-stone-100 shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+                                    {/* Antes */}
+                                    <div className="flex-1 p-6 md:p-7 bg-stone-50/80">
+                                        <span className="inline-flex items-center gap-2 text-stone-400 font-bold uppercase tracking-widest text-[11px] mb-3">
+                                            <span className="w-5 h-5 rounded-full bg-stone-200 flex items-center justify-center"><X size={11} className="text-stone-500" /></span>
+                                            Antes
+                                        </span>
+                                        <p className="text-stone-500 font-light leading-relaxed">{row.antes}</p>
                                     </div>
-                                ))}
-                            </div>
-                            <div className="space-y-4">
-                                <div className="text-center mb-2">
-                                    <span className="inline-block px-5 py-2 rounded-full bg-green-100 text-green-700 font-bold uppercase tracking-widest text-xs">Depois</span>
-                                </div>
-                                {antesDepois.map((row, i) => (
-                                    <div key={i} className="bg-green-50 border border-green-100 rounded-2xl p-5 text-stone-800 font-medium min-h-[88px] flex items-center gap-3">
-                                        <Check className="w-5 h-5 text-green-600 shrink-0" />
-                                        {row.depois}
+
+                                    {/* Conector */}
+                                    <div className="flex items-center justify-center bg-white relative z-10 py-1 md:py-0 md:px-1">
+                                        <div className="w-11 h-11 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 text-white flex items-center justify-center shadow-lg ring-4 ring-white -my-3 md:my-0 md:-mx-3 group-hover:scale-110 transition-transform">
+                                            <ArrowDown size={18} className="md:hidden" />
+                                            <ArrowRight size={18} className="hidden md:block" />
+                                        </div>
                                     </div>
-                                ))}
-                            </div>
+
+                                    {/* Depois */}
+                                    <div className="flex-1 p-6 md:p-7 bg-gradient-to-br from-green-50 to-emerald-50/60">
+                                        <span className="inline-flex items-center gap-2 text-green-700 font-bold uppercase tracking-widest text-[11px] mb-3">
+                                            <span className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center"><Check size={11} className="text-white" /></span>
+                                            Depois
+                                        </span>
+                                        <p className="text-stone-800 font-semibold leading-relaxed">{row.depois}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
