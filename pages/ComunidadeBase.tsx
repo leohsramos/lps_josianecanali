@@ -236,9 +236,9 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="flex flex-wrap justify-center gap-6">
                             {sintomas.map((s, i) => (
-                                <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors group">
+                                <div key={i} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors group">
                                     <div className="mb-6 group-hover:scale-110 transition-transform">{s.icon}</div>
                                     <h3 className="text-xl font-bold mb-3 text-orange-100">{s.title}</h3>
                                     <p className="text-stone-400 text-sm leading-relaxed">{s.text}</p>
