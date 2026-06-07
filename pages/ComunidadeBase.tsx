@@ -156,10 +156,13 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                             <span className="text-orange-800 font-bold tracking-widest uppercase text-[10px] sm:text-xs">Comunidade Frequência Feminina</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-stone-900 mb-8 leading-[1.1] tracking-tight text-balance">
-                            Você não tem que <br className="hidden md:block" />
-                            aceitar viver assim. <br className="hidden md:block" />
-                            Existe medicina por trás da <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">menopausa.</span>
+                        <h1 className="font-display font-bold text-stone-900 mb-8 tracking-tight text-balance max-w-4xl mx-auto">
+                            <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-stone-700 mb-4 leading-snug">
+                                Você não tem que aceitar viver assim.
+                            </span>
+                            <span className="block text-4xl md:text-6xl lg:text-7xl leading-[1.05]">
+                                Existe medicina por trás da <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">menopausa.</span>
+                            </span>
                         </h1>
 
                         <p className="text-stone-600 text-lg md:text-2xl font-light max-w-3xl mx-auto mb-6 leading-relaxed text-pretty">
