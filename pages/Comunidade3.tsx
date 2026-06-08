@@ -215,8 +215,9 @@ const Comunidade3: React.FC = () => {
             {/* ===== PROVA SOCIAL (scroll horizontal) ===== */}
             <section className="py-24 bg-stone-950 overflow-hidden">
                 <div className="max-w-5xl mx-auto px-5 mb-10">
-                    <p className="text-orange-400 font-bold tracking-[0.25em] uppercase text-xs mb-3">Não acredite em mim</p>
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white">Acredite nelas.</h2>
+                    <p className="text-orange-400 font-bold tracking-[0.25em] uppercase text-xs mb-3">Pacientes da Dra. Josiane</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white">Não acredite em mim. Acredite nelas.</h2>
+                    <p className="text-stone-400 mt-3">Mensagens reais de mulheres que a Dra. Josiane já atende. Esse é o cuidado que vem com você.</p>
                 </div>
                 <div className="flex gap-5 overflow-x-auto px-5 pb-6 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                     {DEPOIMENTOS.map((src, i) => (
@@ -228,7 +229,7 @@ const Comunidade3: React.FC = () => {
                         >
                             <img
                                 src={src}
-                                alt={`Depoimento de aluna ${i + 1}`}
+                                alt={`Depoimento de paciente da Dra. Josiane Canali ${i + 1}`}
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full rounded-2xl border border-white/10 shadow-lg group-hover:border-orange-500/40 transition-colors"

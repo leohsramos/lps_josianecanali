@@ -9,7 +9,7 @@ const WHATSAPP_URL = 'https://wa.me/5500000000000';
 const DRA_JOSI_PHOTO = 'https://i.postimg.cc/26Q0fGqj/HDS-9361-2.jpg';
 const VIDEO_THUMB = 'https://i.postimg.cc/dV8Yx0gw/CAPAS_DE_CURSO_10.png';
 
-// Prints reais de depoimentos das alunas (Sessão 5).
+// Prints reais de depoimentos de pacientes da Dra. Josiane Canali (Sessão 5).
 const DEPOIMENTOS_BASE = 'https://pub-9928dd4f81074a80bf263d6f5ead726e.r2.dev/josiane_canali/comunidade/depoimentos/';
 const DEPOIMENTOS = [
     'PHOTO-2026-05-11-18-30-05.jpg',
@@ -339,9 +339,9 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                 <section className="py-24 bg-orange-50 border-y border-orange-100">
                     <div className="max-w-6xl mx-auto px-4">
                         <div className="text-center mb-14">
-                            <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-3 block">Mulheres como você</span>
-                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">Quem já vive isso por aqui</h2>
-                            <p className="text-stone-500 text-lg max-w-2xl mx-auto">Mensagens reais de mulheres que estavam exatamente onde você está hoje. Toque para ampliar.</p>
+                            <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-3 block">Quem já é cuidada pela Dra. Josi</span>
+                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">O que dizem as pacientes dela</h2>
+                            <p className="text-stone-500 text-lg max-w-2xl mx-auto">Mensagens reais de pacientes da Dra. Josiane Canali. É esse mesmo cuidado que você leva para dentro da comunidade. Toque para ampliar.</p>
                         </div>
 
                         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
@@ -354,7 +354,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                                 >
                                     <img
                                         src={src}
-                                        alt={`Depoimento de aluna da Comunidade Frequência Feminina ${i + 1}`}
+                                        alt={`Depoimento de paciente da Dra. Josiane Canali ${i + 1}`}
                                         loading="lazy"
                                         decoding="async"
                                         className="w-full rounded-2xl border border-orange-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-0.5 transition-all duration-300 bg-white"

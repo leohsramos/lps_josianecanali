@@ -252,15 +252,15 @@ const Comunidade4: React.FC = () => {
             <section className="py-24 bg-white border-y border-stone-100">
                 <div className="max-w-5xl mx-auto px-5">
                     <div className="text-center mb-12">
-                        <p className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-3">Quem já vive isto por aqui</p>
-                        <h2 className="text-3xl md:text-5xl font-display font-bold">Elas chegaram exaustas. Olha o que mudou.</h2>
-                        <p className="text-stone-500 text-lg mt-4">Mensagens reais de mulheres da comunidade. Toque para ampliar.</p>
+                        <p className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-3">Pacientes da Dra. Josiane</p>
+                        <h2 className="text-3xl md:text-5xl font-display font-bold">Chegaram exaustas até ela. Olha o que mudou.</h2>
+                        <p className="text-stone-500 text-lg mt-4">Mensagens reais de pacientes da Dra. Josiane Canali. É esse cuidado que você leva para dentro da comunidade. Toque para ampliar.</p>
                     </div>
 
                     <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
                         {DEPOIMENTOS.map((src, i) => (
                             <button key={i} type="button" onClick={() => setLightbox(src)} className="mb-4 block w-full break-inside-avoid group cursor-zoom-in focus:outline-none">
-                                <img src={src} alt={`Depoimento de aluna ${i + 1}`} loading="lazy" decoding="async" className="w-full rounded-2xl border border-stone-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-0.5 transition-all duration-300" />
+                                <img src={src} alt={`Depoimento de paciente da Dra. Josiane Canali ${i + 1}`} loading="lazy" decoding="async" className="w-full rounded-2xl border border-stone-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-0.5 transition-all duration-300" />
                             </button>
                         ))}
                     </div>
