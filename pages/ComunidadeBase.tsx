@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, ArrowDown, X, Play, Shield, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, Smile, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Quote, Stethoscope, MessageCircle, PenLine } from 'lucide-react';
+import { Check, ArrowRight, ArrowDown, X, Play, Shield, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Stethoscope, MessageCircle, PenLine } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
@@ -8,6 +8,18 @@ const WHATSAPP_URL = 'https://wa.me/5500000000000';
 
 const DRA_JOSI_PHOTO = 'https://i.postimg.cc/26Q0fGqj/HDS-9361-2.jpg';
 const VIDEO_THUMB = 'https://i.postimg.cc/dV8Yx0gw/CAPAS_DE_CURSO_10.png';
+
+// Prints reais de depoimentos das alunas (Sessão 5).
+const DEPOIMENTOS_BASE = 'https://pub-9928dd4f81074a80bf263d6f5ead726e.r2.dev/josiane_canali/comunidade/depoimentos/';
+const DEPOIMENTOS = [
+    'PHOTO-2026-05-11-18-30-05.jpg',
+    'PHOTO-2026-05-11-18-30-05 2.jpg',
+    'PHOTO-2026-05-11-18-30-05 3.jpg',
+    'PHOTO-2026-05-11-18-30-05 4.jpg',
+    'PHOTO-2026-05-11-18-30-05 5.jpg',
+    'PHOTO-2026-05-11-18-30-05 6.jpg',
+    'PHOTO-2026-05-11-18-30-05 7.jpg'
+].map((file) => DEPOIMENTOS_BASE + encodeURIComponent(file));
 
 interface ComunidadeBaseProps {
     /** Mídia exibida no hero: 'video' (só vídeo), 'photo' (só foto da Dra) ou 'none' (só texto). */
@@ -18,6 +30,7 @@ interface ComunidadeBaseProps {
 
 const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', canonicalUrl }) => {
     const [playVideo, setPlayVideo] = useState(false);
+    const [lightbox, setLightbox] = useState<string | null>(null);
     const videoId = 'uBoRw_-nD68';
 
     const courseSchema = {
@@ -325,31 +338,28 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                 {/* SESSÃO 5 - PROVA SOCIAL */}
                 <section className="py-24 bg-orange-50 border-y border-orange-100">
                     <div className="max-w-6xl mx-auto px-4">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">Mulheres como você</h2>
-                            <p className="text-stone-500 text-lg max-w-2xl mx-auto">Histórias de quem já esteve exatamente onde você está hoje.</p>
+                        <div className="text-center mb-14">
+                            <span className="text-orange-600 font-bold tracking-widest uppercase text-xs mb-3 block">Mulheres como você</span>
+                            <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-4">Quem já vive isso por aqui</h2>
+                            <p className="text-stone-500 text-lg max-w-2xl mx-auto">Mensagens reais de mulheres que estavam exatamente onde você está hoje. Toque para ampliar.</p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {/* TODO equipe: substituir pelos depoimentos reais (vídeo ou print) antes de subir a página. */}
-                            {[
-                                'Voltei a dormir a noite inteira e os calorões quase sumiram. Pela primeira vez em meses, me sinto eu de novo.',
-                                'Eu achava que estava ficando louca de tanto esquecimento e choro. Entender o que estava acontecendo me deu paz.',
-                                'Foi a primeira vez que uma médica me escutou de verdade e respondeu o que eu precisava saber.'
-                            ].map((depoimento, i) => (
-                                <div key={i} className="bg-white rounded-3xl p-8 shadow-sm border border-orange-100 flex flex-col">
-                                    <Quote className="w-10 h-10 text-orange-300 mb-4" />
-                                    <p className="text-stone-600 italic leading-relaxed flex-1">"{depoimento}"</p>
-                                    <div className="flex items-center gap-3 mt-6 pt-6 border-t border-stone-100">
-                                        <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-400 font-bold">
-                                            <Smile size={22} />
-                                        </div>
-                                        <div>
-                                            <p className="font-bold text-stone-700 text-sm">Aluna da Comunidade</p>
-                                            <p className="text-stone-400 text-xs">Frequência Feminina</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
+                            {DEPOIMENTOS.map((src, i) => (
+                                <button
+                                    key={i}
+                                    type="button"
+                                    onClick={() => setLightbox(src)}
+                                    className="mb-5 block w-full break-inside-avoid group cursor-zoom-in focus:outline-none"
+                                >
+                                    <img
+                                        src={src}
+                                        alt={`Depoimento de aluna da Comunidade Frequência Feminina ${i + 1}`}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full rounded-2xl border border-orange-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-0.5 transition-all duration-300 bg-white"
+                                    />
+                                </button>
                             ))}
                         </div>
                     </div>
@@ -588,6 +598,31 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                 </footer>
 
             </div>
+
+            {/* Lightbox dos depoimentos */}
+            {lightbox && (
+                <div
+                    onClick={() => setLightbox(null)}
+                    className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 cursor-zoom-out animate-fade-in"
+                    role="dialog"
+                    aria-modal="true"
+                >
+                    <button
+                        type="button"
+                        onClick={() => setLightbox(null)}
+                        aria-label="Fechar"
+                        className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors"
+                    >
+                        <X size={32} />
+                    </button>
+                    <img
+                        src={lightbox}
+                        alt="Depoimento ampliado"
+                        className="max-h-[90vh] max-w-full w-auto rounded-2xl shadow-2xl object-contain"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
         </div>
     );
 };
