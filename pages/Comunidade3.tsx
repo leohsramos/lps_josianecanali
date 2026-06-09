@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Check, Plus, Minus, Shield, X } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackViewContent, trackInitiateCheckout } from '../components/track';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
 // ATENÇÃO: troque pelo número real de atendimento da equipe (formato wa.me/55DDDNUMERO)
@@ -70,6 +71,9 @@ const Comunidade3: React.FC = () => {
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
+    // Meta Pixel: marca a visualização da página da Comunidade.
+    useEffect(() => { trackViewContent(); }, []);
 
     const toggle = (i: number) =>
         setChecked((prev) => (prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]));
@@ -308,7 +312,7 @@ const Comunidade3: React.FC = () => {
                             <p className="text-stone-300 mt-2">ou <span className="text-white font-semibold">R$ 579</span> à vista</p>
                         </div>
 
-                        <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full py-5 rounded-2xl font-bold text-lg uppercase tracking-wide flex items-center justify-center`}>
+                        <a href={CHECKOUT_URL} onClick={trackInitiateCheckout} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full py-5 rounded-2xl font-bold text-lg uppercase tracking-wide flex items-center justify-center`}>
                             Quero entrar agora
                         </a>
 

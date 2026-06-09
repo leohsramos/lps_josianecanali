@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, ArrowRight, ArrowDown, X, Play, Shield, Loader2, CheckCircle, Flame, ThermometerSun, Brain, Sparkles, HeartPulse, BookOpen, Users, Infinity as InfinityIcon, HelpCircle, Stethoscope, MessageCircle, PenLine } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackViewContent, trackInitiateCheckout } from '../components/track';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
 // ATENÇÃO: troque pelo número real de atendimento da equipe (formato wa.me/55DDDNUMERO)
@@ -31,6 +32,9 @@ interface ComunidadeBaseProps {
 const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', canonicalUrl }) => {
     const [playVideo, setPlayVideo] = useState(false);
     const [lightbox, setLightbox] = useState<string | null>(null);
+
+    // Meta Pixel: marca a visualização da página da Comunidade.
+    useEffect(() => { trackViewContent(); }, []);
     const videoId = 'uBoRw_-nD68';
 
     const courseSchema = {
@@ -484,7 +488,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                                 </div>
 
                                 <div className="max-w-md mx-auto">
-                                    <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full font-bold py-6 rounded-2xl transition-all transform hover:scale-[1.02] flex items-center justify-center text-xl uppercase tracking-wide`}>
+                                    <a href={CHECKOUT_URL} onClick={trackInitiateCheckout} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full font-bold py-6 rounded-2xl transition-all transform hover:scale-[1.02] flex items-center justify-center text-xl uppercase tracking-wide`}>
                                         QUERO ENTRAR AGORA
                                     </a>
                                 </div>

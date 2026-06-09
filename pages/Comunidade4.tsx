@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Check, X, Plus, Minus, Shield, Star, Lock, Brain, Stethoscope, Users } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackViewContent, trackInitiateCheckout } from '../components/track';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
 // ATENÇÃO: troque pelo número real de atendimento da equipe (formato wa.me/55DDDNUMERO)
@@ -109,6 +110,9 @@ const Comunidade4: React.FC = () => {
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
+    // Meta Pixel: marca a visualização da página da Comunidade.
+    useEffect(() => { trackViewContent(); }, []);
 
     const goCheckout = () => {
         const el = document.getElementById('oferta');
@@ -384,7 +388,7 @@ const Comunidade4: React.FC = () => {
                         <p className="text-center text-orange-700 text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-3">
                             Turma fundadora · vagas limitadas · valor de fundadora só nesta temporada
                         </p>
-                        <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full py-5 rounded-2xl font-bold text-lg uppercase tracking-wide flex items-center justify-center`}>
+                        <a href={CHECKOUT_URL} onClick={trackInitiateCheckout} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full py-5 rounded-2xl font-bold text-lg uppercase tracking-wide flex items-center justify-center`}>
                             Quero entrar agora
                         </a>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, CheckCheck, Send, Shield, X, ArrowDown, Phone, Video } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackViewContent, trackInitiateCheckout } from '../components/track';
 
 const CHECKOUT_URL = 'https://pay.kiwify.com.br/vouQr4v';
 // ATENÇÃO: troque pelo número real de atendimento da equipe (formato wa.me/55DDDNUMERO)
@@ -41,6 +42,9 @@ const Reveal: React.FC<{ children: React.ReactNode; className?: string }> = ({ c
 
 const Comunidade5: React.FC = () => {
     const [lightbox, setLightbox] = useState<string | null>(null);
+
+    // Meta Pixel: marca a visualização da página da Comunidade.
+    useEffect(() => { trackViewContent(); }, []);
 
     const goCheckout = () => {
         const el = document.getElementById('oferta');
@@ -188,7 +192,7 @@ const Comunidade5: React.FC = () => {
 
                     {/* Botão CTA estilo resposta */}
                     <Reveal className="flex justify-end mb-2.5">
-                        <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-2xl rounded-tr-md px-5 py-3 shadow-lg font-bold text-[15px] flex items-center gap-2 hover:from-green-500 hover:to-emerald-500 transition-colors">
+                        <a href={CHECKOUT_URL} onClick={trackInitiateCheckout} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-2xl rounded-tr-md px-5 py-3 shadow-lg font-bold text-[15px] flex items-center gap-2 hover:from-green-500 hover:to-emerald-500 transition-colors">
                             Quero entrar na comunidade <Check size={16} className="opacity-80" />
                         </a>
                     </Reveal>
@@ -235,7 +239,7 @@ const Comunidade5: React.FC = () => {
 
                 {/* Barra de "responder" fixa (CTA) */}
                 <div className="sticky bottom-0 z-30 bg-[#f0f0f0] border-t border-stone-300 px-3 py-2.5">
-                    <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <a href={CHECKOUT_URL} onClick={trackInitiateCheckout} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                         <div className="flex-1 bg-white rounded-full px-4 py-2.5 text-stone-400 text-sm shadow-inner">
                             Responder à Dra. Josiane...
                         </div>
