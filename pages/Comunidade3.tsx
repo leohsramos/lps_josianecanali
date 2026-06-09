@@ -29,6 +29,13 @@ const CHECKLIST = [
     'Sinto que não sou mais eu'
 ];
 
+// Método nomeado (PDF Reescrita das Sessões): 3 pilares que tornam o conteúdo proprietário.
+const PILARES = [
+    { n: '01', t: 'Entender', d: 'A medicina real dessa fase: o que está acontecendo com seus hormônios, seu cérebro, seus ossos e seu coração. Você para de adivinhar e passa a saber.' },
+    { n: '02', t: 'Ler', d: 'Você aprende a interpretar seus próprios exames e sinais. Nunca mais sai de uma consulta sem entender, nem depende de quem não te escuta. Você passa a falar de igual para igual com qualquer médico.' },
+    { n: '03', t: 'Aplicar', d: 'Pequenas ações guiadas para o seu dia, sustentadas pelo consultório aberto ao vivo e pela comunidade. É o que transforma o que você entende em mudança de verdade.' }
+];
+
 const ENTREGAVEIS = [
     { n: '01', t: 'Consultório Aberto ao vivo', d: 'Todo mês você entra, faz a sua pergunta e a Dra. Josiane responde pelo seu nome. Não é gravação. É a médica do outro lado, te escutando.' },
     { n: '02', t: 'Aulas curtas, no seu ritmo', d: 'Na ordem que faz sentido para o seu corpo. Você aprende a ler os seus exames e a falar de igual para igual com qualquer médico.' },
@@ -115,8 +122,11 @@ const Comunidade3: React.FC = () => {
                         </span>
                     </h1>
 
-                    <p className="text-stone-300 text-lg md:text-2xl font-light max-w-2xl leading-relaxed mb-10">
+                    <p className="text-stone-300 text-lg md:text-2xl font-light max-w-2xl leading-relaxed mb-6">
                         Existe medicina por trás da menopausa. E existe uma médica pronta para te escutar ao vivo, pelo seu nome, com a ciência que o seu médico talvez não conheça.
+                    </p>
+                    <p className="text-stone-400 text-base md:text-lg italic max-w-2xl leading-relaxed mb-10 border-l-2 border-orange-500/40 pl-4">
+                        Na Comunidade Frequência Feminina você entra para um consultório aberto ao vivo todo mês, uma jornada em vídeo no seu ritmo e um grupo de mulheres que vivem exatamente o que você vive.
                     </p>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4">
@@ -188,16 +198,37 @@ const Comunidade3: React.FC = () => {
                 </div>
             </section>
 
-            {/* ===== ISTO NÃO É UM CURSO ===== */}
+            {/* ===== MÉTODO FREQUÊNCIA + ENTREGAS ===== */}
             <section className="py-28 bg-[#FDFBF7] text-stone-900">
                 <div className="max-w-5xl mx-auto px-5">
-                    <div className="mb-16 max-w-2xl">
+                    <div className="mb-14 max-w-2xl">
+                        <p className="text-orange-600 font-bold tracking-[0.25em] uppercase text-xs mb-4">O que faltava em tudo que você tentou</p>
                         <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-5">
-                            Isto não é mais <span className="line-through decoration-red-500 decoration-4 text-stone-400">um curso</span> pra você assistir sozinha.
+                            Não existe fórmula mágica. <span className={accent}>Existe método.</span>
                         </h2>
-                        <p className="text-stone-600 text-lg">É acesso. A uma médica que ouve, a um conteúdo feito para o seu corpo e a mulheres que vivem o mesmo que você.</p>
+                        <p className="text-stone-600 text-lg">
+                            Tudo na Comunidade Frequência Feminina segue o <strong>Método Frequência</strong>, o caminho que leva você de "não sei mais o que está acontecendo comigo" para "eu entendo o meu corpo e decido com ele".
+                        </p>
                     </div>
 
+                    {/* 3 pilares do método */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-24">
+                        {PILARES.map((p, i) => (
+                            <div key={i} className="bg-white rounded-[1.75rem] border border-stone-200 p-7 shadow-sm">
+                                <div className="flex items-baseline gap-3 mb-3">
+                                    <span className={`text-3xl font-display font-bold ${accent}`}>{p.n}</span>
+                                    <h3 className="text-2xl font-bold">{p.t}</h3>
+                                </div>
+                                <p className="text-stone-600 leading-relaxed">{p.d}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Como acontece na prática */}
+                    <div className="mb-10 max-w-2xl">
+                        <h3 className="text-2xl md:text-4xl font-display font-bold mb-3">Como o Método Frequência acontece na prática</h3>
+                        <p className="text-stone-600 text-lg">Não é mais um curso pra você assistir sozinha. É acesso de verdade, todo mês.</p>
+                    </div>
                     <div className="divide-y divide-stone-200 border-t border-stone-200">
                         {ENTREGAVEIS.map((e, i) => (
                             <div key={i} className="flex gap-6 md:gap-10 py-8 group">

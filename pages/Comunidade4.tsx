@@ -66,6 +66,30 @@ const ANCORAGEM = [
     { item: 'Acesso permanente ao conteúdo da temporada', valor: 'R$ 400', bonus: true }
 ];
 
+// Legendas de transformação, uma por print (PDF Blocos Extras).
+// ATENÇÃO: a ordem deve casar com o que cada print realmente mostra. Reordene se necessário.
+const LEGENDAS = [
+    'De noites encharcada de suor a dormir a noite inteira de novo.',
+    'Achava que estava enlouquecendo. Era hormônio, e tinha solução.',
+    'Passou por seis médicos. Foi ouvida pela primeira vez aqui.',
+    'Voltou a se reconhecer no espelho.',
+    'O desejo não tinha sumido pra sempre. Só faltava quem soubesse cuidar.',
+    'Chegou exausta. Hoje tem energia pra própria vida de novo.',
+    'Aprendeu a ler os próprios exames. Nunca mais saiu de uma consulta no escuro.'
+];
+
+const PRA_QUEM_E = [
+    'Você está no climatério, na perimenopausa, na menopausa ou na pós, e quer entender o que está acontecendo com o seu corpo.',
+    'Você está cansada de ser ouvida pela metade e quer uma médica que te acompanhe de verdade, mês a mês.',
+    'Você topa participar: assistir, perguntar, estar perto de outras mulheres.'
+];
+
+const PRA_QUEM_NAO = [
+    'Você procura uma pílula mágica que resolve tudo da noite pro dia. Aqui a gente cuida com ciência e com tempo, não com milagre.',
+    'Você quer uma consulta individual com prescrição. A comunidade é educação e acolhimento, ela não substitui o seu atendimento médico.',
+    'Você quer só assistir de longe, sem se envolver. O que transforma aqui é participar.'
+];
+
 const FAQ = [
     { q: 'Já estou na menopausa há anos. Ainda serve pra mim?', a: 'Serve. A comunidade acolhe todas as fases: climatério, perimenopausa, menopausa e pós-menopausa. Depois da menopausa, cuidar de cérebro, ossos e coração fica ainda mais importante.' },
     { q: 'Isso substitui a consulta médica?', a: 'Não. É educação em saúde e acolhimento. O Consultório Aberto te orienta e te prepara para fazer as perguntas certas. Exames, prescrição e tratamento individual seguem com o seu médico.' },
@@ -248,6 +272,40 @@ const Comunidade4: React.FC = () => {
                 </div>
             </section>
 
+            {/* ===== FILTRO: PRA QUEM É / PRA QUEM NÃO É ===== */}
+            <section className="py-24 bg-stone-950 text-white">
+                <div className="max-w-4xl mx-auto px-5">
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-12">Isto é pra você. Ou talvez não.</h2>
+                    <div className="grid md:grid-cols-2 gap-5">
+                        <div className="bg-green-500/5 border border-green-500/20 rounded-[2rem] p-7 md:p-8">
+                            <h3 className="text-green-400 font-bold text-lg mb-6">É pra você se</h3>
+                            <ul className="space-y-4">
+                                {PRA_QUEM_E.map((t, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <span className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shrink-0 mt-0.5"><Check size={14} className="text-white" /></span>
+                                        <span className="text-stone-200 leading-relaxed">{t}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="bg-white/5 border border-white/10 rounded-[2rem] p-7 md:p-8">
+                            <h3 className="text-stone-300 font-bold text-lg mb-6">Não é pra você se</h3>
+                            <ul className="space-y-4">
+                                {PRA_QUEM_NAO.map((t, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <span className="w-6 h-6 rounded-full bg-stone-700 flex items-center justify-center shrink-0 mt-0.5"><X size={14} className="text-stone-300" /></span>
+                                        <span className="text-stone-400 leading-relaxed">{t}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <p className="text-center text-stone-200 text-lg md:text-xl font-medium mt-10">
+                        Se você se reconheceu na primeira lista, a sua vaga está te esperando.
+                    </p>
+                </div>
+            </section>
+
             {/* ===== PROVA SOCIAL ===== */}
             <section className="py-24 bg-white border-y border-stone-100">
                 <div className="max-w-5xl mx-auto px-5">
@@ -259,8 +317,13 @@ const Comunidade4: React.FC = () => {
 
                     <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
                         {DEPOIMENTOS.map((src, i) => (
-                            <button key={i} type="button" onClick={() => setLightbox(src)} className="mb-4 block w-full break-inside-avoid group cursor-zoom-in focus:outline-none">
-                                <img src={src} alt={`Depoimento de paciente da Dra. Josiane Canali ${i + 1}`} loading="lazy" decoding="async" className="w-full rounded-2xl border border-stone-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-0.5 transition-all duration-300" />
+                            <button key={i} type="button" onClick={() => setLightbox(src)} className="mb-4 block w-full break-inside-avoid group cursor-zoom-in focus:outline-none text-left">
+                                <div className="rounded-2xl border border-stone-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-0.5 transition-all duration-300 overflow-hidden bg-white">
+                                    <img src={src} alt={`Depoimento de paciente da Dra. Josiane Canali ${i + 1}`} loading="lazy" decoding="async" className="w-full" />
+                                    <p className="text-stone-700 text-sm font-medium leading-snug p-4 border-t border-stone-100">
+                                        <span className="text-orange-500 font-bold">“</span>{LEGENDAS[i]}<span className="text-orange-500 font-bold">”</span>
+                                    </p>
+                                </div>
                             </button>
                         ))}
                     </div>
@@ -275,6 +338,17 @@ const Comunidade4: React.FC = () => {
                             Turma fundadora, 1ª temporada
                         </span>
                         <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900">Tudo isto, por menos de um café por dia</h2>
+                    </div>
+
+                    {/* Escassez honesta, amarrada ao mecanismo */}
+                    <div className="bg-stone-950 text-white rounded-[1.75rem] p-7 md:p-8 mb-6">
+                        <h3 className="text-xl font-display font-bold text-orange-400 mb-3">Por que a 1ª temporada é limitada</h3>
+                        <p className="text-stone-300 leading-relaxed mb-3">
+                            O Consultório Aberto só funciona se a Dra. Josiane conseguir te responder pelo seu nome, ao vivo. Por isso a turma fundadora tem vagas limitadas. Quando elas acabam, a entrada fecha até a próxima temporada.
+                        </p>
+                        <p className="text-stone-300 leading-relaxed">
+                            Quem entra agora entra pelo valor de fundadora: R$ 579. Na próxima temporada, esse valor sobe. Você não está só garantindo a sua vaga. Está garantindo o preço que não volta.
+                        </p>
                     </div>
 
                     <div className="bg-white rounded-[2rem] border border-stone-200 shadow-xl p-7 md:p-9">
@@ -307,6 +381,9 @@ const Comunidade4: React.FC = () => {
                             <p className="text-stone-600 mt-2">ou <span className="text-stone-900 font-bold">R$ 579</span> à vista</p>
                         </div>
 
+                        <p className="text-center text-orange-700 text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-3">
+                            Turma fundadora · vagas limitadas · valor de fundadora só nesta temporada
+                        </p>
                         <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full py-5 rounded-2xl font-bold text-lg uppercase tracking-wide flex items-center justify-center`}>
                             Quero entrar agora
                         </a>
@@ -403,7 +480,10 @@ const Comunidade4: React.FC = () => {
                     <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
                         O próximo ano pode ser <span className={accent}>completamente diferente.</span>
                     </h2>
-                    <p className="text-stone-400 text-xl mb-10">Voltar a dormir, voltar a desejar, voltar a se reconhecer. Começa agora.</p>
+                    <p className="text-stone-400 text-xl mb-6">Voltar a dormir, voltar a desejar, voltar a se reconhecer. Começa agora.</p>
+                    <p className="text-orange-400 text-sm md:text-base font-semibold max-w-xl mx-auto mb-10">
+                        As vagas da turma fundadora são limitadas. Quando fecharem, a próxima porta só abre na próxima temporada.
+                    </p>
                     <button onClick={goCheckout} className={`${greenBtn} px-12 py-6 rounded-full font-bold text-xl inline-flex items-center group`}>
                         Quero entrar na comunidade
                         <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
