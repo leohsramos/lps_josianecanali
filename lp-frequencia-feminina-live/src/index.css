@@ -1,0 +1,35 @@
+@import '@fontsource-variable/fraunces/wght.css';
+@import '@fontsource-variable/fraunces/wght-italic.css';
+@import '@fontsource-variable/inter/wght.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #14100d;
+  color: #e8dcc8;
+  font-feature-settings: 'ss01' 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #c9a15c;
+  color: #14100d;
+}
+
+:focus-visible {
+  outline: 2px solid #c9a15c;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
