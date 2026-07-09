@@ -189,6 +189,10 @@ const AulaMenopausa: React.FC = () => {
                             </div>
                         ))}
                     </div>
+
+                    <div className="text-center mt-14">
+                        <CTAButton origin="aula-menopausa-entenda" />
+                    </div>
                 </div>
             </section>
 
@@ -213,9 +217,11 @@ const AulaMenopausa: React.FC = () => {
                         ))}
                     </div>
 
-                    <p className="text-xl md:text-2xl font-display italic">
+                    <p className="text-xl md:text-2xl font-display italic mb-12">
                         Você não está exagerando. E não precisa continuar sem entender o motivo.
                     </p>
+
+                    <CTAButton origin="aula-menopausa-e-pra-voce" />
                 </div>
             </section>
 
