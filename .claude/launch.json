@@ -6,6 +6,12 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-c", "cd lp-frequencia-feminina-live && npm run dev -- --port 5183 --strictPort"],
       "port": 5183
+    },
+    {
+      "name": "lps-josianecanali",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5174", "--strictPort"],
+      "port": 5174
     }
   ]
 }
