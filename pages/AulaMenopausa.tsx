@@ -99,7 +99,7 @@ const AulaMenopausa: React.FC = () => {
             />
 
             {/* HERO */}
-            <section className="relative min-h-screen flex flex-col justify-center px-4 pt-28 pb-16 overflow-hidden bg-gradient-to-b from-rose-50 via-stone-50 to-stone-50">
+            <section className="relative min-h-screen flex flex-col justify-center px-4 pt-[2.8rem] pb-16 overflow-hidden bg-gradient-to-b from-rose-50 via-stone-50 to-stone-50">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-rose-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
                 <div className="relative z-10 w-full flex justify-center mb-10">
