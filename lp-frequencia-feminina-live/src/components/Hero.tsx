@@ -16,7 +16,7 @@ export default function Hero() {
           />
 
           <Reveal>
-            <span className="relative inline-block font-sans text-xs uppercase tracking-eyebrow text-dourado">
+            <span className="relative inline-block font-sans text-xs font-semibold uppercase tracking-eyebrow text-dourado">
               Menopausa, identidade e o que ninguém te explicou
             </span>
           </Reveal>
@@ -48,7 +48,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.3} className="mt-4">
-            <p className="font-sans text-sm text-champagne/55">
+            <p className="font-sans text-sm tracking-wide text-champagne/55">
               Vagas limitadas. Entrada via grupo no WhatsApp.
             </p>
           </Reveal>

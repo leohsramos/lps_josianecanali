@@ -20,7 +20,7 @@ export default {
       },
       fontFamily: {
         serif: ['"Instrument Serif"', '"Fraunces Variable"', 'Georgia', 'serif'],
-        sans: ['"Inter Variable"', 'system-ui', 'sans-serif'],
+        sans: ['"Montserrat Variable"', 'Poppins', 'sans-serif'],
       },
       letterSpacing: {
         eyebrow: '0.22em',
@@ -36,7 +36,7 @@ export default {
         },
         marquee: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-12.5%)' },
         },
       },
       animation: {

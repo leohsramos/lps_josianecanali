@@ -29,9 +29,12 @@ export default function DoctorPhoto() {
       </motion.div>
 
       <p className="mt-4 text-center font-sans text-sm leading-relaxed text-champagne/70 md:text-left">
-        Dra. Josiane Canali <span className="text-champagne/40">|</span> Ginecologista e Obstetra
+        <span className="font-medium text-champagne/90">Dra. Josiane Canali</span>{' '}
+        <span className="text-champagne/40">|</span> Ginecologista e Obstetra
         <br />
-        CRM PR 40.088 <span className="text-champagne/40">|</span> RQE 4.382
+        <span className="text-xs tracking-wide text-champagne/50">
+          CRM PR 40.088 <span className="text-champagne/35">|</span> RQE 4.382
+        </span>
       </p>
     </div>
   );

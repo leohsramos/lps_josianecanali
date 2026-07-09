@@ -19,7 +19,7 @@ export default function FinalCta() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <p className="mt-5 font-sans text-sm leading-relaxed text-champagne/55">
+          <p className="mt-5 font-sans text-sm tracking-wide leading-relaxed text-champagne/55">
             Grupo silencioso. Apenas avisos da Dra. Josiane e conteúdos da aula.
             <br />
             Saída livre a qualquer momento.

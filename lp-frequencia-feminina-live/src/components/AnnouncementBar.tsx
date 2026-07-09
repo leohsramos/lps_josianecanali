@@ -2,7 +2,7 @@ import { useReducedMotion } from 'framer-motion';
 
 function MarqueeContent() {
   return (
-    <span className="mx-8 inline-flex shrink-0 items-center gap-2 font-sans text-[11px] uppercase tracking-eyebrow text-champagne/80 md:text-xs">
+    <span className="mx-8 inline-flex shrink-0 items-center gap-2 font-sans text-[11px] font-medium uppercase tracking-eyebrow text-champagne/80 md:text-xs">
       <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-dourado" />
       Aula ao vivo e gratuita sobre menopausa <span className="text-champagne/40">·</span> 5 de
       agosto <span className="text-champagne/40">·</span> Horário a confirmar
@@ -24,8 +24,11 @@ export default function AnnouncementBar() {
   return (
     <div className="w-full overflow-hidden border-b border-dourado/15 bg-carvao/95 py-2.5 backdrop-blur">
       <div className="flex w-max animate-marquee">
-        <MarqueeContent />
-        <MarqueeContent />
+        {/* 8 cópias garantem que a faixa nunca fique vazia, mesmo em telas ultra-wide;
+            o keyframe translada exatamente 1/8 da largura total (uma cópia) por ciclo. */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <MarqueeContent key={i} />
+        ))}
       </div>
     </div>
   );
