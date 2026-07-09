@@ -92,7 +92,7 @@ const AulaMenopausa: React.FC = () => {
                 title="Aula ao vivo e gratuita sobre Menopausa | Dra. Josiane Canali"
                 description="Aula ao vivo e gratuita com a Dra. Josiane Canali sobre climatério e menopausa, no dia 5 de agosto. Entenda sono, libido, humor e identidade nessa fase. Entrada via grupo no WhatsApp."
                 url="https://www.josianecanali.com.br/aula-menopausa"
-                image="https://img.ampulloo.com/josiane_canali/HDS_9199.JPEG"
+                image="https://www.josianecanali.com.br/josiane-canali-aula-menopausa.webp"
             />
 
             {/* HERO */}
@@ -103,28 +103,20 @@ const AulaMenopausa: React.FC = () => {
                     <EventBadge />
                 </div>
 
-                <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-14 items-center">
-                    {/* Text column */}
-                    <div className="min-w-0 text-center lg:text-left flex flex-col items-center lg:items-start order-2 lg:order-1">
-                        <div className="w-full">
-                            <Headline />
-                        </div>
-
-                        <p className="text-stone-600 text-lg max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
-                            Aula ao vivo e <strong className="font-semibold text-stone-800">gratuita</strong> com a <strong className="font-semibold text-stone-800">Dra. Josiane Canali</strong> sobre climatério e menopausa. Entenda por que o sono piorou, a libido caiu, o humor mudou e você sente que não é mais você. Dia <strong className="font-semibold text-stone-800">5 de agosto</strong>.
-                        </p>
-
-                        <div>
-                            <CTAButton origin="aula-menopausa-hero" />
-                            <p className="text-stone-400 text-xs mt-4 font-medium">Vagas limitadas. Entrada via grupo no WhatsApp.</p>
-                        </div>
+                {/* Mobile order: título, foto, texto/CTA. Desktop: título+texto numa coluna, foto na outra. */}
+                <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-14 lg:gap-y-0 items-center [grid-template-areas:'headline'_'photo'_'text'] lg:[grid-template-areas:'headline_photo'_'text_photo']">
+                    {/* Headline */}
+                    <div className="[grid-area:headline] w-full text-center lg:text-left">
+                        <Headline />
                     </div>
 
                     {/* Photo column */}
-                    <div className="order-1 lg:order-2 flex flex-col items-center">
+                    <div className="[grid-area:photo] flex flex-col items-center">
                         <img
-                            src="https://img.ampulloo.com/josiane_canali/HDS_9199.JPEG"
+                            src="/josiane-canali-aula-menopausa.webp"
                             alt="Dra. Josiane Canali, ginecologista e obstetra, sorrindo sentada"
+                            width={800}
+                            height={1000}
                             className="w-full max-w-sm aspect-[4/5] object-cover rounded-[2.5rem] shadow-2xl border-4 border-white"
                             loading="eager"
                             decoding="async"
@@ -133,6 +125,18 @@ const AulaMenopausa: React.FC = () => {
                         <div className="text-center mt-5">
                             <p className="font-bold text-stone-900 text-lg">Dra. Josiane Canali | Ginecologista</p>
                             <p className="text-stone-500 text-sm">CRM PR 40.088 | RQE 4.382</p>
+                        </div>
+                    </div>
+
+                    {/* Text + CTA */}
+                    <div className="[grid-area:text] min-w-0 text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <p className="text-stone-600 text-lg max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
+                            Aula ao vivo e <strong className="font-semibold text-stone-800">gratuita</strong> com a <strong className="font-semibold text-stone-800">Dra. Josiane Canali</strong> sobre climatério e menopausa. Entenda por que o sono piorou, a libido caiu, o humor mudou e você sente que não é mais você. Dia <strong className="font-semibold text-stone-800">5 de agosto</strong>.
+                        </p>
+
+                        <div>
+                            <CTAButton origin="aula-menopausa-hero" />
+                            <p className="text-stone-400 text-xs mt-4 font-medium">Vagas limitadas. Entrada via grupo no WhatsApp.</p>
                         </div>
                     </div>
                 </div>
