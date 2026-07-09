@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { MessageCircle, Moon, HeartCrack, ShieldCheck, Flame, Radio, Lock, Bell, Sparkles } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/SUBSTITUIR_LINK_DO_GRUPO';
+const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/JAM6mnlMVMaDO8vMxAL9Oz?mode=gi_t';
 
 // Encolhe o(s) texto(s) marcado(s) com data-fit-line até caberem em uma única linha dentro
 // da largura real do container (medida via ResizeObserver, não em vw — que ignora colunas/grid).
