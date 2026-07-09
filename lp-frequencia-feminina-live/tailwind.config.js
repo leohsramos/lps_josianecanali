@@ -13,9 +13,13 @@ export default {
         champagne: '#E8DCC8',
         terracota: '#B98165',
         creme: '#FAF6F0',
+        whatsapp: {
+          DEFAULT: '#25D366',
+          dark: '#1FAF57',
+        },
       },
       fontFamily: {
-        serif: ['"Fraunces Variable"', 'Georgia', 'serif'],
+        serif: ['"Instrument Serif"', '"Fraunces Variable"', 'Georgia', 'serif'],
         sans: ['"Inter Variable"', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
@@ -30,10 +34,15 @@ export default {
           '0%, 100%': { transform: 'scaleY(1)' },
           '50%': { transform: 'scaleY(1.08)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'drift-slow': 'driftSlow 42s linear infinite',
         breathe: 'breathe 9s ease-in-out infinite',
+        marquee: 'marquee 34s linear infinite',
       },
     },
   },
