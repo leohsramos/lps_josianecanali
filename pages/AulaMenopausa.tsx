@@ -128,7 +128,7 @@ const AulaMenopausa: React.FC = () => {
                             className="w-full max-w-sm aspect-[4/5] object-cover rounded-[2.5rem] shadow-2xl border-4 border-white"
                             loading="eager"
                             decoding="async"
-                            fetchpriority="high"
+                            fetchPriority="high"
                         />
                         <div className="text-center mt-5">
                             <p className="font-bold text-stone-900 text-lg">Dra. Josiane Canali | Ginecologista</p>
@@ -254,11 +254,6 @@ const AulaMenopausa: React.FC = () => {
                 <div className="max-w-3xl mx-auto px-4 text-stone-400 text-xs leading-relaxed space-y-3">
                     <p>Este conteúdo é educativo e não substitui consulta médica.</p>
                     <p className="font-semibold text-stone-300">Dra. Josiane Canali | CRM PR 40.088 | RQE 4.382</p>
-                    <p>
-                        <a href="/politica-privacidade" className="hover:text-white transition-colors underline">Política de Privacidade</a>
-                        <span className="mx-2 opacity-50">|</span>
-                        <a href="/termos-de-uso" className="hover:text-white transition-colors underline">Termos de Uso</a>
-                    </p>
                 </div>
             </footer>
         </div>
