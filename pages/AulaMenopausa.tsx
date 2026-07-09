@@ -63,7 +63,7 @@ const EventBadge: React.FC = () => {
                     <span className="opacity-50 mx-1.5">·</span>
                     <strong>5 de agosto</strong>
                     <span className="opacity-50 mx-1.5">·</span>
-                    <span>Horário a confirmar</span>
+                    <span>Às 20h</span>
                 </span>
             </div>
         </div>
