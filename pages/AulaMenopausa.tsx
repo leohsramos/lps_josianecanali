@@ -241,8 +241,8 @@ const AulaMenopausa: React.FC = () => {
                             Você não precisa atravessar essa fase sozinha.
                         </p>
                         <CTAButton origin="aula-menopausa-meio" />
-                        <p className="text-stone-400 text-xs mt-5 max-w-sm leading-relaxed">
-                            Grupo silencioso. Apenas avisos da Dra. Josiane e conteúdos da aula.<br />
+                        <p className="text-stone-400 text-xs mt-5 leading-relaxed">
+                            <span className="whitespace-nowrap">Grupo silencioso. Apenas avisos da Dra. Josiane e conteúdos da aula.</span><br />
                             Saída livre a qualquer momento.
                         </p>
                     </div>
