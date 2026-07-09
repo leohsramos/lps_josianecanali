@@ -106,12 +106,12 @@ const AulaMenopausa: React.FC = () => {
                 {/* Mobile order: título, foto, texto/CTA. Desktop: título+texto numa coluna, foto na outra. */}
                 <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-14 lg:gap-y-0 items-center [grid-template-areas:'headline'_'photo'_'text'] lg:[grid-template-areas:'headline_photo'_'text_photo']">
                     {/* Headline */}
-                    <div className="[grid-area:headline] w-full text-center lg:text-left">
+                    <div className="[grid-area:headline] min-w-0 w-full text-center lg:text-left">
                         <Headline />
                     </div>
 
                     {/* Photo column */}
-                    <div className="[grid-area:photo] flex flex-col items-center">
+                    <div className="[grid-area:photo] flex flex-col items-center -mt-10 lg:mt-0">
                         <img
                             src="/josiane-canali-aula-menopausa.webp"
                             alt="Dra. Josiane Canali, ginecologista e obstetra, sorrindo sentada"
