@@ -79,7 +79,10 @@ const Headline: React.FC = () => {
         <div ref={containerRef} className="w-full">
             <h1 className="font-display font-black text-stone-900 mb-6 leading-[1.05] tracking-tight">
                 <span data-fit-line style={{ fontSize }} className="block whitespace-nowrap">Você não está ficando louca.</span>
-                <span data-fit-line style={{ fontSize }} className="block whitespace-nowrap text-rose-500">Pode ser menopausa.</span>
+                <span data-fit-line style={{ fontSize }} className="block whitespace-nowrap">
+                    <span className="text-rose-500">Pode ser a </span>
+                    <span className="bg-gradient-to-r from-[rgb(244,63,94)] to-[rgb(184,71,80)] bg-clip-text text-transparent">MENOPAUSA.</span>
+                </span>
             </h1>
         </div>
     );
