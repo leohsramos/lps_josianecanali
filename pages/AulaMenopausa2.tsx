@@ -98,7 +98,7 @@ const AulaMenopausa2: React.FC = () => {
             />
 
             {/* PRIMEIRA DOBRA — destaque da aula (badge, título, texto, CTA) */}
-            <section className="relative min-h-screen flex flex-col justify-center px-4 pt-[2.8rem] pb-16 overflow-hidden bg-gradient-to-b from-rose-50 via-stone-50 to-stone-50">
+            <section className="relative px-4 pt-[2.8rem] pb-14 overflow-hidden bg-gradient-to-b from-rose-50 via-stone-50 to-stone-50">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-rose-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
                 <div className="relative z-10 w-full flex justify-center mb-10">
@@ -120,7 +120,7 @@ const AulaMenopausa2: React.FC = () => {
             </section>
 
             {/* SEGUNDA DOBRA — foto da Dra. Josiane */}
-            <section className="relative min-h-screen flex flex-col justify-center items-center px-4 py-16 overflow-hidden bg-stone-50">
+            <section className="relative flex flex-col items-center px-4 pt-4 pb-14 overflow-hidden bg-stone-50">
                 <img
                     src="/josiane-canali-aula-menopausa.webp"
                     alt="Dra. Josiane Canali, ginecologista e obstetra, sorrindo sentada"
