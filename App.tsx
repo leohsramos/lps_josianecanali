@@ -19,6 +19,7 @@ const Comunidade3 = React.lazy(() => import('./pages/Comunidade3'));
 const Comunidade4 = React.lazy(() => import('./pages/Comunidade4'));
 const Comunidade5 = React.lazy(() => import('./pages/Comunidade5'));
 const AulaMenopausa = React.lazy(() => import('./pages/AulaMenopausa'));
+const AulaMenopausa2 = React.lazy(() => import('./pages/AulaMenopausa2'));
 
 const PageLoader = () => (
     <div className="flex items-center justify-center min-h-screen bg-stone-950">
@@ -68,6 +69,8 @@ const App: React.FC = () => {
 
                     {/* Aula ao vivo e gratuita sobre Menopausa (5 de agosto) */}
                     <Route path="/aula-menopausa" element={<AulaMenopausa />} />
+                    {/* Variação: destaque da aula na 1ª dobra, foto da Dra. na 2ª */}
+                    <Route path="/aula-menopausa-2" element={<AulaMenopausa2 />} />
 
                     {/* Cursos */}
                     <Route path="/sexualidade" element={<CourseSexualidade />} />
