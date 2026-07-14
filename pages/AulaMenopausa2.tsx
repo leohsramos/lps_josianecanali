@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { MessageCircle, Moon, HeartCrack, ShieldCheck, Flame, Radio, Lock, Bell, Sparkles } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackLeadWhatsappAulaMenopausa } from '../components/track';
 
 const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/JAM6mnlMVMaDO8vMxAL9Oz?mode=gi_t';
 
@@ -44,6 +45,7 @@ const CTAButton: React.FC<{ origin: string; className?: string }> = ({ origin, c
         target="_blank"
         rel="noreferrer"
         data-track-origin={origin}
+        onClick={trackLeadWhatsappAulaMenopausa}
         className={`inline-flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap bg-[#25D366] text-white font-bold px-4 sm:px-8 py-3.5 sm:py-5 rounded-2xl shadow-xl shadow-[#25D366]/30 hover:bg-[#20bd5a] hover:scale-[1.03] active:scale-[0.97] transition-all text-[clamp(12px,3.6vw,18px)] ${className}`}
     >
         <MessageCircle size={20} className="shrink-0" />

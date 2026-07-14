@@ -31,3 +31,12 @@ export const trackInitiateCheckout = () => {
         content_category: 'comunidade'
     });
 };
+
+// Disparado no clique do botão que leva ao grupo do WhatsApp da aula de menopausa
+// (aula-menopausa e aula-menopausa-2). Mesmo nome de evento nas duas páginas para
+// manter a comparação entre variações consistente no Meta Ads.
+export const trackLeadWhatsappAulaMenopausa = () => {
+    fbq('track', 'Lead', {
+        content_name: 'grupo_whatsapp_aula_menopausa'
+    });
+};
