@@ -93,25 +93,47 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
             icon: <Stethoscope size={26} />,
             title: 'Consultório Aberto ao vivo com a Dra. Josi',
             tag: 'O coração da comunidade',
-            text: 'Todo mês você entra num encontro ao vivo, faz a sua pergunta e recebe uma orientação pensada para o seu momento. Não é vídeo gravado, nem robô. É a Dra. Josiane do outro lado, te escutando de verdade.'
+            text: '4 encontros ao vivo comigo. Você entra, faz a sua pergunta e recebe uma orientação pensada para o seu momento. Não é vídeo gravado, nem robô. É a Dra. Josiane do outro lado, te escutando de verdade.'
         },
         {
             icon: <BookOpen size={26} />,
             title: 'Aulas no seu ritmo, do seu jeito',
             tag: '16 semanas em vídeo',
-            text: 'Aulas curtas e diretas, na ordem que faz sentido para o seu corpo. Você aprende a entender os seus exames e a conversar com qualquer médico de igual para igual.'
+            text: 'Aulas gravadas curtas e diretas, sobre todo o universo da menopausa, na ordem que faz sentido para o seu corpo. Você aprende a entender os seus exames e a conversar com qualquer médico de igual para igual.'
         },
         {
             icon: <PenLine size={26} />,
-            title: 'Exercícios práticos para o dia a dia',
+            title: 'Exercícios semanais e reflexão guiada',
             tag: 'Simples de aplicar',
-            text: 'Pequenas práticas guiadas para você colocar em ação no seu dia. São elas que transformam o que você aprende em mudança de verdade, semana após semana.'
+            text: 'Toda semana, sugestões práticas para o seu dia a dia e um momento de reflexão para aplicar o que você aprendeu na sua rotina. É isso que transforma conteúdo em mudança de verdade.'
         },
         {
             icon: <Users size={26} />,
-            title: 'Mulheres que vivem o mesmo que você',
+            title: 'Grupo de WhatsApp com toda a comunidade',
             tag: 'Sem julgamento',
-            text: 'Um espaço fechado para trocar com quem entende de verdade o que você sente. Aqui ninguém minimiza a sua dor, e você se sente normal de novo.'
+            text: 'Um espaço fechado para se abraçar, se ajudar e trocar com quem entende de verdade o que você sente, com vídeos, áudios e interações da própria Dra. Josi.'
+        }
+    ];
+
+    // Bônus extra para membros da comunidade (Sessão 4b).
+    const bonusExtra = [
+        {
+            icon: <BookOpen size={26} />,
+            title: '3 Cursos bônus da Academia Digital',
+            tag: 'Incluso sem custo extra',
+            text: 'Sexualidade no Casamento, Anatomia Sexual Feminina e Menopausa com Saúde: três cursos completos da Academia Digital, liberados junto com a sua matrícula.'
+        },
+        {
+            icon: <Sparkles size={26} />,
+            title: 'Descontos e benefícios exclusivos',
+            tag: 'Vantagem de membro',
+            text: 'Descontos, brindes e benefícios exclusivos na compra de produtos "by Josiane Canali".'
+        },
+        {
+            icon: <Flame size={26} />,
+            title: 'Acesso antecipado às novidades da clínica',
+            tag: 'Em primeira mão',
+            text: 'Você fica sabendo antes de todo mundo sobre os lançamentos da clínica: produtos, livros e eventos.'
         },
         {
             icon: <InfinityIcon size={26} />,
@@ -125,17 +147,17 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
     const antesDepois = [
         { antes: 'Achar que está ficando louca.', depois: 'Entender exatamente o que está acontecendo no seu corpo e por quê.' },
         { antes: 'Sair de consulta sem resposta e com receita genérica.', depois: 'Conversar com o seu médico em pé de igualdade, sabendo o que perguntar.' },
-        { antes: 'Sentir-se invisível para o sistema de saúde depois dos 40.', depois: 'Ter acesso direto a uma especialista em menopausa, ao vivo, todo mês.' },
+        { antes: 'Sentir-se invisível para o sistema de saúde depois dos 40.', depois: 'Ter acesso direto a uma especialista em menopausa, em encontros ao vivo.' },
         { antes: 'Carregar sozinha o medo de envelhecer mal.', depois: 'Estar numa comunidade de mulheres no mesmo momento, sem julgamento.' },
         { antes: 'Aceitar que essa é a sua vida agora.', depois: 'Voltar a dormir, voltar a desejar, voltar a se reconhecer no espelho.' }
     ];
 
     // Sessão 7 (Ancoragem de valor)
     const ancoragem = [
-        { item: 'Consultório Aberto com a Dra. Josi, ao vivo e mensal', desc: 'Acesso direto a uma ginecologista especialista em menopausa, com respostas para o seu caso.', valor: 'R$ 3.800,00' },
+        { item: 'Consultório Aberto com a Dra. Josi, 4 encontros ao vivo', desc: 'Acesso direto a uma ginecologista especialista em menopausa, com respostas para o seu caso.', valor: 'R$ 4.400,00' },
         { item: 'Jornada de 16 semanas em vídeo', desc: 'Conteúdo organizado em ordem clínica para você entender corpo, exames e tratamentos.', valor: 'R$ 997,00' },
-        { item: 'Comunidade fechada de mulheres', desc: 'Espaço de troca permanente com outras mulheres no mesmo momento de vida.', valor: 'R$ 600,00' },
-        { item: 'Acesso permanente ao conteúdo da temporada', desc: 'Reveja quando quiser, no seu ritmo, sem prazo de expiração.', valor: 'R$ 400,00' }
+        { item: 'Grupo de WhatsApp com toda a comunidade', desc: 'Vídeos, áudios e interações da Dra. Josi, para se abraçar e se ajudar com outras mulheres.', valor: 'R$ 530,00' },
+        { item: '3 Cursos bônus da Academia Digital', desc: 'Sexualidade no Casamento, Anatomia Sexual Feminina e Menopausa com Saúde.', valor: 'R$ 291,00' }
     ];
 
     // Sessão 11 (FAQ)
@@ -224,7 +246,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                         {/* Variação 3: hero sem mídia, faixa de credibilidade */}
                         {heroMedia === 'none' && (
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
-                                {['Ginecologista especialista em menopausa', 'Encontros ao vivo todo mês', 'Mulheres em mais de 5 países'].map((item, i) => (
+                                {['Ginecologista especialista em menopausa', '4 encontros ao vivo com a Dra. Josi', 'Mulheres em mais de 5 países'].map((item, i) => (
                                     <span key={i} className="inline-flex items-center gap-2 bg-white border border-orange-100 rounded-full px-5 py-2 shadow-sm text-stone-700 text-sm font-medium">
                                         <Check size={15} className="text-green-600 shrink-0" /> {item}
                                     </span>
@@ -322,6 +344,33 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                             {entregaveis.map((e, i) => (
                                 <div key={i} className={`bg-white/5 p-8 rounded-[2rem] border transition-all duration-300 group relative overflow-hidden backdrop-blur-sm ${i === 0 ? 'border-orange-500/50 bg-orange-500/5 md:col-span-2' : 'border-white/10 hover:border-orange-500/40 hover:bg-white/10'}`}>
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
+                                    <div className="flex items-start gap-5 relative z-10">
+                                        <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center border border-white/5 text-orange-400 shrink-0 shadow-lg">
+                                            {e.icon}
+                                        </div>
+                                        <div>
+                                            <span className="text-orange-400 font-bold uppercase tracking-widest text-[10px] block mb-1">{e.tag}</span>
+                                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{e.title}</h3>
+                                            <p className="text-stone-400 leading-relaxed">{e.text}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="text-center mt-20 mb-12">
+                            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 font-bold uppercase tracking-widest text-xs mb-6">
+                                Bônus exclusivos para membros
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">
+                                Você ainda leva de bônus
+                            </h3>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                            {bonusExtra.map((e, i) => (
+                                <div key={i} className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/40 hover:bg-white/10 transition-all duration-300 group relative overflow-hidden backdrop-blur-sm">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
                                     <div className="flex items-start gap-5 relative z-10">
                                         <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center border border-white/5 text-orange-400 shrink-0 shadow-lg">
@@ -437,7 +486,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
 
                         <div className="bg-gradient-to-r from-orange-900/40 to-red-900/40 border border-orange-500/30 rounded-2xl p-6 flex items-center justify-between">
                             <span className="text-white font-bold uppercase tracking-widest text-sm">Valor total</span>
-                            <span className="text-white font-black text-2xl md:text-3xl">R$ 5.797,00</span>
+                            <span className="text-white font-black text-2xl md:text-3xl">R$ 6.218,00</span>
                         </div>
                     </div>
                 </section>
@@ -469,12 +518,12 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
 
                                 <div className="relative bg-white/5 border border-amber-500/30 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.1)]">
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
-                                        90% de desconto
+                                        43% de desconto
                                     </div>
 
                                     <div className="flex items-center justify-center gap-2 mb-3 mt-2">
                                         <span className="text-stone-500 text-sm uppercase tracking-widest">De</span>
-                                        <span className="text-stone-500 text-2xl font-bold line-through decoration-red-500 decoration-2">R$ 5.797</span>
+                                        <span className="text-stone-500 text-2xl font-bold line-through decoration-red-500 decoration-2">R$ 6.218</span>
                                     </div>
 
                                     <div className="flex items-center justify-center gap-2 mb-1">
@@ -482,9 +531,9 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                                     </div>
                                     <div className="flex flex-row justify-center items-baseline gap-1 sm:gap-2 mb-3 whitespace-nowrap">
                                         <span className="text-lg sm:text-xl md:text-2xl text-stone-300 font-medium">12x de</span>
-                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]">R$ 59,88</span>
+                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]">R$ 292,87</span>
                                     </div>
-                                    <p className="text-stone-300 text-lg font-semibold">ou <span className="text-white">R$ 579,00</span> à vista</p>
+                                    <p className="text-stone-300 text-lg font-semibold">ou <span className="text-white">R$ 3.514,44</span> à vista</p>
                                 </div>
 
                                 <div className="max-w-md mx-auto">
