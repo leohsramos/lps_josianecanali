@@ -55,7 +55,7 @@ const Comunidade5: React.FC = () => {
         '@context': 'https://schema.org',
         '@type': 'Course',
         name: 'Comunidade Frequência Feminina',
-        description: 'Acesso direto a uma ginecologista especialista em menopausa, ao vivo todo mês, mais conteúdo e comunidade de mulheres.',
+        description: 'Acesso direto a uma ginecologista especialista em menopausa, em encontros ao vivo, mais conteúdo e comunidade de mulheres.',
         provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.drajosianecanali.com.br' }
     };
 
@@ -143,10 +143,13 @@ const Comunidade5: React.FC = () => {
                             <p className="text-[13px] font-bold text-orange-600 uppercase tracking-wide mb-2">O que você recebe</p>
                             <ul className="space-y-2 text-[14px]">
                                 {[
-                                    'Consultório Aberto ao vivo comigo, todo mês',
-                                    'Aulas curtas, no seu ritmo, feitas pro seu corpo',
-                                    'Exercícios práticos pro dia a dia',
-                                    'Uma comunidade de mulheres que te entende',
+                                    '4 encontros ao vivo comigo, o Consultório Aberto',
+                                    '16 semanas de aulas curtas, no seu ritmo, feitas pro seu corpo',
+                                    'Exercícios e reflexão semanal pro seu dia a dia',
+                                    'Grupo de WhatsApp com toda a comunidade, com vídeos, áudios e interações minhas',
+                                    '3 cursos bônus da Academia Digital, inclusos',
+                                    'Descontos exclusivos em produtos "by Josiane Canali"',
+                                    'Acesso antecipado a todas as novidades da clínica',
                                     'Acesso permanente ao conteúdo da temporada'
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start gap-2">
@@ -176,10 +179,10 @@ const Comunidade5: React.FC = () => {
                                 <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 text-center border border-orange-100">
                                     <p className="text-[12px] text-stone-500 uppercase tracking-widest font-bold mb-1">Turma fundadora</p>
                                     <p className="text-[13px] text-stone-500">Tudo isso valeria</p>
-                                    <p className="text-stone-400 line-through decoration-red-500 text-lg font-bold mb-1">R$ 5.797</p>
+                                    <p className="text-stone-400 line-through decoration-red-500 text-lg font-bold mb-1">R$ 6.218</p>
                                     <p className="text-[13px] text-stone-600">Entrando agora</p>
-                                    <p className="text-4xl font-black text-orange-600 leading-tight">12x R$ 59,88</p>
-                                    <p className="text-[13px] text-stone-600">ou R$ 579 à vista</p>
+                                    <p className="text-4xl font-black text-orange-600 leading-tight">12x R$ 29,68</p>
+                                    <p className="text-[13px] text-stone-600">ou R$ 287 à vista</p>
                                 </div>
                                 <span className="block text-[10px] text-stone-400 text-right mt-1 pr-1">09:18</span>
                             </div>

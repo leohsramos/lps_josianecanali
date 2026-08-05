@@ -38,18 +38,20 @@ const PILARES = [
 ];
 
 const ENTREGAVEIS = [
-    { n: '01', t: 'Consultório Aberto ao vivo', d: 'Todo mês você entra, faz a sua pergunta e a Dra. Josiane responde pelo seu nome. Não é gravação. É a médica do outro lado, te escutando.' },
-    { n: '02', t: 'Aulas curtas, no seu ritmo', d: 'Na ordem que faz sentido para o seu corpo. Você aprende a ler os seus exames e a falar de igual para igual com qualquer médico.' },
-    { n: '03', t: 'Exercícios práticos', d: 'Pequenas ações guiadas para aplicar no dia. É o que transforma o que você entende em mudança de verdade.' },
-    { n: '04', t: 'Mulheres como você', d: 'Um grupo fechado onde ninguém minimiza o que você sente. Aqui você volta a se sentir normal.' },
-    { n: '05', t: 'Acesso que fica com você', d: 'Entra uma vez e leva o conteúdo da temporada. Sem assinatura, sem pressa, no seu tempo.' }
+    { n: '01', t: 'Consultório Aberto ao vivo', d: '4 encontros ao vivo comigo. Você entra, faz a sua pergunta e a Dra. Josiane responde pelo seu nome. Não é gravação. É a médica do outro lado, te escutando.' },
+    { n: '02', t: 'Aulas curtas, no seu ritmo', d: '16 semanas de aulas gravadas, na ordem que faz sentido para o seu corpo. Você aprende a ler os seus exames e a falar de igual para igual com qualquer médico.' },
+    { n: '03', t: 'Exercícios e reflexão semanal', d: 'Toda semana, ações práticas guiadas e um momento de reflexão para aplicar na sua rotina. É o que transforma o que você entende em mudança de verdade.' },
+    { n: '04', t: 'Grupo de WhatsApp com a comunidade', d: 'Um espaço fechado com vídeos, áudios e interações minhas, onde ninguém minimiza o que você sente. Aqui você volta a se sentir normal.' },
+    { n: '05', t: '3 Cursos bônus da Academia Digital', d: 'Sexualidade no Casamento, Anatomia Sexual Feminina e Menopausa com Saúde: três cursos completos, inclusos sem custo extra.' },
+    { n: '06', t: 'Descontos e novidades em primeira mão', d: 'Descontos e benefícios exclusivos em produtos "by Josiane Canali", e acesso antecipado a todos os lançamentos da clínica.' },
+    { n: '07', t: 'Acesso que fica com você', d: 'Entra uma vez e leva o conteúdo da temporada. Sem assinatura, sem pressa, no seu tempo.' }
 ];
 
 const ANCORAGEM = [
-    { item: 'Consultório Aberto ao vivo, mensal', valor: 'R$ 3.800' },
+    { item: 'Consultório Aberto ao vivo, 4 encontros', valor: 'R$ 4.400' },
     { item: 'Jornada de 16 semanas em vídeo', valor: 'R$ 997' },
-    { item: 'Comunidade fechada de mulheres', valor: 'R$ 600' },
-    { item: 'Acesso permanente à temporada', valor: 'R$ 400' }
+    { item: 'Grupo de WhatsApp com a comunidade', valor: 'R$ 530' },
+    { item: '3 Cursos bônus da Academia Digital', valor: 'R$ 291' }
 ];
 
 const FAQ = [
@@ -130,7 +132,7 @@ const Comunidade3: React.FC = () => {
                         Existe medicina por trás da menopausa. E existe uma médica pronta para te escutar ao vivo, pelo seu nome, com a ciência que o seu médico talvez não conheça.
                     </p>
                     <p className="text-stone-400 text-base md:text-lg italic max-w-2xl leading-relaxed mb-10 border-l-2 border-orange-500/40 pl-4">
-                        Na Comunidade Frequência Feminina você entra para um consultório aberto ao vivo todo mês, uma jornada em vídeo no seu ritmo e um grupo de mulheres que vivem exatamente o que você vive.
+                        Na Comunidade Frequência Feminina você entra para 4 encontros ao vivo comigo, uma jornada em vídeo no seu ritmo e um grupo de mulheres que vivem exatamente o que você vive.
                     </p>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4">
@@ -231,7 +233,7 @@ const Comunidade3: React.FC = () => {
                     {/* Como acontece na prática */}
                     <div className="mb-10 max-w-2xl">
                         <h3 className="text-2xl md:text-4xl font-display font-bold mb-3">Como o Método Frequência acontece na prática</h3>
-                        <p className="text-stone-600 text-lg">Não é mais um curso pra você assistir sozinha. É acesso de verdade, todo mês.</p>
+                        <p className="text-stone-600 text-lg">Não é mais um curso pra você assistir sozinha. É acesso de verdade, ao vivo.</p>
                     </div>
                     <div className="divide-y divide-stone-200 border-t border-stone-200">
                         {ENTREGAVEIS.map((e, i) => (
@@ -300,16 +302,16 @@ const Comunidade3: React.FC = () => {
 
                         <div className="flex items-center justify-between border-t border-white/10 pt-5 mb-7">
                             <span className="text-stone-400 uppercase tracking-widest text-xs font-bold">Valor total</span>
-                            <span className="text-stone-400 text-xl font-bold line-through decoration-red-500">R$ 5.797</span>
+                            <span className="text-stone-400 text-xl font-bold line-through decoration-red-500">R$ 6.218</span>
                         </div>
 
                         <div className="text-center mb-7">
                             <p className="text-stone-400 uppercase tracking-widest text-xs mb-2">Entrando hoje</p>
                             <div className="flex items-baseline justify-center gap-2">
                                 <span className="text-xl text-stone-300 font-medium">12x de</span>
-                                <span className="text-6xl md:text-7xl font-black text-orange-500 leading-none drop-shadow-[0_0_20px_rgba(249,115,22,0.4)]">R$ 59,88</span>
+                                <span className="text-6xl md:text-7xl font-black text-orange-500 leading-none drop-shadow-[0_0_20px_rgba(249,115,22,0.4)]">R$ 29,68</span>
                             </div>
-                            <p className="text-stone-300 mt-2">ou <span className="text-white font-semibold">R$ 579</span> à vista</p>
+                            <p className="text-stone-300 mt-2">ou <span className="text-white font-semibold">R$ 287</span> à vista</p>
                         </div>
 
                         <a href={CHECKOUT_URL} onClick={trackInitiateCheckout} target="_blank" rel="noopener noreferrer" className={`${greenBtn} w-full py-5 rounded-2xl font-bold text-lg uppercase tracking-wide flex items-center justify-center`}>
@@ -413,7 +415,7 @@ const Comunidade3: React.FC = () => {
                 <div className="bg-stone-900/95 backdrop-blur-md border-t border-white/10 px-4 py-3">
                     <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
                         <div className="hidden sm:block">
-                            <p className="text-white font-bold text-sm leading-tight">12x de R$ 59,88 <span className="text-stone-400 font-normal">ou R$ 579 à vista</span></p>
+                            <p className="text-white font-bold text-sm leading-tight">12x de R$ 29,68 <span className="text-stone-400 font-normal">ou R$ 287 à vista</span></p>
                             <p className="text-stone-500 text-xs">Turma fundadora, 7 dias de garantia</p>
                         </div>
                         <button onClick={goCheckout} className={`${greenBtn} flex-1 sm:flex-none px-8 py-3.5 rounded-full font-bold text-base inline-flex items-center justify-center group`}>

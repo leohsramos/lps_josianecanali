@@ -518,7 +518,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
 
                                 <div className="relative bg-white/5 border border-amber-500/30 rounded-3xl p-8 mb-10 max-w-xl mx-auto backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.1)]">
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
-                                        43% de desconto
+                                        95% de desconto
                                     </div>
 
                                     <div className="flex items-center justify-center gap-2 mb-3 mt-2">
@@ -531,9 +531,9 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
                                     </div>
                                     <div className="flex flex-row justify-center items-baseline gap-1 sm:gap-2 mb-3 whitespace-nowrap">
                                         <span className="text-lg sm:text-xl md:text-2xl text-stone-300 font-medium">12x de</span>
-                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]">R$ 292,87</span>
+                                        <span className="text-5xl sm:text-6xl md:text-7xl font-black text-orange-500 leading-none tracking-tight drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]">R$ 29,68</span>
                                     </div>
-                                    <p className="text-stone-300 text-lg font-semibold">ou <span className="text-white">R$ 3.514,44</span> à vista</p>
+                                    <p className="text-stone-300 text-lg font-semibold">ou <span className="text-white">R$ 287</span> à vista</p>
                                 </div>
 
                                 <div className="max-w-md mx-auto">

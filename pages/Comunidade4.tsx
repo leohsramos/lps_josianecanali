@@ -22,7 +22,7 @@ const DEPOIMENTOS = [
 // Mecanismo único: As 3 Frequências
 const FREQUENCIAS = [
     { icon: <Brain size={24} />, n: '1', t: 'Entender', d: 'Você aprende a ler o seu corpo e os seus exames, na ordem que faz sentido para você. Sai da confusão e entra no controle.' },
-    { icon: <Stethoscope size={24} />, n: '2', t: 'Acessar', d: 'Todo mês, ao vivo, você fala direto com a Dra. Josiane. As suas dúvidas respondidas pelo seu nome, não em dez minutos de consulta.' },
+    { icon: <Stethoscope size={24} />, n: '2', t: 'Acessar', d: 'Em 4 encontros ao vivo, você fala direto com a Dra. Josiane. As suas dúvidas respondidas pelo seu nome, não em dez minutos de consulta.' },
     { icon: <Users size={24} />, n: '3', t: 'Pertencer', d: 'Você entra para um grupo de mulheres que vivem o mesmo que você. Ninguém minimiza o que você sente, e você deixa de estar sozinha.' }
 ];
 
@@ -52,7 +52,7 @@ const COMPARA = [
         titulo: 'Comunidade Frequência Feminina',
         destaque: true,
         linhas: [
-            { ok: true, t: 'Especialista em menopausa ao vivo, todo mês' },
+            { ok: true, t: 'Especialista em menopausa em encontros ao vivo' },
             { ok: true, t: 'Conteúdo feito para o seu corpo' },
             { ok: true, t: 'Comunidade que acolhe, sem julgamento' },
             { ok: true, t: 'Acesso permanente, no seu ritmo' }
@@ -61,10 +61,10 @@ const COMPARA = [
 ];
 
 const ANCORAGEM = [
-    { item: 'Consultório Aberto ao vivo, mensal, com a Dra. Josi', valor: 'R$ 3.800', bonus: false },
+    { item: 'Consultório Aberto, 4 encontros ao vivo com a Dra. Josi', valor: 'R$ 4.400', bonus: false },
     { item: 'Jornada de 16 semanas em vídeo', valor: 'R$ 997', bonus: false },
-    { item: 'Comunidade fechada de mulheres', valor: 'R$ 600', bonus: false },
-    { item: 'Acesso permanente ao conteúdo da temporada', valor: 'R$ 400', bonus: true }
+    { item: 'Grupo de WhatsApp com toda a comunidade', valor: 'R$ 530', bonus: false },
+    { item: '3 Cursos bônus da Academia Digital', valor: 'R$ 291', bonus: true }
 ];
 
 // Legendas de transformação, uma por print (PDF Blocos Extras).
@@ -81,7 +81,7 @@ const LEGENDAS = [
 
 const PRA_QUEM_E = [
     'Você está no climatério, na perimenopausa, na menopausa ou na pós, e quer entender o que está acontecendo com o seu corpo.',
-    'Você está cansada de ser ouvida pela metade e quer uma médica que te acompanhe de verdade, mês a mês.',
+    'Você está cansada de ser ouvida pela metade e quer uma médica que te acompanhe de verdade, ao longo da jornada.',
     'Você topa participar: assistir, perguntar, estar perto de outras mulheres.'
 ];
 
@@ -134,7 +134,7 @@ const Comunidade4: React.FC = () => {
         <div className="w-full overflow-x-hidden bg-[#FDFBF7] text-stone-900 font-sans selection:bg-orange-500 selection:text-white">
             <SEO
                 title="Comunidade Frequência Feminina | Dra. Josiane Canali"
-                description="O método das 3 Frequências para viver bem a menopausa: entender o seu corpo, acessar uma médica ao vivo todo mês e pertencer a uma comunidade de mulheres."
+                description="O método das 3 Frequências para viver bem a menopausa: entender o seu corpo, acessar uma médica em encontros ao vivo e pertencer a uma comunidade de mulheres."
                 image="https://i.postimg.cc/dV8Yx0gw/CAPAS_DE_CURSO_10.png"
                 url="https://lp.institutocanali.com/comunidade-4"
                 structuredData={courseSchema}
@@ -176,7 +176,7 @@ const Comunidade4: React.FC = () => {
                     </h1>
 
                     <p className="text-stone-600 text-lg md:text-2xl font-light max-w-2xl mx-auto leading-relaxed mb-10">
-                        A menopausa tem medicina por trás. Na Comunidade Frequência Feminina, você fala ao vivo com a Dra. Josiane Canali todo mês, entende o seu corpo e para de enfrentar isso sozinha.
+                        A menopausa tem medicina por trás. Na Comunidade Frequência Feminina, você tem encontros ao vivo com a Dra. Josiane Canali, entende o seu corpo e para de enfrentar isso sozinha.
                     </p>
 
                     <div className="flex flex-col items-center gap-3">
@@ -351,7 +351,7 @@ const Comunidade4: React.FC = () => {
                             O Consultório Aberto só funciona se a Dra. Josiane conseguir te responder pelo seu nome, ao vivo. Por isso a turma fundadora tem vagas limitadas. Quando elas acabam, a entrada fecha até a próxima temporada.
                         </p>
                         <p className="text-stone-300 leading-relaxed">
-                            Quem entra agora entra pelo valor de fundadora: R$ 579. Na próxima temporada, esse valor sobe. Você não está só garantindo a sua vaga. Está garantindo o preço que não volta.
+                            Quem entra agora entra pelo valor de fundadora: 12x de R$ 29,68. Na próxima temporada, esse valor sobe. Você não está só garantindo a sua vaga. Está garantindo o preço que não volta.
                         </p>
                     </div>
 
@@ -373,16 +373,16 @@ const Comunidade4: React.FC = () => {
 
                         <div className="flex items-center justify-between border-t border-stone-200 pt-5 mb-6">
                             <span className="text-stone-500 uppercase tracking-widest text-xs font-bold">Valor total</span>
-                            <span className="text-stone-400 text-xl font-bold line-through decoration-red-500">R$ 5.797</span>
+                            <span className="text-stone-400 text-xl font-bold line-through decoration-red-500">R$ 6.218</span>
                         </div>
 
                         <div className="text-center bg-orange-50 rounded-2xl py-6 mb-6">
                             <p className="text-stone-500 uppercase tracking-widest text-xs mb-2">Entrando hoje</p>
                             <div className="flex items-baseline justify-center gap-2">
                                 <span className="text-lg text-stone-600 font-medium">12x de</span>
-                                <span className="text-6xl md:text-7xl font-black text-orange-600 leading-none">R$ 59,88</span>
+                                <span className="text-6xl md:text-7xl font-black text-orange-600 leading-none">R$ 29,68</span>
                             </div>
-                            <p className="text-stone-600 mt-2">ou <span className="text-stone-900 font-bold">R$ 579</span> à vista</p>
+                            <p className="text-stone-600 mt-2">ou <span className="text-stone-900 font-bold">R$ 287</span> à vista</p>
                         </div>
 
                         <p className="text-center text-orange-700 text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-3">
