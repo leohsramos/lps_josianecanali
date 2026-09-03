@@ -40,3 +40,11 @@ export const trackLeadWhatsappAulaMenopausa = () => {
         content_name: 'grupo_whatsapp_aula_menopausa'
     });
 };
+
+// Disparado no clique do botão de WhatsApp da LP de qualificação para
+// consulta particular em Umuarama, PR.
+export const trackLeadWhatsappConsultaUmuarama = () => {
+    fbq('track', 'Lead', {
+        content_name: 'whatsapp_consulta_umuarama'
+    });
+};
