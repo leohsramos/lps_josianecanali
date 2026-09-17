@@ -61,7 +61,7 @@ const CourseSexualidade: React.FC = () => {
         "provider": {
             "@type": "Organization",
             "name": "Instituto Canali",
-            "sameAs": "https://www.drajosianecanali.com.br"
+            "sameAs": "https://www.josianecanali.com.br"
         },
         "hasCourseInstance": {
             "@type": "CourseInstance",
@@ -175,7 +175,7 @@ const CourseSexualidade: React.FC = () => {
                 const submissionDate = new Date().toLocaleString('pt-BR');
 
                 // Envio para o Proxy da API (Google Sheets)
-                await fetch('https://drajosianecanali.com.br/api/form-submit', {
+                await fetch('https://www.josianecanali.com.br/api/form-submit', {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -209,7 +209,7 @@ const CourseSexualidade: React.FC = () => {
                 title="Curso Sexualidade no Casamento | Dra. Josiane Canali"
                 description="Resgate a intimidade e o prazer no seu casamento. Um curso que une a visão médica da ginecologia com princípios cristãos. Acabe com a dor e a falta de libido."
                 image="https://i.postimg.cc/8z8G4vXV/CAPAS_DE_CURSO_1.png"
-                url="https://www.drajosianecanali.com.br/mais/cursos/sexualidade"
+                url="https://www.josianecanali.com.br/mais/cursos/sexualidade"
                 structuredData={courseSchema}
             />
 
@@ -218,7 +218,7 @@ const CourseSexualidade: React.FC = () => {
 
                 {/* Botão Voltar (Esquerda) */}
                 <a
-                    href="https://drajosianecanali.com.br/mais/cursos"
+                    href="https://www.josianecanali.com.br/mais/cursos"
                     className="flex items-center text-white/80 hover:text-white hover:bg-white/10 p-2 pr-4 rounded-full transition-all group shrink-0"
                     title="Voltar para o site principal"
                 >

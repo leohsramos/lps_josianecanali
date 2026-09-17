@@ -56,7 +56,7 @@ const Comunidade5: React.FC = () => {
         '@type': 'Course',
         name: 'Comunidade Frequência Feminina',
         description: 'Acesso direto a uma ginecologista especialista em menopausa, em encontros ao vivo, mais conteúdo e comunidade de mulheres.',
-        provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.drajosianecanali.com.br' }
+        provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.josianecanali.com.br' }
     };
 
     // Bolha da Dra. (lado esquerdo)

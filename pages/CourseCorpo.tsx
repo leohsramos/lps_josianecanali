@@ -166,7 +166,7 @@ const CourseCorpo: React.FC = () => {
                 const submissionDate = new Date().toLocaleString('pt-BR');
 
                 // Envio para o Proxy da API (Google Sheets)
-                await fetch('https://drajosianecanali.com.br/api/form-submit', {
+                await fetch('https://www.josianecanali.com.br/api/form-submit', {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -200,7 +200,7 @@ const CourseCorpo: React.FC = () => {
                 title="Entendendo Meu Corpo | Anatomia Feminina Sem Tabus"
                 description="Pare de lutar contra sua biologia. Um guia médico e visual para mulheres entenderem sua anatomia, acabarem com a dor e descobrirem o prazer."
                 image="https://i.postimg.cc/SxWhvKHq/CAPAS_DE_CURSO_8.png"
-                url="https://www.drajosianecanali.com.br/mais/cursos/corpo"
+                url="https://www.josianecanali.com.br/mais/cursos/corpo"
             />
 
             {/* --- BARRA FIXA UNIFICADA (ROXO) --- */}
@@ -208,7 +208,7 @@ const CourseCorpo: React.FC = () => {
 
                 {/* Botão Voltar (Esquerda) */}
                 <a
-                    href="https://drajosianecanali.com.br/mais/cursos"
+                    href="https://www.josianecanali.com.br/mais/cursos"
                     className="flex items-center text-white/80 hover:text-white hover:bg-white/10 p-2 pr-4 rounded-full transition-all group shrink-0"
                     title="Voltar para o site principal"
                 >

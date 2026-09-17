@@ -23,7 +23,7 @@ const CourseMenopausa: React.FC = () => {
         "provider": {
             "@type": "Organization",
             "name": "Instituto Canali",
-            "sameAs": "https://www.drajosianecanali.com.br"
+            "sameAs": "https://www.josianecanali.com.br"
         },
         "hasCourseInstance": {
             "@type": "CourseInstance",
@@ -92,7 +92,7 @@ const CourseMenopausa: React.FC = () => {
 
         try {
             // NOVO ENVIO: JSON Plano para Google Apps Script via Proxy
-            const response = await fetch('https://drajosianecanali.com.br/api/form-submit', {
+            const response = await fetch('https://www.josianecanali.com.br/api/form-submit', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -129,7 +129,7 @@ const CourseMenopausa: React.FC = () => {
                 title="Curso Menopausa Sem Dor | Dra. Josiane Canali"
                 description="Aprenda a controlar os calorões, recuperar a libido e proteger sua saúde na menopausa. Protocolo médico integrativo e reposição hormonal segura."
                 image="https://i.postimg.cc/dV8Yx0gw/CAPAS_DE_CURSO_10.png"
-                url="https://www.drajosianecanali.com.br/mais/cursos/menopausa"
+                url="https://www.josianecanali.com.br/mais/cursos/menopausa"
                 structuredData={courseSchema}
             />
 
@@ -138,7 +138,7 @@ const CourseMenopausa: React.FC = () => {
 
                 {/* Botão Voltar */}
                 <a
-                    href="https://drajosianecanali.com.br/mais/cursos"
+                    href="https://www.josianecanali.com.br/mais/cursos"
                     className="flex items-center text-white/80 hover:text-white hover:bg-white/10 p-2 pr-4 rounded-full transition-all group shrink-0"
                     title="Voltar para o site principal"
                 >

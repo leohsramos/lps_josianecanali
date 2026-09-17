@@ -45,7 +45,7 @@ const ComunidadeBase: React.FC<ComunidadeBaseProps> = ({ heroMedia = 'video', ca
         provider: {
             '@type': 'Organization',
             name: 'Instituto Canali',
-            sameAs: 'https://www.drajosianecanali.com.br'
+            sameAs: 'https://www.josianecanali.com.br'
         }
     };
 

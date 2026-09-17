@@ -124,7 +124,7 @@ const Comunidade4: React.FC = () => {
         '@type': 'Course',
         name: 'Comunidade Frequência Feminina',
         description: 'O método das 3 Frequências: entender o seu corpo, acessar uma médica ao vivo e pertencer a uma comunidade de mulheres na menopausa.',
-        provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.drajosianecanali.com.br' }
+        provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.josianecanali.com.br' }
     };
 
     const accent = 'text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600';

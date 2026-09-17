@@ -90,7 +90,7 @@ const Comunidade3: React.FC = () => {
         '@type': 'Course',
         name: 'Comunidade Frequência Feminina',
         description: 'Acesso direto a uma ginecologista especialista em menopausa, ao vivo, mais jornada em vídeo e comunidade de mulheres.',
-        provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.drajosianecanali.com.br' }
+        provider: { '@type': 'Organization', name: 'Instituto Canali', sameAs: 'https://www.josianecanali.com.br' }
     };
 
     const accent = 'text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600';

@@ -83,7 +83,7 @@ const ImersaoLP2: React.FC = () => {
                 title="O Fim da Dependência dos Convênios | Dra. Josiane Canali"
                 description="Como construir um consultório particular exclusivo e gerar múltiplos 6 dígitos recorrentes."
                 image="https://img.ampulloo.com/josiane_canali/imersao-hero.webp"
-                url="https://www.drajosianecanali.com.br/imersao-lp"
+                url="https://www.josianecanali.com.br/imersao-lp"
             />
 
             {/* NAVBAR MINIMAL - Clicável para voltar ao topo */}
